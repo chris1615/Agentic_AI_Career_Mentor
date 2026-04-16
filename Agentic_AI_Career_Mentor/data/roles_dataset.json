@@ -1,0 +1,122 @@
+{
+  "Software Developer": {
+    "domain": "Technology",
+    "skills": ["Python", "JavaScript", "Git", "Algorithms", "Data Structures", "APIs", "SQL"],
+    "learning_topics": ["Python", "Data Structures", "System Design", "REST APIs"],
+    "description": "Build software applications and systems."
+  },
+  "Data Scientist": {
+    "domain": "Technology",
+    "skills": ["Python", "Statistics", "Machine Learning", "SQL", "Data Visualization", "NumPy", "Pandas"],
+    "learning_topics": ["Machine Learning", "Statistics", "Deep Learning", "Data Visualization"],
+    "description": "Analyze complex data to drive business decisions."
+  },
+  "Data Analyst": {
+    "domain": "Technology",
+    "skills": ["SQL", "Excel", "Python", "Data Visualization", "Statistics", "Tableau"],
+    "learning_topics": ["SQL", "Excel Advanced", "Tableau", "Power BI"],
+    "description": "Interpret data and generate actionable insights."
+  },
+  "Machine Learning Engineer": {
+    "domain": "Technology",
+    "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "MLOps", "Statistics"],
+    "learning_topics": ["Deep Learning", "MLOps", "Model Deployment", "Cloud Platforms"],
+    "description": "Design and deploy ML models at scale."
+  },
+  "DevOps Engineer": {
+    "domain": "Technology",
+    "skills": ["Linux", "Docker", "Kubernetes", "CI/CD", "Cloud", "Scripting", "Networking"],
+    "learning_topics": ["Docker", "Kubernetes", "AWS/GCP", "Terraform"],
+    "description": "Bridge development and operations through automation."
+  },
+  "Cybersecurity Analyst": {
+    "domain": "Technology",
+    "skills": ["Networking", "Linux", "Python", "Penetration Testing", "Security Protocols", "Risk Assessment"],
+    "learning_topics": ["Ethical Hacking", "Network Security", "SIEM Tools", "Compliance"],
+    "description": "Protect systems and networks from cyber threats."
+  },
+  "Product Manager": {
+    "domain": "Business",
+    "skills": ["Communication", "Leadership", "Market Research", "Roadmapping", "Agile", "Analytics", "Stakeholder Management"],
+    "learning_topics": ["Product Strategy", "Agile Methodology", "User Research", "OKRs"],
+    "description": "Define product vision and drive cross-functional teams."
+  },
+  "Business Analyst": {
+    "domain": "Business",
+    "skills": ["Communication", "SQL", "Excel", "Process Mapping", "Requirements Gathering", "Data Analysis"],
+    "learning_topics": ["Business Process Modeling", "SQL", "Stakeholder Communication", "JIRA"],
+    "description": "Bridge business needs and technical solutions."
+  },
+  "Marketing Manager": {
+    "domain": "Marketing",
+    "skills": ["Communication", "Marketing Strategy", "SEO", "Social Media", "Content Creation", "Analytics", "Campaign Management"],
+    "learning_topics": ["Digital Marketing", "SEO", "Google Analytics", "Marketing Automation"],
+    "description": "Drive brand growth through strategic campaigns."
+  },
+  "Digital Marketing Specialist": {
+    "domain": "Marketing",
+    "skills": ["SEO", "SEM", "Social Media", "Content Writing", "Google Analytics", "Email Marketing", "Copywriting"],
+    "learning_topics": ["SEO/SEM", "Social Media Ads", "Email Marketing", "Content Strategy"],
+    "description": "Execute online marketing campaigns and grow digital presence."
+  },
+  "Graphic Designer": {
+    "domain": "Design",
+    "skills": ["Creativity", "Typography", "Adobe Photoshop", "Illustrator", "Color Theory", "Layout Design", "Branding"],
+    "learning_topics": ["Adobe Creative Suite", "Typography", "UI Design Principles", "Motion Graphics"],
+    "description": "Create visual content to communicate ideas."
+  },
+  "UX/UI Designer": {
+    "domain": "Design",
+    "skills": ["User Research", "Wireframing", "Figma", "Prototyping", "Usability Testing", "Visual Design", "Information Architecture"],
+    "learning_topics": ["Figma", "User Research Methods", "Interaction Design", "Accessibility"],
+    "description": "Design user-centered digital experiences."
+  },
+  "Doctor / Physician": {
+    "domain": "Healthcare",
+    "skills": ["Clinical Knowledge", "Diagnosis", "Patient Communication", "Medical Research", "Anatomy", "Pharmacology"],
+    "learning_topics": ["Clinical Guidelines", "Medical Research", "Telemedicine", "EHR Systems"],
+    "description": "Diagnose and treat patients to improve health outcomes."
+  },
+  "Healthcare Administrator": {
+    "domain": "Healthcare",
+    "skills": ["Leadership", "Healthcare Policy", "Budget Management", "Communication", "Operations", "Compliance"],
+    "learning_topics": ["Healthcare Law", "Hospital Management", "Health Informatics", "Budgeting"],
+    "description": "Manage healthcare facilities and improve operational efficiency."
+  },
+  "Financial Analyst": {
+    "domain": "Finance",
+    "skills": ["Excel", "Financial Modeling", "Accounting", "Statistics", "SQL", "Bloomberg", "Communication"],
+    "learning_topics": ["Financial Modeling", "Valuation Techniques", "Excel Advanced", "CFA Preparation"],
+    "description": "Evaluate financial data to guide investment decisions."
+  },
+  "Investment Banker": {
+    "domain": "Finance",
+    "skills": ["Financial Modeling", "Valuation", "Excel", "Communication", "Market Analysis", "M&A Knowledge"],
+    "learning_topics": ["Mergers & Acquisitions", "DCF Modeling", "Capital Markets", "Deal Structuring"],
+    "description": "Advise companies on capital raising and M&A transactions."
+  },
+  "Teacher / Educator": {
+    "domain": "Education",
+    "skills": ["Communication", "Curriculum Design", "Subject Expertise", "Patience", "Assessment", "Classroom Management"],
+    "learning_topics": ["Instructional Design", "EdTech Tools", "Differentiated Learning", "Assessment Strategies"],
+    "description": "Educate and inspire students to achieve their potential."
+  },
+  "Instructional Designer": {
+    "domain": "Education",
+    "skills": ["Curriculum Design", "E-Learning", "Communication", "Articulate Storyline", "LMS Platforms", "Adult Learning Theory"],
+    "learning_topics": ["E-Learning Authoring Tools", "LMS Administration", "Learning Analytics", "SCORM"],
+    "description": "Create effective learning experiences and educational materials."
+  },
+  "Content Writer": {
+    "domain": "Creative",
+    "skills": ["Writing", "Research", "SEO", "Editing", "Storytelling", "Communication", "Grammar"],
+    "learning_topics": ["SEO Writing", "Content Strategy", "Copywriting", "Brand Voice Development"],
+    "description": "Produce engaging written content across various platforms."
+  },
+  "Film Director": {
+    "domain": "Creative",
+    "skills": ["Storytelling", "Cinematography", "Leadership", "Visual Composition", "Script Writing", "Editing"],
+    "learning_topics": ["Directing Techniques", "Film Production", "Screenwriting", "Post-Production"],
+    "description": "Oversee and direct the creative vision of film productions."
+  }
+}
