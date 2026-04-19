@@ -1,76 +1,77 @@
 """
 workflow.py
 -----------
-Orchestrates the full multi-agent career mentorship pipeline.
+Orchestrates the full career mentorship pipeline.
 
-Pipeline:
-    Skill Analyzer Agent
-        → Career Advisor Agent
-            → Learning Planner Agent
-                → Interview Preparation Agent
+Primary path:
+    CrewAI multi-agent workflow
 
-Each agent feeds its output into the next, producing a combined result
-that the frontend can display directly.
+Fallback path:
+    Deterministic local functions so the app still works without CrewAI or an
+    API key.
 """
 
-import sys
+from __future__ import annotations
+
 import os
+import sys
 
 # Ensure the backend package is importable regardless of working directory
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+from career_agent import CareerMentorCrew, recommend_career
 from data_loader import load_roles
-from skill_agent import analyze_skills, get_overall_missing_skills
-from career_agent import recommend_career
-from learning_agent import generate_learning_plan
 from interview_agent import generate_interview_questions
+from learning_agent import generate_learning_plan
+from skill_agent import analyze_skills, get_overall_missing_skills
+
+
+def _parse_user_skills(raw_skills: str) -> list[str]:
+    return [skill.strip() for skill in raw_skills.split(",") if skill.strip()]
+
+
+def _run_fallback_workflow(
+    *,
+    user_skills: list[str],
+    interests: str,
+    education: str,
+    career_goal: str,
+    roles: dict,
+) -> dict:
+    skill_analysis = analyze_skills(user_skills, roles)
+    recommended_roles = recommend_career(
+        user_skills=user_skills,
+        roles=roles,
+        interests=interests,
+        career_goal=career_goal,
+        top_n=3,
+    )
+
+    top_role_names = [role["role"] for role in recommended_roles]
+    missing_skills = get_overall_missing_skills(skill_analysis, top_role_names)
+    learning_plan = generate_learning_plan(missing_skills)
+
+    top_role = top_role_names[0] if top_role_names else "Software Developer"
+    interview_questions = generate_interview_questions(top_role)
+    interview_questions["role"] = top_role
+
+    return {
+        "status": "success",
+        "engine": "fallback",
+        "user_skills": user_skills,
+        "recommended_roles": recommended_roles,
+        "missing_skills": missing_skills,
+        "learning_plan": learning_plan,
+        "interview_questions": interview_questions,
+        "education": education,
+        "interests": interests,
+    }
 
 
 def run_workflow(user_input: dict) -> dict:
     """
     Run the complete career mentorship pipeline for a given user.
-
-    Args:
-        user_input: A dictionary with the following keys:
-            - skills       (str)  : comma-separated skills, e.g. "Python, SQL"
-            - interests    (str)  : free-text interests, e.g. "AI, data"
-            - education    (str)  : optional education background
-            - career_goal  (str)  : optional career goal description
-
-    Returns:
-        A structured result dictionary:
-        {
-            "status": "success" | "error",
-            "message": str,                  # error detail (only on error)
-            "recommended_roles": [           # top-3 career recommendations
-                {
-                    "role": str,
-                    "domain": str,
-                    "match_score": float,
-                    "matched_skills": list[str],
-                    "missing_skills": list[str],
-                    "description": str,
-                }
-            ],
-            "missing_skills": list[str],     # aggregated across top roles
-            "learning_plan": [               # weekly roadmap
-                {
-                    "week": int,
-                    "skill": str,
-                    "steps": list[str],
-                    "resource_hint": str,
-                }
-            ],
-            "interview_questions": {         # for the #1 recommended role
-                "role": str,
-                "technical": list[str],
-                "behavioral": list[str],
-            },
-        }
     """
-    # ------------------------------------------------------------------
-    # 0. Validate and parse user input
-    # ------------------------------------------------------------------
     raw_skills = user_input.get("skills", "").strip()
     interests = user_input.get("interests", "").strip()
     education = user_input.get("education", "").strip()
@@ -82,70 +83,51 @@ def run_workflow(user_input: dict) -> dict:
             "message": "Please enter at least one skill to get career recommendations.",
         }
 
-    # Parse comma-separated skills, filtering out blanks
-    user_skills = [s.strip() for s in raw_skills.split(",") if s.strip()]
-
+    user_skills = _parse_user_skills(raw_skills)
     if not user_skills:
         return {
             "status": "error",
             "message": "Could not parse any skills. Please separate skills with commas.",
         }
 
-    # ------------------------------------------------------------------
-    # 1. Load dataset
-    # ------------------------------------------------------------------
     try:
         roles = load_roles()
-    except (FileNotFoundError, ValueError) as e:
-        return {"status": "error", "message": str(e)}
+    except (FileNotFoundError, ValueError) as exc:
+        return {"status": "error", "message": str(exc)}
 
-    # ------------------------------------------------------------------
-    # 2. AGENT 1 — Skill Analyzer
-    # ------------------------------------------------------------------
-    try:
-        skill_analysis = analyze_skills(user_skills, roles)
-    except ValueError as e:
-        return {"status": "error", "message": str(e)}
+    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    crew = CareerMentorCrew(api_key=api_key)
 
-    # ------------------------------------------------------------------
-    # 3. AGENT 2 — Career Advisor
-    # ------------------------------------------------------------------
+    if crew.is_available():
+        try:
+            result = crew.run(
+                user_skills=user_skills,
+                interests=interests,
+                education=education,
+                career_goal=career_goal,
+                roles=roles,
+            )
+            result.update(
+                {
+                    "status": "success",
+                    "engine": "crewai",
+                    "user_skills": user_skills,
+                    "education": education,
+                    "interests": interests,
+                }
+            )
+            return result
+        except Exception:
+            # Fall through gracefully to the deterministic pipeline.
+            pass
+
     try:
-        recommended_roles = recommend_career(
+        return _run_fallback_workflow(
             user_skills=user_skills,
-            roles=roles,
             interests=interests,
+            education=education,
             career_goal=career_goal,
-            top_n=3,
+            roles=roles,
         )
-    except ValueError as e:
-        return {"status": "error", "message": str(e)}
-
-    top_role_names = [r["role"] for r in recommended_roles]
-
-    # ------------------------------------------------------------------
-    # 4. AGENT 3 — Learning Planner
-    # ------------------------------------------------------------------
-    missing_skills = get_overall_missing_skills(skill_analysis, top_role_names)
-    learning_plan = generate_learning_plan(missing_skills)
-
-    # ------------------------------------------------------------------
-    # 5. AGENT 4 — Interview Preparation
-    # ------------------------------------------------------------------
-    top_role = top_role_names[0] if top_role_names else "Software Developer"
-    interview_questions = generate_interview_questions(top_role)
-    interview_questions["role"] = top_role
-
-    # ------------------------------------------------------------------
-    # 6. Combine and return
-    # ------------------------------------------------------------------
-    return {
-        "status": "success",
-        "user_skills": user_skills,
-        "recommended_roles": recommended_roles,
-        "missing_skills": missing_skills,
-        "learning_plan": learning_plan,
-        "interview_questions": interview_questions,
-        "education": education,
-        "interests": interests,
-    }
+    except ValueError as exc:
+        return {"status": "error", "message": str(exc)}

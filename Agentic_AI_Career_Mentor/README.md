@@ -1,159 +1,66 @@
-# 🧭 Agentic AI Career Mentor System
+# Agentic AI Career Mentor System
 
-A full-stack, multi-agent AI career guidance platform built with Python and Streamlit.
+A career guidance app built with Python, Streamlit, and a CrewAI-based multi-agent backend.
 
----
-
-## 🌟 Features
+## Features
 
 | Feature | Details |
 |---|---|
-| 🤖 Multi-Agent Architecture | 4 sequential AI agents collaborate on your career analysis |
-| 🎯 Career Matching | Skill-based scoring across 20+ roles in 8 domains |
-| 🧩 Skill Gap Analysis | See exactly what you have and what you still need |
-| 📅 Learning Roadmap | Personalised weekly plan to close skill gaps |
-| 🎤 Interview Prep | Technical + behavioral questions for your target role |
-| 🔌 OpenAI Integration | Optional GPT-powered plans (template fallback if no key) |
+| CrewAI Multi-Agent Flow | Four agents collaborate on analysis, role matching, planning, and interview prep |
+| Career Matching | Dataset-driven scoring across multiple career paths |
+| Skill Gap Analysis | Shows current strengths and missing skills |
+| Learning Roadmap | Builds a weekly plan to close gaps |
+| Interview Prep | Generates technical and behavioral questions |
+| Safe Fallback | Uses local deterministic logic if CrewAI or API access is unavailable |
 
----
+## Project Structure
 
-## 📁 Project Structure
-
-```
+```text
 Agentic_AI_Career_Mentor/
-├── backend/
-│   ├── data_loader.py       # Load roles dataset from JSON
-│   ├── skill_agent.py       # Agent 1 — Skill gap analysis
-│   ├── career_agent.py      # Agent 2 — Career recommendations
-│   ├── learning_agent.py    # Agent 3 — Learning roadmap
-│   ├── interview_agent.py   # Agent 4 — Interview questions
-│   └── workflow.py          # Orchestrates all 4 agents
-├── frontend/
-│   └── app.py               # Streamlit UI
-├── data/
-│   └── roles_dataset.json   # 20+ career roles across 8 domains
-├── main.py                  # Command-line demo
-├── requirements.txt
-└── README.md
+|-- backend/
+|   |-- career_agent.py      # Career scoring + CrewAI crew definition
+|   |-- data_loader.py       # Load roles dataset from JSON
+|   |-- interview_agent.py   # Interview question helpers
+|   |-- learning_agent.py    # Learning plan helpers
+|   |-- skill_agent.py       # Skill gap helpers
+|   `-- workflow.py          # Main orchestration entry point
+|-- data/
+|   `-- roles_dataset.json   # Career roles dataset
+|-- frontend/
+|   `-- app.py               # Streamlit UI
+|-- main.py
+|-- requirements.txt
+`-- README.md
 ```
 
----
-
-## 🚀 Quick Start
-
-### 1. Install dependencies
+## Quick Start
 
 ```bash
 pip install -r requirements.txt
-```
-
-### 2. Run the Streamlit app
-
-```bash
 streamlit run frontend/app.py
 ```
 
-Open your browser at **http://localhost:8501**
+## CrewAI Setup
 
-### 3. (Optional) Run the CLI demo
-
-```bash
-python main.py
-```
-
----
-
-## 🔑 Optional: OpenAI Integration
-
-To get GPT-powered learning plans and interview questions:
-
-1. Add your key in the sidebar of the Streamlit app, **or**
-2. Set the environment variable:
+To use the CrewAI path, set an OpenAI key before running the app:
 
 ```bash
 export OPENAI_API_KEY="sk-your-key-here"
+export OPENAI_MODEL="gpt-4o-mini"
 streamlit run frontend/app.py
 ```
 
-If no key is provided, the system uses high-quality built-in templates — fully functional without any API.
+If CrewAI is not installed or no API key is set, the app automatically falls back to the local pipeline.
 
----
+## Agent Pipeline
 
-## 🤖 Agent Pipeline
+1. `Skill Analyst` reviews current skills and highlights gaps.
+2. `Career Strategist` recommends the best-fit roles.
+3. `Learning Coach` creates a week-by-week learning plan.
+4. `Interview Coach` generates role-specific practice questions.
 
-```
-User Input
-    │
-    ▼
-┌─────────────────────────┐
-│ Agent 1: Skill Analyzer │  ← Compares your skills vs role requirements
-└─────────────────────────┘
-    │
-    ▼
-┌──────────────────────────┐
-│ Agent 2: Career Advisor  │  ← Scores & recommends top 3 career paths
-└──────────────────────────┘
-    │
-    ▼
-┌────────────────────────────┐
-│ Agent 3: Learning Planner  │  ← Builds weekly roadmap for missing skills
-└────────────────────────────┘
-    │
-    ▼
-┌──────────────────────────────┐
-│ Agent 4: Interview Coach     │  ← Generates interview questions for top role
-└──────────────────────────────┘
-    │
-    ▼
-Combined Results → Streamlit UI
-```
+## Notes
 
----
-
-## 🌐 Supported Domains
-
-- 💻 Technology (Software Dev, Data Science, ML, DevOps, Cybersecurity)
-- 📊 Business (Product Manager, Business Analyst)
-- 📢 Marketing (Marketing Manager, Digital Marketing Specialist)
-- 🎨 Design (Graphic Designer, UX/UI Designer)
-- 🏥 Healthcare (Doctor, Healthcare Administrator)
-- 💰 Finance (Financial Analyst, Investment Banker)
-- 📚 Education (Teacher, Instructional Designer)
-- ✍️ Creative (Content Writer, Film Director)
-
----
-
-## 📝 Example Input
-
-| Field | Example |
-|---|---|
-| Skills | `Python, Statistics, Excel` |
-| Interests | `Machine Learning, AI` |
-| Education | `B.Tech Computer Science` |
-| Career Goal | `Become a Data Scientist` |
-
----
-
-## 🛠️ Extending the Dataset
-
-Add new roles to `data/roles_dataset.json`:
-
-```json
-"Your Role Title": {
-    "domain": "Technology",
-    "skills": ["Skill1", "Skill2", "Skill3"],
-    "learning_topics": ["Topic1", "Topic2"],
-    "description": "Brief role description."
-}
-```
-
-The system picks it up automatically — no code changes needed.
-
----
-
-## 📦 Dependencies
-
-- `streamlit` — frontend UI
-- `openai` — optional GPT integration (only needed if using API key)
-
-No other external dependencies required.
+- The frontend still calls `run_workflow()` and expects the same response shape.
+- The CrewAI output is parsed into structured JSON before being shown in Streamlit.
+- Deterministic helpers remain in place so development is easier even without live API access.
