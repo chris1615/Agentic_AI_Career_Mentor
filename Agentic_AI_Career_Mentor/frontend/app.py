@@ -198,6 +198,29 @@ html, body, [class*="css"] {
     flex-shrink: 0;
 }
 
+/* ---- resume analyzer button & container ---- */
+.resume-analyzer-btn {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    width: 100%;
+    transition: opacity .2s !important;
+}
+.resume-analyzer-btn:hover { opacity: 0.88; }
+
+.resume-container {
+    background: #1e1b4b;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid #312e81;
+}
+
 /* ---- misc ---- */
 .stButton > button {
     background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
@@ -281,10 +304,22 @@ with st.sidebar:
     if openai_key:
         os.environ["OPENAI_API_KEY"] = openai_key
 
+    # Groq API key for resume analyzer (reused)
+    st.markdown("---")
+    groq_api_key = st.text_input(
+        "🧠 Groq API Key (for Resume Analyzer)",
+        type="password",
+        placeholder="gsk_...",
+        help="Free key from console.groq.com. Used to extract info from your resume."
+    )
+    if groq_api_key:
+        os.environ["GROQ_API_KEY"] = groq_api_key
 
-# ── input form ───────────────────────────────────────────────────────────────
-col_form, col_gap = st.columns([2, 1])
 
+# ── main layout: two columns ─────────────────────────────────────────────────
+col_form, col_resume = st.columns([2, 1])
+
+# ── left column: user profile form ──────────────────────────────────────────
 with col_form:
     st.markdown("<div class='section-title'>📝 Your Profile</div>", unsafe_allow_html=True)
 
@@ -314,34 +349,78 @@ with col_form:
 
     analyze_btn = st.button("🚀  Analyze My Career", use_container_width=True)
 
+# ── right column: Resume Analyzer button (seamless) ─────────────────────────
+with col_resume:
+    st.markdown("<div class='section-title'>📄 Resume Analyzer</div>", unsafe_allow_html=True)
+    if st.button("📂 Upload & Analyze Resume", key="resume_btn", use_container_width=True):
+        st.session_state.show_resume_upload = True
+    else:
+        if "show_resume_upload" not in st.session_state:
+            st.session_state.show_resume_upload = False
 
-# ── example prompts ───────────────────────────────────────────────────────────
-with col_gap:
-    st.markdown("<div class='section-title'>💡 Try an Example</div>", unsafe_allow_html=True)
+    if st.session_state.show_resume_upload:
+        with st.container():
+            st.markdown("<div class='resume-container'>", unsafe_allow_html=True)
+            uploaded_file = st.file_uploader(
+                "Choose your resume (PDF, DOCX, or TXT)",
+                type=["pdf", "docx", "txt"],
+                key="resume_uploader"
+            )
+            if uploaded_file is not None:
+                if not groq_api_key:
+                    st.error("❌ Please enter your Groq API key in the sidebar first.")
+                else:
+                    file_bytes = uploaded_file.read()
+                    file_type = uploaded_file.name.split(".")[-1].lower()
+                    with st.spinner("🔍 Extracting text and analyzing with Groq AI..."):
+                        try:
+                            from resume_analyzer import extract_resume_text, analyze_resume_with_groq
+                            resume_text = extract_resume_text(file_bytes, file_type)
+                            if not resume_text:
+                                st.error("Could not extract text from the file. Try a different file.")
+                            else:
+                                result = analyze_resume_with_groq(resume_text, groq_api_key)
+                                st.success("✅ Analysis complete!")
 
-    examples = {
-        "👩‍💻 Tech / AI": ("Python, Statistics, Excel", "Machine Learning, AI", "Become a Data Scientist"),
-        "📊 Business": ("Communication, Excel, Presentation", "Strategy, Finance", "Product Manager"),
-        "🎨 Design": ("Figma, Creativity, Typography", "UX, Visual Design", "UX Designer"),
-        "📢 Marketing": ("Content Writing, SEO, Social Media", "Digital Marketing", "Marketing Manager"),
-    }
+                                # Display extracted info
+                                st.markdown("**🛠️ Extracted Skills**")
+                                skills_list = result.get("skills", [])
+                                if skills_list:
+                                    for s in skills_list:
+                                        st.markdown(f"<span class='chip-green'>{s}</span>", unsafe_allow_html=True)
+                                else:
+                                    st.info("No skills detected.")
 
-    for label, (sk, intr, goal) in examples.items():
-        if st.button(label, key=f"ex_{label}"):
-            st.session_state["_ex_skills"] = sk
-            st.session_state["_ex_interests"] = intr
-            st.session_state["_ex_goal"] = goal
-            st.rerun()
+                                st.markdown("**🎓 Education**")
+                                st.write(result.get("education", "Not detected"))
 
-    # Populate from example click
-    if "_ex_skills" in st.session_state:
-        skills_input = st.session_state.pop("_ex_skills")
-        interests_input = st.session_state.pop("_ex_interests", "")
-        goal_input = st.session_state.pop("_ex_goal", "")
-        analyze_btn = True  # auto-run
+                                st.markdown("**📅 Years of Experience**")
+                                st.write(f"{result.get('experience_years', 0)} years")
+
+                                st.markdown("**🚀 Suggested Missing Skills**")
+                                missing_sug = result.get("missing_skills_suggestion", [])
+                                if missing_sug:
+                                    for s in missing_sug:
+                                        st.markdown(f"<span class='chip-red'>{s}</span>", unsafe_allow_html=True)
+                                else:
+                                    st.write("No suggestions.")
+
+                                st.markdown("**📝 Professional Summary**")
+                                st.info(result.get("summary", "No summary generated."))
+
+                                # Import skills button
+                                if skills_list and st.button("📋 Import these skills into your profile", key="import_skills"):
+                                    existing = set(st.session_state.get("user_skills", []))
+                                    new_skills = existing.union(set(skills_list))
+                                    st.session_state.user_skills = list(new_skills)
+                                    st.success(f"Added {len(skills_list)} skills! Refresh the page to see them in the skills input.")
+                                    st.rerun()
+                        except Exception as e:
+                            st.error(f"Error: {str(e)}")
+            st.markdown("</div>", unsafe_allow_html=True)
 
 
-# ── run workflow ──────────────────────────────────────────────────────────────
+# ── run workflow (if Analyze button clicked) ─────────────────────────────────
 if analyze_btn:
     if not skills_input.strip():
         st.error("⚠️  Please enter at least one skill to get started.")
