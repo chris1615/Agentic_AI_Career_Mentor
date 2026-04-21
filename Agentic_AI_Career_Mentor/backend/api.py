@@ -55,6 +55,8 @@ class ResumeResponse(BaseModel):
 
 class ChatInput(BaseModel):
     question: str
+    user_profile: dict | None = None
+    recommended_roles: list[dict] | None = None
 
 
 class ChatResponse(BaseModel):
@@ -119,7 +121,12 @@ def analyze(payload: CareerInput):
 def chat(payload: ChatInput):
     try:
         roles = load_roles()
-        answer = ask_career_chatbot(payload.question, roles)
+        answer = ask_career_chatbot(
+            payload.question,
+            roles,
+            user_profile=payload.user_profile,
+            recommended_roles=payload.recommended_roles,
+        )
         return {"status": "success", "answer": answer}
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Chat error: {exc}") from exc

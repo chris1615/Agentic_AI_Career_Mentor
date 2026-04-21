@@ -325,7 +325,19 @@ with col_tools:
         )
         if st.button("Ask Career Chatbot", use_container_width=True):
             roles = load_roles()
-            answer = ask_career_chatbot(chat_question, roles)
+            latest_result = st.session_state.get("latest_workflow_result", {})
+            user_profile = {
+                "skills": latest_result.get("user_skills", []),
+                "education": latest_result.get("education", ""),
+                "interests": latest_result.get("interests", ""),
+                "career_goal": latest_result.get("career_goal", goal_input),
+            }
+            answer = ask_career_chatbot(
+                chat_question,
+                roles,
+                user_profile=user_profile,
+                recommended_roles=latest_result.get("recommended_roles", []),
+            )
             st.session_state["career_chat_answer"] = answer
 
         if st.session_state.get("career_chat_answer"):
@@ -382,6 +394,7 @@ if analyze_btn:
         time.sleep(0.35)
 
     result = run_workflow(user_input)
+    st.session_state["latest_workflow_result"] = result
     progress.empty()
     status_text.empty()
 
@@ -422,10 +435,23 @@ if analyze_btn:
                 breakdown = role.get("score_breakdown", {})
                 st.markdown("**Score Breakdown**")
                 st.markdown(f"- Skills Match: {breakdown.get('skill_score', 0)}%")
+                st.markdown(f"- Semantic Similarity: {breakdown.get('semantic_score', 0)}%")
+                st.markdown(f"- Random Forest Probability: {breakdown.get('random_forest_score', 0)}%")
+                st.markdown(f"- Existing Weighted Score: {breakdown.get('existing_weighted_score', 0)}%")
                 st.markdown(f"- Interest Match: {breakdown.get('interest_score', 0)}%")
                 st.markdown(f"- Domain Match: {breakdown.get('domain_score', 0)}%")
                 st.markdown(f"- Career Goal: {breakdown.get('goal_score', 0)}%")
                 st.markdown(f"- Eligibility: {breakdown.get('eligibility_score', 0)}%")
+
+        model_metrics = result.get("ml_model_metrics", {})
+        if model_metrics:
+            st.markdown("<div class='section-title'>Hybrid AI Signals</div>", unsafe_allow_html=True)
+            st.markdown(f"- Semantic Model: `{result.get('hybrid_components', {}).get('semantic_matching', 'enabled')}`")
+            st.markdown(f"- Random Forest Status: `{model_metrics.get('status', 'unknown')}`")
+            if model_metrics.get("accuracy") is not None:
+                st.markdown(f"- Validation Accuracy: `{round(model_metrics.get('accuracy', 0.0) * 100, 2)}%`")
+            if model_metrics.get("sample_count"):
+                st.markdown(f"- Training Samples: `{model_metrics.get('sample_count')}`")
 
         if result.get("rejected_roles"):
             st.markdown("<div class='section-title'>Rejected or Low-Fit Roles</div>", unsafe_allow_html=True)
@@ -448,6 +474,9 @@ if analyze_btn:
         if not job_listings:
             st.info("No live job listings were fetched. Add Adzuna or RapidAPI credentials in the sidebar to enable live market results.")
         else:
+            recommended_names = [role.get("role", "") for role in result.get("recommended_roles", [])]
+            if recommended_names:
+                st.caption(f"Live jobs matched for: {', '.join(name for name in recommended_names if name)}")
             for job in job_listings:
                 job_title = job.get("role", "Role")
                 company = job.get("company", "Unknown company")

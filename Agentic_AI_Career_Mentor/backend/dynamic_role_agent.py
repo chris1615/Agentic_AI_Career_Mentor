@@ -11,10 +11,7 @@ import os
 import re
 from typing import Any
 
-try:
-    import requests
-except ImportError:  # pragma: no cover - optional dependency
-    requests = None
+from job_api import fetch_adzuna_jobs, fetch_rapidapi_jobs
 
 
 INTEREST_DOMAIN_MAP = {
@@ -165,14 +162,6 @@ CREATIVE_ROLE_TEMPLATES = {
     },
 }
 
-COMMON_JOB_SKILLS = [
-    "Python", "SQL", "Excel", "Blender", "VFX", "Video Editing", "Animation",
-    "C++", "C#", "Unity", "Unreal Engine", "Motion Graphics", "Sound Design",
-    "Linux", "Cybersecurity", "Machine Learning", "Data Visualization",
-    "Communication", "Design", "Storytelling", "Premiere Pro", "After Effects",
-]
-
-
 def _normalize(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "").strip().lower())
 
@@ -186,11 +175,6 @@ def infer_interest_domains(interests: str, skills: list[str]) -> list[str]:
     return domains
 
 
-def _extract_skills_from_text(text: str) -> list[str]:
-    lower = text.lower()
-    return [skill for skill in COMMON_JOB_SKILLS if skill.lower() in lower]
-
-
 def _creative_role_matches(skills: list[str], interests: str, career_goal: str) -> dict[str, Any]:
     text = f"{' '.join(skills)} {interests} {career_goal}".lower()
     matches = {}
@@ -200,103 +184,6 @@ def _creative_role_matches(skills: list[str], interests: str, career_goal: str) 
         if overlap >= 1:
             matches[role_name] = dict(role_data)
     return matches
-
-
-def _fetch_adzuna_jobs(query: str, limit: int = 6) -> list[dict[str, Any]]:
-    if requests is None:
-        return []
-
-    app_id = os.environ.get("ADZUNA_APP_ID", "").strip()
-    app_key = os.environ.get("ADZUNA_APP_KEY", "").strip()
-    if not app_id or not app_key:
-        return []
-
-    url = "https://api.adzuna.com/v1/api/jobs/in/search/1"
-    params = {
-        "app_id": app_id,
-        "app_key": app_key,
-        "results_per_page": limit,
-        "what": query,
-        "content-type": "application/json",
-    }
-
-    try:
-        response = requests.get(url, params=params, timeout=12)
-        response.raise_for_status()
-        payload = response.json()
-    except Exception:
-        return []
-
-    jobs = []
-    for item in payload.get("results", []):
-        description = item.get("description", "")
-        title = item.get("title", "Unknown Role")
-        jobs.append(
-            {
-                "role": title,
-                "domain": "Dynamic Market",
-                "description": description[:500],
-                "skills": _extract_skills_from_text(f"{title} {description}"),
-                "roadmap": _extract_skills_from_text(description)[:6],
-                "degree_required": False,
-                "portfolio_required": False,
-                "required_degree": [],
-                "education_level": "",
-                "source": "Adzuna",
-                "job_url": item.get("redirect_url", ""),
-                "company": (item.get("company") or {}).get("display_name", ""),
-                "location": (item.get("location") or {}).get("display_name", ""),
-            }
-        )
-    return jobs
-
-
-def _fetch_rapidapi_jobs(query: str, limit: int = 6) -> list[dict[str, Any]]:
-    if requests is None:
-        return []
-
-    api_key = os.environ.get("RAPIDAPI_KEY", "").strip()
-    api_host = os.environ.get("RAPIDAPI_JOBS_HOST", "").strip()
-    if not api_key or not api_host:
-        return []
-
-    url = f"https://{api_host}/search"
-    headers = {
-        "X-RapidAPI-Key": api_key,
-        "X-RapidAPI-Host": api_host,
-    }
-    params = {"query": query, "page": "1", "num_pages": "1"}
-
-    try:
-        response = requests.get(url, headers=headers, params=params, timeout=12)
-        response.raise_for_status()
-        payload = response.json()
-    except Exception:
-        return []
-
-    items = payload.get("data", []) if isinstance(payload, dict) else []
-    jobs = []
-    for item in items[:limit]:
-        title = item.get("job_title", "Unknown Role")
-        description = item.get("job_description", "") or item.get("job_highlights", "")
-        jobs.append(
-            {
-                "role": title,
-                "domain": "Dynamic Market",
-                "description": str(description)[:500],
-                "skills": _extract_skills_from_text(f"{title} {description}"),
-                "roadmap": _extract_skills_from_text(str(description))[:6],
-                "degree_required": False,
-                "portfolio_required": False,
-                "required_degree": [],
-                "education_level": "",
-                "source": "RapidAPI",
-                "job_url": item.get("job_apply_link", ""),
-                "company": item.get("employer_name", ""),
-                "location": item.get("job_city", "") or item.get("job_country", ""),
-            }
-        )
-    return jobs
 
 
 def _expand_roles_with_ai(skills: list[str], interests: str, career_goal: str) -> list[dict[str, Any]]:
@@ -371,7 +258,7 @@ def _expand_roles_with_ai(skills: list[str], interests: str, career_goal: str) -
 
 def discover_dynamic_roles(user_skills: list[str], interests: str, career_goal: str) -> dict[str, Any]:
     query = " ".join([career_goal, interests, " ".join(user_skills)]).strip()
-    live_jobs = _fetch_adzuna_jobs(query) + _fetch_rapidapi_jobs(query)
+    live_jobs = fetch_adzuna_jobs(query, limit=6) + fetch_rapidapi_jobs(query, limit=6)
     creative_roles = _creative_role_matches(user_skills, interests, career_goal)
     ai_roles = _expand_roles_with_ai(user_skills, interests, career_goal)
 

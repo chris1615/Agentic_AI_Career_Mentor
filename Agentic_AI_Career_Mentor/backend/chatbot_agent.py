@@ -28,16 +28,34 @@ def _fallback_chat_reply(question: str, roles: dict) -> str:
     )
 
 
-def ask_career_chatbot(question: str, roles: dict) -> str:
+def ask_career_chatbot(
+    question: str,
+    roles: dict,
+    user_profile: dict | None = None,
+    recommended_roles: list[dict] | None = None,
+) -> str:
     if not question.strip():
         return "Ask me anything about roles, skills, roadmaps, or how to move into a new career."
 
     groq_key = os.environ.get("GROQ_API_KEY", "").strip()
     openrouter_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    user_profile = user_profile or {}
+    recommended_roles = recommended_roles or []
+    recommended_summary = [
+        {
+            "role": role.get("role", ""),
+            "match_score": role.get("match_score", 0),
+            "missing_skills": role.get("missing_skills", [])[:5],
+        }
+        for role in recommended_roles[:3]
+    ]
 
     prompt = (
         "You are a career mentor chatbot. Answer using the provided role catalog when possible. "
-        "Be practical, concise, and helpful.\n\n"
+        "Use the student's profile and current recommendations to give practical skill advice, "
+        "learning roadmap suggestions, and degree eligibility guidance. Be practical, concise, and helpful.\n\n"
+        f"User profile: {user_profile}\n\n"
+        f"Recommended careers: {recommended_summary}\n\n"
         f"Question: {question}\n\n"
         f"Role catalog: {roles}"
     )

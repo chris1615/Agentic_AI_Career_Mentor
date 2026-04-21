@@ -15,7 +15,9 @@ from career_agent import CareerMentorCrew, recommend_career
 from data_loader import load_roles
 from dynamic_role_agent import discover_dynamic_roles
 from interview_agent import generate_interview_questions
+from job_api import fetch_live_jobs_for_roles, jobs_to_role_catalog
 from learning_agent import generate_learning_plan
+from semantic_engine import warm_role_embeddings
 
 
 def _parse_user_skills(raw_skills: str) -> list[str]:
@@ -64,10 +66,13 @@ def run_workflow(user_input: dict) -> dict:
     except (FileNotFoundError, ValueError) as exc:
         return {"status": "error", "message": str(exc)}
 
+    warm_role_embeddings(static_roles)
+
     discovery = discover_dynamic_roles(user_skills, interests, career_goal)
     interest_domains = discovery.get("interest_domains", [])
     live_job_listings = discovery.get("live_job_listings", [])
     roles = _merge_roles(static_roles, discovery.get("roles", {}))
+    warm_role_embeddings(roles)
 
     api_key = os.environ.get("OPENAI_API_KEY", "").strip()
     crew = CareerMentorCrew(api_key=api_key)
@@ -104,6 +109,24 @@ def run_workflow(user_input: dict) -> dict:
 
     _attach_role_learning_plans(result.get("recommended_roles", []), roles)
 
+    recommended_role_names = [role.get("role", "") for role in result.get("recommended_roles", []) if role.get("role")]
+    api_job_listings = fetch_live_jobs_for_roles(recommended_role_names)
+    merged_live_jobs = []
+    seen_jobs = set()
+    for job in live_job_listings + api_job_listings:
+        dedupe_key = (
+            (job.get("role") or "").strip().lower(),
+            (job.get("company") or "").strip().lower(),
+            (job.get("location") or "").strip().lower(),
+        )
+        if dedupe_key in seen_jobs:
+            continue
+        seen_jobs.add(dedupe_key)
+        merged_live_jobs.append(job)
+
+    live_role_catalog = jobs_to_role_catalog(merged_live_jobs)
+    roles = _merge_roles(roles, live_role_catalog)
+
     selected_role = result.get("recommended_roles", [{}])[0]
     selected_role_name = selected_role.get("role", "Software Developer")
     top_role_plan = selected_role.get("learning_plan", [])
@@ -118,13 +141,20 @@ def run_workflow(user_input: dict) -> dict:
         "user_skills": user_skills,
         "education": education,
         "interests": interests,
+        "career_goal": career_goal,
         "interest_domains": interest_domains,
         "recommended_roles": result.get("recommended_roles", []),
         "rejected_roles": result.get("rejected_roles", []),
+        "ml_model_metrics": result.get("ml_model_metrics", {}),
         "selected_role": selected_role_name,
         "missing_skills": top_role_missing_skills,
         "learning_plan": top_role_plan,
         "interview_questions": interview_questions,
-        "live_job_listings": live_job_listings,
+        "live_job_listings": merged_live_jobs,
         "dynamic_role_count": len(discovery.get("roles", {})),
+        "hybrid_components": {
+            "semantic_matching": "sentence-transformers/all-MiniLM-L6-v2",
+            "random_forest": "enabled",
+            "existing_weighted_score": "enabled",
+        },
     }

@@ -1,9 +1,13 @@
 """
 skill_agent.py
 --------------
-Skill Analyzer Agent — compares user skills against career role requirements
-and identifies gaps.
+Skill Analyzer Agent - compares user skills against career role requirements
+and identifies gaps with semantic matching.
 """
+
+from semantic_engine import semantic_similarity
+
+MATCH_THRESHOLD = 0.55
 
 
 def _normalize(skill: str) -> str:
@@ -24,20 +28,27 @@ def analyze_skills(user_skills: list, roles: dict) -> dict:
         A dictionary keyed by role name, each containing:
             - matched_skills  : skills the user already has
             - missing_skills  : skills the user still needs
-            - match_score     : percentage of role skills the user has (0–100)
+            - match_score     : percentage of role skills the user has (0-100)
     """
     if not user_skills:
         raise ValueError("User skills list is empty. Please provide at least one skill.")
 
-    normalized_user_skills = {_normalize(s) for s in user_skills}
-
+    normalized_user_skills = [_normalize(s) for s in user_skills]
     skill_analysis = {}
 
     for role_name, role_data in roles.items():
         role_skills = role_data.get("skills", [])
+        matched = []
+        missing = []
 
-        matched = [s for s in role_skills if _normalize(s) in normalized_user_skills]
-        missing = [s for s in role_skills if _normalize(s) not in normalized_user_skills]
+        for role_skill in role_skills:
+            best_similarity = 0.0
+            for user_skill in normalized_user_skills:
+                best_similarity = max(best_similarity, semantic_similarity(user_skill, role_skill))
+            if best_similarity >= MATCH_THRESHOLD:
+                matched.append(role_skill)
+            else:
+                missing.append(role_skill)
 
         total = len(role_skills)
         score = round((len(matched) / total) * 100, 1) if total > 0 else 0.0

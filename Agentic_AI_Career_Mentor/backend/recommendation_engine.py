@@ -7,8 +7,10 @@ Core explainable ranking engine for career recommendations.
 from __future__ import annotations
 
 import math
-import re
 from typing import Any
+
+from hybrid_ml import predict_role_probabilities
+from semantic_engine import cosine_similarity, get_role_embedding, normalize as _normalize, semantic_similarity
 
 WEIGHTS = {
     "skills": 0.60,
@@ -20,73 +22,6 @@ WEIGHTS = {
 
 MATCH_THRESHOLD = 0.55
 STRONG_MATCH_THRESHOLD = 0.72
-
-_MODEL = None
-_MODEL_LOAD_ATTEMPTED = False
-
-
-def _normalize(text: str) -> str:
-    return re.sub(r"\s+", " ", (text or "").strip().lower())
-
-
-def _tokenize(text: str) -> set[str]:
-    return {token for token in re.findall(r"[a-z0-9.+#/-]+", _normalize(text)) if token}
-
-
-def _load_sentence_model():
-    global _MODEL, _MODEL_LOAD_ATTEMPTED
-
-    if _MODEL_LOAD_ATTEMPTED:
-        return _MODEL
-
-    _MODEL_LOAD_ATTEMPTED = True
-    try:
-        from sentence_transformers import SentenceTransformer  # type: ignore
-
-        _MODEL = SentenceTransformer("all-MiniLM-L6-v2")
-    except Exception:
-        _MODEL = None
-
-    return _MODEL
-
-
-def _cosine_similarity(vec_a, vec_b) -> float:
-    numerator = sum(a * b for a, b in zip(vec_a, vec_b))
-    denom_a = math.sqrt(sum(a * a for a in vec_a))
-    denom_b = math.sqrt(sum(b * b for b in vec_b))
-    if denom_a == 0 or denom_b == 0:
-        return 0.0
-    return numerator / (denom_a * denom_b)
-
-
-def _fallback_similarity(text_a: str, text_b: str) -> float:
-    tokens_a = _tokenize(text_a)
-    tokens_b = _tokenize(text_b)
-    if not tokens_a or not tokens_b:
-        return 0.0
-    overlap = len(tokens_a & tokens_b)
-    return overlap / math.sqrt(len(tokens_a) * len(tokens_b))
-
-
-def semantic_similarity(text_a: str, text_b: str) -> float:
-    text_a = (text_a or "").strip()
-    text_b = (text_b or "").strip()
-
-    if not text_a or not text_b:
-        return 0.0
-    if _normalize(text_a) == _normalize(text_b):
-        return 1.0
-
-    model = _load_sentence_model()
-    if model is None:
-        return max(0.0, min(1.0, _fallback_similarity(text_a, text_b)))
-
-    try:
-        embeddings = model.encode([text_a, text_b], normalize_embeddings=True)
-        similarity = float(_cosine_similarity(embeddings[0], embeddings[1]))
-        return max(0.0, min(1.0, similarity))
-    except Exception:
-        return max(0.0, min(1.0, _fallback_similarity(text_a, text_b)))
 
 
 def _format_percent(value: float) -> int:
@@ -170,6 +105,24 @@ def _best_skill_matches(user_skills: list[str], role_skills: list[str]) -> tuple
     return matched_skills, missing_skills, sum(role_skill_scores) / len(role_skill_scores)
 
 
+def _role_semantic_score(user_skills: list[str], role_name: str, role_data: dict[str, Any]) -> float:
+    role_embedding = get_role_embedding(role_name, role_data)
+    user_text = ", ".join(user_skills)
+    user_embedding = get_role_embedding(
+        f"user::{user_text}",
+        {
+            "skills": user_skills,
+            "domain": role_data.get("domain", ""),
+            "description": "",
+        },
+    )
+    if role_embedding is None or user_embedding is None:
+        return semantic_similarity(user_text, ", ".join(role_data.get("skills", []) or []))
+
+    similarity = cosine_similarity(user_embedding, role_embedding)
+    return max(0.0, min(1.0, similarity))
+
+
 def _domain_similarity(interests: str, interest_domains: list[str], role_domain: str, description: str) -> float:
     scores = []
     if interests.strip():
@@ -233,6 +186,7 @@ def score_role(
     interest_domains: list[str],
     user_education: str,
     career_goal: str,
+    rf_probability: float = 0.0,
 ) -> dict[str, Any]:
     role_skills = role_data.get("skills", []) or []
     domain = role_data.get("domain", "Unknown")
@@ -241,19 +195,22 @@ def score_role(
 
     matched_skills, missing_skills, skill_similarity = _best_skill_matches(user_skills, role_skills)
     global_skill_similarity = semantic_similarity(", ".join(user_skills), ", ".join(role_skills))
-    skill_score = (skill_similarity * 0.55) + (global_skill_similarity * 0.45)
+    role_semantic_score = _role_semantic_score(user_skills, role_name, role_data)
+    semantic_score = (skill_similarity * 0.35) + (global_skill_similarity * 0.30) + (role_semantic_score * 0.35)
+    skill_score = semantic_score
     interests_score = 0.5 if not interests.strip() else semantic_similarity(interests, f"{description}. {domain}. {' '.join(role_skills)}")
     domain_score = _domain_similarity(interests, interest_domains, domain, description)
     goal_score = 0.5 if not career_goal.strip() else semantic_similarity(career_goal, f"{role_name}. {domain}. {description}")
     eligibility_result = evaluate_eligibility(user_education, role_data, missing_skills)
 
-    final_score = (
+    existing_weighted_score = (
         (skill_score * WEIGHTS["skills"])
         + (interests_score * WEIGHTS["interests"])
         + (domain_score * WEIGHTS["domain"])
         + (goal_score * WEIGHTS["career_goal"])
         + (eligibility_result["score"] * WEIGHTS["eligibility"])
     )
+    final_score = (semantic_score * 0.50) + (rf_probability * 0.30) + (existing_weighted_score * 0.20)
 
     return {
         "role": role_name,
@@ -284,6 +241,9 @@ def score_role(
         ),
         "score_breakdown": {
             "skill_score": _format_percent(skill_score),
+            "semantic_score": _format_percent(semantic_score),
+            "random_forest_score": _format_percent(rf_probability),
+            "existing_weighted_score": _format_percent(existing_weighted_score),
             "interest_score": _format_percent(interests_score),
             "domain_score": _format_percent(domain_score),
             "goal_score": _format_percent(goal_score),
@@ -302,6 +262,13 @@ def rank_roles(
     roles: dict[str, Any],
     top_n: int = 3,
 ) -> dict[str, Any]:
+    rf_probabilities, model_metadata = predict_role_probabilities(
+        user_skills=user_skills,
+        interests=interests,
+        career_goal=career_goal,
+        roles=roles,
+    )
+
     scored_roles = [
         score_role(
             role_name=role_name,
@@ -311,6 +278,7 @@ def rank_roles(
             interest_domains=interest_domains,
             user_education=user_education,
             career_goal=career_goal,
+            rf_probability=rf_probabilities.get(role_name, 0.0),
         )
         for role_name, role_data in roles.items()
     ]
@@ -331,4 +299,5 @@ def rank_roles(
         "recommended_roles": recommended_roles,
         "rejected_roles": rejected_roles[:5],
         "all_roles": scored_roles,
+        "ml_model_metrics": model_metadata,
     }
