@@ -107,7 +107,7 @@ Do not include any extra text or markdown.
 """
 
     response = client.chat.completions.create(
-        model="llama3-70b-8192",  # or "mixtral-8x7b-32768"
+        model="groq/compound-mini",  # or "mixtral-8x7b-32768"
         messages=[{"role": "user", "content": prompt}],
         temperature=0.2,
         response_format={"type": "json_object"},  # only works with some models; fallback to parsing
