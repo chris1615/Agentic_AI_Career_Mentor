@@ -38,17 +38,29 @@ def _run_fallback_workflow(
     career_goal: str,
     roles: dict,
 ) -> dict:
-    skill_analysis = analyze_skills(user_skills, roles)
     recommended_roles = recommend_career(
         user_skills=user_skills,
         roles=roles,
         interests=interests,
         career_goal=career_goal,
+        education=education,
         top_n=3,
     )
 
     top_role_names = [role["role"] for role in recommended_roles]
-    missing_skills = get_overall_missing_skills(skill_analysis, top_role_names)
+    skill_analysis = analyze_skills(user_skills, roles)
+    missing_skills = []
+    seen = set()
+    for role in recommended_roles:
+        for skill in role.get("missing_skills", []):
+            normalized_skill = skill.strip().lower()
+            if normalized_skill not in seen:
+                missing_skills.append(skill)
+                seen.add(normalized_skill)
+
+    if not missing_skills:
+        missing_skills = get_overall_missing_skills(skill_analysis, top_role_names)
+    rejected_roles = []
     learning_plan = generate_learning_plan(missing_skills)
 
     top_role = top_role_names[0] if top_role_names else "Software Developer"
@@ -60,6 +72,7 @@ def _run_fallback_workflow(
         "engine": "fallback",
         "user_skills": user_skills,
         "recommended_roles": recommended_roles,
+        "rejected_roles": rejected_roles,
         "missing_skills": missing_skills,
         "learning_plan": learning_plan,
         "interview_questions": interview_questions,
@@ -107,13 +120,23 @@ def run_workflow(user_input: dict) -> dict:
                 career_goal=career_goal,
                 roles=roles,
             )
+            top_role_names = [role["role"] for role in result.get("recommended_roles", [])]
+            missing_skills = result.get("missing_skills", [])
+            learning_plan = generate_learning_plan(missing_skills)
+
+            top_role = top_role_names[0] if top_role_names else "Software Developer"
+            interview_questions = generate_interview_questions(top_role)
+            interview_questions["role"] = top_role
+
             result.update(
                 {
                     "status": "success",
-                    "engine": "crewai",
+                    "engine": "explainable-local",
                     "user_skills": user_skills,
                     "education": education,
                     "interests": interests,
+                    "learning_plan": learning_plan,
+                    "interview_questions": interview_questions,
                 }
             )
             return result

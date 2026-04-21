@@ -8,6 +8,16 @@ import json
 import os
 
 
+REQUIRED_ROLE_FIELDS = {
+    "skills": list,
+    "domain": str,
+    "required_degree": list,
+    "education_level": str,
+    "description": str,
+    "career_path_steps": list,
+}
+
+
 def load_roles(filepath: str = None) -> dict:
     """
     Load the career roles dataset from a JSON file.
@@ -41,6 +51,17 @@ def load_roles(filepath: str = None) -> dict:
 
     if not roles:
         raise ValueError("Dataset is empty. Please add career roles to the JSON file.")
+
+    for role_name, role_data in roles.items():
+        for field_name, field_type in REQUIRED_ROLE_FIELDS.items():
+            if field_name not in role_data:
+                raise ValueError(
+                    f"Role '{role_name}' is missing required field '{field_name}' in roles_dataset.json."
+                )
+            if not isinstance(role_data[field_name], field_type):
+                raise ValueError(
+                    f"Role '{role_name}' field '{field_name}' must be of type {field_type.__name__}."
+                )
 
     return roles
 
