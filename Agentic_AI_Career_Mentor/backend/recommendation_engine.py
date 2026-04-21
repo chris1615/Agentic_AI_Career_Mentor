@@ -11,10 +11,11 @@ import re
 from typing import Any
 
 WEIGHTS = {
-    "skills": 0.70,
-    "interests": 0.15,
-    "career_goal": 0.10,
-    "education": 0.05,
+    "skills": 0.60,
+    "interests": 0.20,
+    "domain": 0.10,
+    "career_goal": 0.05,
+    "eligibility": 0.05,
 }
 
 MATCH_THRESHOLD = 0.55
@@ -73,7 +74,6 @@ def semantic_similarity(text_a: str, text_b: str) -> float:
 
     if not text_a or not text_b:
         return 0.0
-
     if _normalize(text_a) == _normalize(text_b):
         return 1.0
 
@@ -98,78 +98,50 @@ def _education_matches(user_education: str, required_degrees: list[str]) -> bool
     return any(_normalize(degree) in normalized_education for degree in required_degrees)
 
 
-def _education_level_matches(user_education: str, education_level: str) -> bool:
-    if not user_education or not education_level:
-        return False
-
-    normalized_education = _normalize(user_education)
-    level_aliases = {
-        "high school": ["12th", "higher secondary", "high school", "intermediate"],
-        "diploma": ["diploma"],
-        "bachelor": ["bachelor", "b.tech", "btech", "b.e", "be", "bca", "b.sc", "bsc", "ba", "b.arch", "barch"],
-        "master": ["master", "m.tech", "mtech", "m.e", "me", "mca", "m.sc", "msc", "mba", "ma"],
-        "professional": ["mbbs", "llb", "license", "aviation", "commercial pilot"],
-        "doctorate": ["phd", "doctorate"],
-    }
-    return any(alias in normalized_education for alias in level_aliases.get(_normalize(education_level), []))
-
-
-def evaluate_education(user_education: str, role_data: dict[str, Any], missing_skills: list[str]) -> dict[str, Any]:
-    required_degrees = role_data.get("required_degree", []) or []
-    education_level = role_data.get("education_level", "")
+def evaluate_eligibility(user_education: str, role_data: dict[str, Any], missing_skills: list[str]) -> dict[str, Any]:
     role_domain = role_data.get("domain", "target domain")
+    degree_required = bool(role_data.get("degree_required", False))
+    portfolio_required = bool(role_data.get("portfolio_required", False))
+    required_degrees = role_data.get("required_degree", []) or []
 
-    if not required_degrees:
+    reasons = []
+
+    if not degree_required:
+        reasons.append("✔ This role does not require a strict degree.")
+        if portfolio_required:
+            reasons.append("⚠ Portfolio quality matters more than formal degree requirements for this role.")
+        if missing_skills:
+            reasons.append(f"⚠ Main improvement areas: {', '.join(missing_skills[:3])}.")
         return {
             "score": 1.0,
             "status": "Eligible",
-            "summary": "No mandatory degree restriction listed for this role.",
-            "reasons": [
-                "✔ No mandatory degree restriction is listed for this role.",
-            ],
-        }
-
-    if not user_education.strip():
-        return {
-            "score": 0.5,
-            "status": "Eligibility Unknown",
-            "summary": f"Requires {', '.join(required_degrees)}, but no education details were provided.",
-            "reasons": [
-                f"⚠ Requires {', '.join(required_degrees)}.",
-                "⚠ No current degree was provided, so eligibility cannot be fully confirmed.",
-            ],
-        }
-
-    if _education_matches(user_education, required_degrees):
-        return {
-            "score": 1.0,
-            "status": "Eligible",
-            "summary": f"Education matches the required degree: {', '.join(required_degrees)}.",
-            "reasons": [
-                f"✔ Degree matches the accepted requirement: {', '.join(required_degrees)}.",
-                f"✔ Your background supports entry into the {role_domain} domain.",
-            ],
-        }
-
-    reasons = [
-        f"❌ Requires {', '.join(required_degrees)}.",
-        f"❌ Current degree: {user_education}.",
-    ]
-    if missing_skills:
-        reasons.append(f"⚠ Missing background areas include {', '.join(missing_skills[:2])}.")
-
-    if education_level and _education_level_matches(user_education, education_level):
-        return {
-            "score": 0.25,
-            "status": "Not Eligible",
-            "summary": f"Current education level is similar, but this role specifically requires {', '.join(required_degrees)}.",
             "reasons": reasons,
         }
 
+    if not user_education.strip():
+        reasons.append(f"⚠ This role expects {', '.join(required_degrees) or 'a relevant degree'}, but no education was provided.")
+        return {
+            "score": 0.5,
+            "status": "Eligibility Unknown",
+            "reasons": reasons,
+        }
+
+    if _education_matches(user_education, required_degrees):
+        reasons.append(f"✔ Degree matches the accepted requirement: {', '.join(required_degrees)}.")
+        reasons.append(f"✔ Your background supports entry into the {role_domain} domain.")
+        return {
+            "score": 1.0,
+            "status": "Eligible",
+            "reasons": reasons,
+        }
+
+    reasons.append(f"❌ Requires {', '.join(required_degrees)}.")
+    reasons.append(f"❌ Current degree: {user_education}.")
+    if missing_skills:
+        reasons.append(f"⚠ Missing background areas include {', '.join(missing_skills[:2])}.")
     return {
         "score": 0.0,
         "status": "Not Eligible",
-        "summary": f"Requires {', '.join(required_degrees)}. Current education: {user_education}.",
         "reasons": reasons,
     }
 
@@ -198,50 +170,57 @@ def _best_skill_matches(user_skills: list[str], role_skills: list[str]) -> tuple
     return matched_skills, missing_skills, sum(role_skill_scores) / len(role_skill_scores)
 
 
-def _goal_reason(goal_similarity: float, role_name: str) -> str:
-    if goal_similarity >= STRONG_MATCH_THRESHOLD:
-        return f"✔ Your career goal strongly aligns with {role_name}."
-    if goal_similarity >= MATCH_THRESHOLD:
-        return f"✔ Your career goal partially supports {role_name}."
-    return f"⚠ Your career goal has limited alignment with {role_name}."
+def _domain_similarity(interests: str, interest_domains: list[str], role_domain: str, description: str) -> float:
+    scores = []
+    if interests.strip():
+        scores.append(semantic_similarity(interests, f"{role_domain}. {description}"))
+    if interest_domains:
+        scores.append(max(semantic_similarity(domain, role_domain) for domain in interest_domains))
+    return sum(scores) / len(scores) if scores else 0.5
 
 
-def _domain_reason(domain_similarity: float, domain: str) -> str:
-    if domain_similarity >= STRONG_MATCH_THRESHOLD:
-        return f"✔ Your interests strongly match the {domain} domain."
-    if domain_similarity >= MATCH_THRESHOLD:
-        return f"✔ Your interests show moderate alignment with the {domain} domain."
-    return f"⚠ Your interests do not strongly match the {domain} domain."
-
-
-def _build_role_reasoning(
+def _build_reasoning(
     *,
     role_name: str,
+    domain: str,
     matched_skills: list[str],
     missing_skills: list[str],
-    domain: str,
-    domain_similarity: float,
-    goal_similarity: float,
-    education_result: dict[str, Any],
+    interests_score: float,
+    domain_score: float,
+    goal_score: float,
+    eligibility_result: dict[str, Any],
+    portfolio_required: bool,
 ) -> list[str]:
     reasoning = []
 
     if matched_skills:
         for skill in matched_skills[:3]:
-            reasoning.append(f"✔ {skill} matches a role requirement.")
+            reasoning.append(f"✔ {skill} matches a required skill.")
     else:
         reasoning.append(f"⚠ You currently have few direct skill matches for {role_name}.")
 
-    reasoning.append(_domain_reason(domain_similarity, domain))
-    reasoning.append(_goal_reason(goal_similarity, role_name))
-
-    if missing_skills:
-        for skill in missing_skills[:3]:
-            reasoning.append(f"⚠ Missing {skill}.")
+    if interests_score >= MATCH_THRESHOLD:
+        reasoning.append("✔ Your stated interests support this career direction.")
     else:
-        reasoning.append("✔ No major skill gaps were detected for this role.")
+        reasoning.append("⚠ Your stated interests only weakly support this role.")
 
-    reasoning.extend(education_result["reasons"])
+    if domain_score >= MATCH_THRESHOLD:
+        reasoning.append(f"✔ Your interests map well to the {domain} domain.")
+    else:
+        reasoning.append(f"⚠ Your interests do not strongly map to the {domain} domain.")
+
+    if goal_score >= MATCH_THRESHOLD:
+        reasoning.append(f"✔ Your career goal aligns with {role_name}.")
+    else:
+        reasoning.append(f"⚠ Your career goal has limited influence for {role_name} because stronger skill or domain matches exist elsewhere.")
+
+    for skill in missing_skills[:3]:
+        reasoning.append(f"⚠ Missing skill: {skill}.")
+
+    if portfolio_required:
+        reasoning.append("⚠ This role is portfolio-driven, so practical projects matter strongly.")
+
+    reasoning.extend(eligibility_result["reasons"])
     return reasoning
 
 
@@ -251,25 +230,29 @@ def score_role(
     role_data: dict[str, Any],
     user_skills: list[str],
     interests: str,
+    interest_domains: list[str],
     user_education: str,
     career_goal: str,
 ) -> dict[str, Any]:
     role_skills = role_data.get("skills", []) or []
     domain = role_data.get("domain", "Unknown")
     description = role_data.get("description", "")
+    portfolio_required = bool(role_data.get("portfolio_required", False))
 
     matched_skills, missing_skills, skill_similarity = _best_skill_matches(user_skills, role_skills)
     global_skill_similarity = semantic_similarity(", ".join(user_skills), ", ".join(role_skills))
     skill_score = (skill_similarity * 0.55) + (global_skill_similarity * 0.45)
-    domain_similarity = 0.5 if not interests.strip() else semantic_similarity(interests, f"{domain}. {description}")
-    goal_similarity = 0.5 if not career_goal.strip() else semantic_similarity(career_goal, f"{role_name}. {domain}. {description}")
-    education_result = evaluate_education(user_education, role_data, missing_skills)
+    interests_score = 0.5 if not interests.strip() else semantic_similarity(interests, f"{description}. {domain}. {' '.join(role_skills)}")
+    domain_score = _domain_similarity(interests, interest_domains, domain, description)
+    goal_score = 0.5 if not career_goal.strip() else semantic_similarity(career_goal, f"{role_name}. {domain}. {description}")
+    eligibility_result = evaluate_eligibility(user_education, role_data, missing_skills)
 
     final_score = (
         (skill_score * WEIGHTS["skills"])
-        + (domain_similarity * WEIGHTS["interests"])
-        + (goal_similarity * WEIGHTS["career_goal"])
-        + (education_result["score"] * WEIGHTS["education"])
+        + (interests_score * WEIGHTS["interests"])
+        + (domain_score * WEIGHTS["domain"])
+        + (goal_score * WEIGHTS["career_goal"])
+        + (eligibility_result["score"] * WEIGHTS["eligibility"])
     )
 
     return {
@@ -277,29 +260,34 @@ def score_role(
         "domain": domain,
         "description": description,
         "required_degree": role_data.get("required_degree", []),
+        "degree_required": bool(role_data.get("degree_required", False)),
+        "portfolio_required": portfolio_required,
         "education_level": role_data.get("education_level", ""),
         "roadmap": role_data.get("roadmap", []),
         "match_score": _format_percent(final_score),
         "confidence_score": _format_percent(final_score),
         "raw_match_score": final_score,
-        "eligibility_status": education_result["status"],
-        "eligibility_reasoning": education_result["reasons"],
+        "eligibility_status": eligibility_result["status"],
+        "eligibility_reasoning": eligibility_result["reasons"],
         "matched_skills": matched_skills,
         "missing_skills": missing_skills,
-        "reasoning_explanation": _build_role_reasoning(
+        "reasoning_explanation": _build_reasoning(
             role_name=role_name,
+            domain=domain,
             matched_skills=matched_skills,
             missing_skills=missing_skills,
-            domain=domain,
-            domain_similarity=domain_similarity,
-            goal_similarity=goal_similarity,
-            education_result=education_result,
+            interests_score=interests_score,
+            domain_score=domain_score,
+            goal_score=goal_score,
+            eligibility_result=eligibility_result,
+            portfolio_required=portfolio_required,
         ),
         "score_breakdown": {
             "skill_score": _format_percent(skill_score),
-            "domain_score": _format_percent(domain_similarity),
-            "goal_score": _format_percent(goal_similarity),
-            "education_score": _format_percent(education_result["score"]),
+            "interest_score": _format_percent(interests_score),
+            "domain_score": _format_percent(domain_score),
+            "goal_score": _format_percent(goal_score),
+            "eligibility_score": _format_percent(eligibility_result["score"]),
         },
     }
 
@@ -308,6 +296,7 @@ def rank_roles(
     *,
     user_skills: list[str],
     interests: str,
+    interest_domains: list[str],
     user_education: str,
     career_goal: str,
     roles: dict[str, Any],
@@ -319,6 +308,7 @@ def rank_roles(
             role_data=role_data,
             user_skills=user_skills,
             interests=interests,
+            interest_domains=interest_domains,
             user_education=user_education,
             career_goal=career_goal,
         )
@@ -340,6 +330,5 @@ def rank_roles(
     return {
         "recommended_roles": recommended_roles,
         "rejected_roles": rejected_roles[:5],
-        "missing_skills": [],
         "all_roles": scored_roles,
     }

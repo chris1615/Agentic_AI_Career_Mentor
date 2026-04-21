@@ -15,6 +15,7 @@ def recommend_career(
     user_skills: list[str],
     roles: dict[str, Any],
     interests: str = "",
+    interest_domains: list[str] | None = None,
     career_goal: str = "",
     education: str = "",
     top_n: int = 3,
@@ -28,6 +29,7 @@ def recommend_career(
     result = rank_roles(
         user_skills=user_skills,
         interests=interests,
+        interest_domains=interest_domains or [],
         user_education=education,
         career_goal=career_goal,
         roles=roles,
@@ -58,6 +60,7 @@ class CareerMentorCrew:
         *,
         user_skills: list[str],
         interests: str,
+        interest_domains: list[str],
         education: str,
         career_goal: str,
         roles: dict[str, Any],
@@ -65,6 +68,7 @@ class CareerMentorCrew:
         return rank_roles(
             user_skills=user_skills,
             interests=interests,
+            interest_domains=interest_domains,
             user_education=education,
             career_goal=career_goal,
             roles=roles,

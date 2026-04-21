@@ -1,347 +1,302 @@
 {
   "Software Developer": {
-    "domain": "Technology",
     "skills": ["Python", "JavaScript", "Git", "Algorithms", "Data Structures", "APIs", "SQL"],
-    "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
-    "education_level": "bachelor",
+    "domain": "Technology",
     "description": "Build software applications and backend or frontend systems.",
-    "roadmap": [
-      "Programming Fundamentals",
-      "Version Control with Git",
-      "Data Structures and Algorithms",
-      "Backend API Development",
-      "Database Design with SQL",
-      "System Design and Deployment"
-    ]
+    "roadmap": ["Programming Fundamentals", "Version Control with Git", "Data Structures and Algorithms", "Backend API Development", "Database Design", "System Design and Deployment"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
+    "education_level": "bachelor"
   },
   "Data Scientist": {
-    "domain": "Technology",
     "skills": ["Python", "Statistics", "Machine Learning", "SQL", "Data Visualization", "NumPy", "Pandas"],
-    "required_degree": ["BCA", "BSc", "BE", "BTech", "MSc Data Science"],
-    "education_level": "bachelor",
+    "domain": "Technology",
     "description": "Analyze data, build predictive models, and communicate insights.",
-    "roadmap": [
-      "Python for Data Analysis",
-      "Statistics and Probability",
-      "SQL for Analytics",
-      "Exploratory Data Analysis",
-      "Machine Learning Fundamentals",
-      "Model Evaluation and Portfolio Projects"
-    ]
+    "roadmap": ["Python for Data Analysis", "Statistics and Probability", "SQL for Analytics", "Exploratory Data Analysis", "Machine Learning Fundamentals", "Model Evaluation and Portfolio Projects"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc", "BE", "BTech", "MSc Data Science"],
+    "education_level": "bachelor"
   },
   "Data Analyst": {
-    "domain": "Technology",
     "skills": ["SQL", "Excel", "Python", "Data Visualization", "Statistics", "Tableau"],
-    "required_degree": ["BCA", "BSc", "BCom", "BE", "BTech"],
-    "education_level": "bachelor",
+    "domain": "Technology",
     "description": "Interpret business data and turn it into actionable insights.",
-    "roadmap": [
-      "Excel Fundamentals",
-      "SQL Querying",
-      "Statistics for Analytics",
-      "Data Cleaning and Reporting",
-      "Dashboarding with Tableau or Power BI",
-      "Business Case Analysis"
-    ]
+    "roadmap": ["Excel Fundamentals", "SQL Querying", "Statistics for Analytics", "Data Cleaning and Reporting", "Dashboarding with Tableau or Power BI", "Business Case Analysis"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc", "BCom", "BE", "BTech"],
+    "education_level": "bachelor"
   },
   "Machine Learning Engineer": {
-    "domain": "Technology",
     "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "MLOps", "Statistics"],
-    "required_degree": ["BCA", "BSc", "BE", "BTech", "MTech AI"],
-    "education_level": "bachelor",
+    "domain": "Technology",
     "description": "Design, train, and deploy machine learning systems at scale.",
-    "roadmap": [
-      "Python and Statistics Foundations",
-      "Machine Learning Algorithms",
-      "Deep Learning with TensorFlow or PyTorch",
-      "Feature Engineering and Model Tuning",
-      "Model Deployment and APIs",
-      "MLOps and Production Monitoring"
-    ]
+    "roadmap": ["Python and Statistics Foundations", "Machine Learning Algorithms", "Deep Learning with TensorFlow or PyTorch", "Feature Engineering and Model Tuning", "Model Deployment and APIs", "MLOps and Production Monitoring"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc", "BE", "BTech", "MTech AI"],
+    "education_level": "bachelor"
   },
   "DevOps Engineer": {
-    "domain": "Technology",
     "skills": ["Linux", "Docker", "Kubernetes", "CI/CD", "Cloud", "Scripting", "Networking"],
-    "required_degree": ["BCA", "BSc IT", "BE", "BTech"],
-    "education_level": "bachelor",
+    "domain": "Technology",
     "description": "Automate deployments and build reliable engineering infrastructure.",
-    "roadmap": [
-      "Linux Fundamentals",
-      "Shell Scripting",
-      "Docker and Container Basics",
-      "CI/CD Pipelines",
-      "Kubernetes Orchestration",
-      "Cloud Infrastructure and Monitoring"
-    ]
+    "roadmap": ["Linux Fundamentals", "Shell Scripting", "Docker and Container Basics", "CI/CD Pipelines", "Kubernetes Orchestration", "Cloud Infrastructure and Monitoring"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc IT", "BE", "BTech"],
+    "education_level": "bachelor"
   },
   "Cybersecurity Analyst": {
-    "domain": "Technology",
     "skills": ["Networking", "Linux", "Python", "Penetration Testing", "Security Protocols", "Risk Assessment"],
-    "required_degree": ["BCA", "BSc Cybersecurity", "BE", "BTech"],
-    "education_level": "bachelor",
+    "domain": "Technology",
     "description": "Protect systems, detect threats, and reduce security risk.",
-    "roadmap": [
-      "Linux Fundamentals",
-      "Networking Basics",
-      "Python for Security",
-      "Security Protocols and Hardening",
-      "Ethical Hacking and Penetration Testing",
-      "Security Tools and Threat Detection"
-    ]
+    "roadmap": ["Linux Fundamentals", "Networking Basics", "Python for Security", "Security Protocols and Hardening", "Ethical Hacking and Penetration Testing", "Security Tools and Threat Detection"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc Cybersecurity", "BE", "BTech"],
+    "education_level": "bachelor"
+  },
+  "Game Developer": {
+    "skills": ["Programming", "C#", "C++", "Unity", "Unreal Engine", "Game Design"],
+    "domain": "Technology",
+    "description": "Create gameplay systems and interactive experiences for digital games.",
+    "roadmap": ["Programming Foundations", "C# or C++ for Games", "Unity or Unreal Basics", "Gameplay Programming", "Math and Physics for Games", "Game Project Portfolio"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
   },
   "Product Manager": {
-    "domain": "Business",
     "skills": ["Communication", "Leadership", "Market Research", "Roadmapping", "Agile", "Analytics", "Stakeholder Management"],
-    "required_degree": ["BBA", "BCom", "BTech", "MBA"],
-    "education_level": "bachelor",
+    "domain": "Business",
     "description": "Own product strategy and align teams around customer value.",
-    "roadmap": [
-      "Product Thinking and Customer Research",
-      "Communication and Stakeholder Alignment",
-      "Roadmap Planning",
-      "Agile Delivery Practices",
-      "Product Metrics and Analytics",
-      "Strategy, Prioritization, and Launch Execution"
-    ]
+    "roadmap": ["Product Thinking and Customer Research", "Communication and Stakeholder Alignment", "Roadmap Planning", "Agile Delivery Practices", "Product Metrics and Analytics", "Strategy and Launch Execution"],
+    "degree_required": false,
+    "portfolio_required": false,
+    "required_degree": ["BBA", "BCom", "BTech", "MBA"],
+    "education_level": "bachelor"
   },
   "Business Analyst": {
-    "domain": "Business",
     "skills": ["Communication", "SQL", "Excel", "Process Mapping", "Requirements Gathering", "Data Analysis"],
-    "required_degree": ["BBA", "BCom", "BCA", "MBA"],
-    "education_level": "bachelor",
+    "domain": "Business",
     "description": "Translate business problems into structured technical solutions.",
-    "roadmap": [
-      "Business Communication Fundamentals",
-      "Excel and SQL Basics",
-      "Requirements Gathering",
-      "Process Mapping and Documentation",
-      "Data Analysis for Decision Making",
-      "Stakeholder Presentation and Tools"
-    ]
+    "roadmap": ["Business Communication Fundamentals", "Excel and SQL Basics", "Requirements Gathering", "Process Mapping and Documentation", "Data Analysis for Decision Making", "Stakeholder Presentation and Tools"],
+    "degree_required": false,
+    "portfolio_required": false,
+    "required_degree": ["BBA", "BCom", "BCA", "MBA"],
+    "education_level": "bachelor"
   },
   "Marketing Manager": {
-    "domain": "Marketing",
     "skills": ["Communication", "Marketing Strategy", "SEO", "Social Media", "Content Creation", "Analytics", "Campaign Management"],
-    "required_degree": ["BBA", "BCom", "BA Marketing", "MBA Marketing"],
-    "education_level": "bachelor",
+    "domain": "Marketing",
     "description": "Plan and run marketing campaigns that drive brand growth.",
-    "roadmap": [
-      "Marketing Fundamentals",
-      "Audience Research and Positioning",
-      "Content and Social Strategy",
-      "SEO and Campaign Planning",
-      "Marketing Analytics",
-      "Multi-Channel Campaign Management"
-    ]
+    "roadmap": ["Marketing Fundamentals", "Audience Research and Positioning", "Content and Social Strategy", "SEO and Campaign Planning", "Marketing Analytics", "Campaign Management"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BBA", "BCom", "BA Marketing", "MBA Marketing"],
+    "education_level": "bachelor"
   },
   "Digital Marketing Specialist": {
-    "domain": "Marketing",
     "skills": ["SEO", "SEM", "Social Media", "Content Writing", "Google Analytics", "Email Marketing", "Copywriting"],
-    "required_degree": ["BBA", "BCom", "BA", "MBA Marketing"],
-    "education_level": "bachelor",
+    "domain": "Marketing",
     "description": "Execute online campaigns and optimize digital growth channels.",
-    "roadmap": [
-      "Digital Marketing Basics",
-      "Content Writing and Copywriting",
-      "SEO and SEM",
-      "Social Media Marketing",
-      "Email Marketing and Analytics",
-      "Campaign Optimization and Reporting"
-    ]
+    "roadmap": ["Digital Marketing Basics", "Content Writing and Copywriting", "SEO and SEM", "Social Media Marketing", "Email Marketing and Analytics", "Campaign Optimization and Reporting"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BBA", "BCom", "BA", "MBA Marketing"],
+    "education_level": "bachelor"
   },
   "Graphic Designer": {
-    "domain": "Arts",
     "skills": ["Creativity", "Typography", "Adobe Photoshop", "Illustrator", "Color Theory", "Layout Design", "Branding"],
-    "required_degree": ["BDes", "BFA", "BA Design"],
-    "education_level": "bachelor",
+    "domain": "Arts",
     "description": "Create visual assets that communicate messages clearly and attractively.",
-    "roadmap": [
-      "Design Principles and Color Theory",
-      "Typography and Layout Basics",
-      "Photoshop and Illustrator Fundamentals",
-      "Brand Identity Design",
-      "Advanced Composition and Visual Systems",
-      "Portfolio Building and Client Workflows"
-    ]
+    "roadmap": ["Design Principles and Color Theory", "Typography and Layout Basics", "Photoshop and Illustrator Fundamentals", "Brand Identity Design", "Advanced Composition", "Portfolio Building"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
   },
   "UX/UI Designer": {
-    "domain": "Arts",
     "skills": ["User Research", "Wireframing", "Figma", "Prototyping", "Usability Testing", "Visual Design", "Information Architecture"],
-    "required_degree": ["BDes", "BFA", "BCA", "BTech"],
-    "education_level": "bachelor",
+    "domain": "Arts",
     "description": "Design intuitive user-centered digital products and interfaces.",
-    "roadmap": [
-      "User Experience Foundations",
-      "Wireframing and Information Architecture",
-      "Figma and Prototyping",
-      "User Research and Usability Testing",
-      "Visual Design Systems",
-      "End-to-End Product Case Studies"
-    ]
+    "roadmap": ["User Experience Foundations", "Wireframing and Information Architecture", "Figma and Prototyping", "User Research and Usability Testing", "Visual Design Systems", "Case Study Portfolio"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BDes", "BFA", "BCA", "BTech"],
+    "education_level": "bachelor"
+  },
+  "VFX Artist": {
+    "skills": ["Blender", "VFX", "Compositing", "Video Editing", "Motion Graphics"],
+    "domain": "Media",
+    "description": "Create visual effects and composited scenes for film, ads, and digital media.",
+    "roadmap": ["Visual Design Foundations", "Blender or Maya Basics", "Compositing and Tracking", "Particle and Simulation Effects", "Shot Finishing and Color Workflow", "Showreel Development"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
+  },
+  "Video Editor": {
+    "skills": ["Video Editing", "Storytelling", "Premiere Pro", "Color Grading", "Sound Design"],
+    "domain": "Media",
+    "description": "Edit video content for storytelling, marketing, entertainment, and social platforms.",
+    "roadmap": ["Editing Fundamentals", "Timeline and Audio Workflow", "Storytelling Through Cuts", "Color Correction and Grading", "Motion Titles and Delivery Formats", "Editing Portfolio and Client Projects"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
+  },
+  "3D Animator": {
+    "skills": ["Animation", "Blender", "Rigging", "Storytelling", "3D Modeling"],
+    "domain": "Creative",
+    "description": "Animate characters, objects, and scenes for games, film, and digital media.",
+    "roadmap": ["Animation Principles", "3D Software Fundamentals", "Rigging and Character Setup", "Walk Cycles and Acting Shots", "Lighting and Scene Polish", "Animation Reel Creation"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
+  },
+  "Motion Designer": {
+    "skills": ["Motion Graphics", "After Effects", "Design", "Storyboarding", "Video Editing"],
+    "domain": "Media",
+    "description": "Create animated visual content for branding, ads, product demos, and social media.",
+    "roadmap": ["Graphic Design Basics", "After Effects Fundamentals", "Motion Principles and Timing", "Transitions and Kinetic Typography", "Compositing and Delivery", "Motion Design Portfolio"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
+  },
+  "Sound Designer": {
+    "skills": ["Audio Editing", "Sound Design", "Mixing", "Recording", "Storytelling"],
+    "domain": "Media",
+    "description": "Design and edit soundscapes, effects, and audio experiences for media projects.",
+    "roadmap": ["Audio Fundamentals", "Editing and Cleanup", "Recording Techniques", "Sound Effects Creation", "Mixing and Spatial Audio", "Audio Portfolio Production"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
+  },
+  "Content Creator": {
+    "skills": ["Content Strategy", "Video Editing", "Storytelling", "Social Media", "Branding"],
+    "domain": "Media",
+    "description": "Create and distribute engaging content across digital platforms and communities.",
+    "roadmap": ["Audience and Niche Research", "Content Planning", "Video and Short-Form Editing", "Social Platform Strategy", "Branding and Analytics", "Publishing Rhythm and Portfolio"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": [],
+    "education_level": ""
   },
   "Doctor": {
-    "domain": "Healthcare",
     "skills": ["Biology", "Medical Knowledge", "Diagnosis", "Patient Communication", "Anatomy", "Pharmacology"],
-    "required_degree": ["MBBS"],
-    "education_level": "professional",
+    "domain": "Healthcare",
     "description": "Diagnose illnesses, treat patients, and manage medical care.",
-    "roadmap": [
-      "Biology and Chemistry Foundations",
-      "Medical Entrance Preparation",
-      "Anatomy and Physiology",
-      "Clinical Medicine Fundamentals",
-      "Diagnosis and Patient Care",
-      "Internship and Medical Licensing"
-    ]
+    "roadmap": ["Biology and Chemistry Foundations", "Medical Entrance Preparation", "Anatomy and Physiology", "Clinical Medicine Fundamentals", "Diagnosis and Patient Care", "Internship and Medical Licensing"],
+    "degree_required": true,
+    "portfolio_required": false,
+    "required_degree": ["MBBS"],
+    "education_level": "professional"
   },
   "Healthcare Administrator": {
-    "domain": "Healthcare",
     "skills": ["Leadership", "Healthcare Policy", "Budget Management", "Communication", "Operations", "Compliance"],
-    "required_degree": ["BHA", "BBA Healthcare", "MBA Healthcare"],
-    "education_level": "bachelor",
+    "domain": "Healthcare",
     "description": "Manage healthcare operations, policy, and organizational performance.",
-    "roadmap": [
-      "Healthcare Systems Fundamentals",
-      "Communication and Operations Basics",
-      "Healthcare Policy and Compliance",
-      "Budgeting and Administration",
-      "Hospital Operations Management",
-      "Leadership in Healthcare Environments"
-    ]
+    "roadmap": ["Healthcare Systems Fundamentals", "Communication and Operations Basics", "Healthcare Policy and Compliance", "Budgeting and Administration", "Hospital Operations Management", "Leadership in Healthcare Environments"],
+    "degree_required": false,
+    "portfolio_required": false,
+    "required_degree": ["BHA", "BBA Healthcare", "MBA Healthcare"],
+    "education_level": "bachelor"
   },
   "Financial Analyst": {
-    "domain": "Finance",
     "skills": ["Excel", "Financial Modeling", "Accounting", "Statistics", "SQL", "Bloomberg", "Communication"],
-    "required_degree": ["BCom", "BBA Finance", "BSc Economics", "MBA Finance"],
-    "education_level": "bachelor",
+    "domain": "Finance",
     "description": "Analyze financial data and support investment or planning decisions.",
-    "roadmap": [
-      "Accounting and Finance Basics",
-      "Excel for Finance",
-      "Statistics and Financial Data Analysis",
-      "Financial Modeling",
-      "Valuation and Market Research",
-      "Reporting, Communication, and Tools"
-    ]
+    "roadmap": ["Accounting and Finance Basics", "Excel for Finance", "Statistics and Financial Data Analysis", "Financial Modeling", "Valuation and Market Research", "Reporting and Communication"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCom", "BBA Finance", "BSc Economics", "MBA Finance"],
+    "education_level": "bachelor"
   },
   "Investment Banker": {
-    "domain": "Finance",
     "skills": ["Financial Modeling", "Valuation", "Excel", "Communication", "Market Analysis", "M&A Knowledge"],
-    "required_degree": ["BCom", "BBA Finance", "MBA Finance"],
-    "education_level": "bachelor",
+    "domain": "Finance",
     "description": "Advise companies on mergers, acquisitions, and capital raising.",
-    "roadmap": [
-      "Corporate Finance Fundamentals",
-      "Excel and Financial Modeling",
-      "Valuation Techniques",
-      "Capital Markets and Deal Structuring",
-      "Mergers and Acquisitions",
-      "Pitch Books, Communication, and Interviews"
-    ]
+    "roadmap": ["Corporate Finance Fundamentals", "Excel and Financial Modeling", "Valuation Techniques", "Capital Markets and Deal Structuring", "Mergers and Acquisitions", "Pitch Books and Interviews"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCom", "BBA Finance", "MBA Finance"],
+    "education_level": "bachelor"
   },
   "Teacher": {
-    "domain": "Education",
     "skills": ["Communication", "Curriculum Design", "Subject Expertise", "Patience", "Assessment", "Classroom Management"],
-    "required_degree": ["BEd", "BA", "BSc", "MA Education"],
-    "education_level": "bachelor",
+    "domain": "Education",
     "description": "Educate students and create supportive learning environments.",
-    "roadmap": [
-      "Subject Knowledge Foundation",
-      "Pedagogy and Lesson Planning",
-      "Classroom Management",
-      "Assessment Design",
-      "Student Engagement Methods",
-      "Teaching Practice and Certification"
-    ]
+    "roadmap": ["Subject Knowledge Foundation", "Pedagogy and Lesson Planning", "Classroom Management", "Assessment Design", "Student Engagement Methods", "Teaching Practice and Certification"],
+    "degree_required": true,
+    "portfolio_required": false,
+    "required_degree": ["BEd", "BA", "BSc", "MA Education"],
+    "education_level": "bachelor"
   },
   "Instructional Designer": {
-    "domain": "Education",
     "skills": ["Curriculum Design", "E-Learning", "Communication", "Articulate Storyline", "LMS Platforms", "Adult Learning Theory"],
-    "required_degree": ["BEd", "BA", "MA Education", "MEd"],
-    "education_level": "bachelor",
+    "domain": "Education",
     "description": "Design digital and blended learning experiences for learners.",
-    "roadmap": [
-      "Learning Theory Fundamentals",
-      "Curriculum Design Basics",
-      "LMS and E-Learning Platforms",
-      "Authoring Tools and Storyboarding",
-      "Interactive Module Design",
-      "Learning Analytics and Portfolio Modules"
-    ]
+    "roadmap": ["Learning Theory Fundamentals", "Curriculum Design Basics", "LMS and E-Learning Platforms", "Authoring Tools and Storyboarding", "Interactive Module Design", "Learning Analytics and Portfolio Modules"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BEd", "BA", "MA Education", "MEd"],
+    "education_level": "bachelor"
   },
   "Content Writer": {
-    "domain": "Arts",
     "skills": ["Writing", "Research", "SEO", "Editing", "Storytelling", "Communication", "Grammar"],
-    "required_degree": ["BA English", "BA Journalism", "BMM"],
-    "education_level": "bachelor",
+    "domain": "Arts",
     "description": "Write engaging articles, blogs, scripts, and brand content.",
-    "roadmap": [
-      "Writing and Grammar Foundations",
-      "Research and Audience Understanding",
-      "Storytelling and Editing",
-      "SEO Writing",
-      "Content Strategy and Brand Voice",
-      "Portfolio Development and Publishing"
-    ]
+    "roadmap": ["Writing and Grammar Foundations", "Research and Audience Understanding", "Storytelling and Editing", "SEO Writing", "Content Strategy and Brand Voice", "Portfolio Development and Publishing"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BA English", "BA Journalism", "BMM"],
+    "education_level": "bachelor"
   },
   "Film Director": {
-    "domain": "Arts",
     "skills": ["Storytelling", "Cinematography", "Leadership", "Visual Composition", "Script Writing", "Editing"],
-    "required_degree": ["BFA Film", "BA Film Studies", "Diploma in Film Direction"],
-    "education_level": "bachelor",
+    "domain": "Arts",
     "description": "Lead the creative and visual direction of film productions.",
-    "roadmap": [
-      "Storytelling and Film Language",
-      "Script Writing Fundamentals",
-      "Cinematography and Visual Composition",
-      "Direction and Crew Leadership",
-      "Editing and Post-Production",
-      "Short Film Production and Showreel Building"
-    ]
+    "roadmap": ["Storytelling and Film Language", "Script Writing Fundamentals", "Cinematography and Visual Composition", "Direction and Crew Leadership", "Editing and Post-Production", "Short Film Production and Showreel Building"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BFA Film", "BA Film Studies", "Diploma in Film Direction"],
+    "education_level": "bachelor"
   },
   "Lawyer": {
-    "domain": "Law",
     "skills": ["Legal Research", "Argumentation", "Drafting", "Negotiation", "Critical Thinking", "Communication"],
-    "required_degree": ["LLB"],
-    "education_level": "professional",
+    "domain": "Law",
     "description": "Advise clients, interpret law, and represent cases in legal settings.",
-    "roadmap": [
-      "Legal Reasoning Foundations",
-      "Constitutional and Contract Law",
-      "Legal Research and Drafting",
-      "Argumentation and Negotiation",
-      "Courtroom Advocacy",
-      "Licensing and Legal Practice Preparation"
-    ]
+    "roadmap": ["Legal Reasoning Foundations", "Constitutional and Contract Law", "Legal Research and Drafting", "Argumentation and Negotiation", "Courtroom Advocacy", "Licensing and Legal Practice Preparation"],
+    "degree_required": true,
+    "portfolio_required": false,
+    "required_degree": ["LLB"],
+    "education_level": "professional"
   },
   "Pilot": {
-    "domain": "Engineering",
     "skills": ["Physics", "Navigation", "Situational Awareness", "Decision Making", "Aircraft Systems", "Communication"],
-    "required_degree": ["Commercial Pilot License", "Aviation License"],
-    "education_level": "professional",
+    "domain": "Engineering",
     "description": "Operate aircraft safely and make disciplined decisions in flight.",
-    "roadmap": [
-      "Physics and Flight Fundamentals",
-      "Navigation Basics",
-      "Aircraft Systems",
-      "Flight Simulation and Decision Making",
-      "Advanced Flight Training",
-      "Licensing, Flight Hours, and Safety Protocols"
-    ]
+    "roadmap": ["Physics and Flight Fundamentals", "Navigation Basics", "Aircraft Systems", "Flight Simulation and Decision Making", "Advanced Flight Training", "Licensing and Safety Protocols"],
+    "degree_required": true,
+    "portfolio_required": false,
+    "required_degree": ["Commercial Pilot License", "Aviation License"],
+    "education_level": "professional"
   },
   "Architect": {
-    "domain": "Engineering",
     "skills": ["Design Thinking", "AutoCAD", "3D Visualization", "Building Materials", "Structural Concepts", "Planning"],
-    "required_degree": ["B.Arch", "BArch"],
-    "education_level": "bachelor",
+    "domain": "Engineering",
     "description": "Design buildings and spaces that balance function, safety, and aesthetics.",
-    "roadmap": [
-      "Drawing and Design Fundamentals",
-      "Architectural Theory and Planning",
-      "AutoCAD and 3D Visualization",
-      "Building Materials and Structures",
-      "Studio Design Projects",
-      "Professional Practice and Licensure Preparation"
-    ]
+    "roadmap": ["Drawing and Design Fundamentals", "Architectural Theory and Planning", "AutoCAD and 3D Visualization", "Building Materials and Structures", "Studio Design Projects", "Professional Practice and Licensure Preparation"],
+    "degree_required": true,
+    "portfolio_required": true,
+    "required_degree": ["B.Arch", "BArch"],
+    "education_level": "bachelor"
   }
 }

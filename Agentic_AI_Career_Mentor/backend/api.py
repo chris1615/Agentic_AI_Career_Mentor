@@ -1,42 +1,40 @@
 """
-api.py — FastAPI backend for the Agentic AI Career Mentor
-Run with: uvicorn api:app --reload
+api.py
+------
+FastAPI backend for the Agentic AI Career Mentor.
 """
 
-import sys
-import os
 import io
-import re
+import os
+import sys
 
-# ── Ensure the backend package is importable regardless of CWD ──────────────
+from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
 BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
 if BACKEND_DIR not in sys.path:
     sys.path.insert(0, BACKEND_DIR)
 
-from fastapi import FastAPI, HTTPException, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from chatbot_agent import ask_career_chatbot
+from data_loader import load_roles
+from workflow import run_workflow
 
-from workflow import run_workflow  # your existing entry-point
-
-
-# ── App setup ────────────────────────────────────────────────────────────────
 app = FastAPI(
     title="AI Career Mentor API",
-    version="1.0.0",
-    description="Exposes the career-mentor workflow as REST endpoints.",
+    version="2.0.0",
+    description="REST API for the AI-driven career intelligence platform.",
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],          # tighten in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-# ── Schemas ──────────────────────────────────────────────────────────────────
 class CareerInput(BaseModel):
     skills: str
     interests: str
@@ -51,37 +49,31 @@ class AnalyzeResponse(BaseModel):
 
 class ResumeResponse(BaseModel):
     status: str
-    extracted_text_preview: str   # first 500 chars
+    extracted_text_preview: str
     detected_skills: list[str]
 
 
-# ── Keyword list for basic resume skill extraction ───────────────────────────
-SKILL_KEYWORDS: list[str] = [
-    # Languages
+class ChatInput(BaseModel):
+    question: str
+
+
+class ChatResponse(BaseModel):
+    status: str
+    answer: str
+
+
+SKILL_KEYWORDS = [
     "python", "java", "javascript", "typescript", "c++", "c#", "go", "rust",
     "ruby", "swift", "kotlin", "scala", "r", "matlab", "sql", "bash",
-    # Web / frameworks
     "react", "angular", "vue", "fastapi", "django", "flask", "node",
-    "express", "spring", "rails", "next.js", "nuxt",
-    # Data / AI
-    "machine learning", "deep learning", "nlp", "computer vision",
     "tensorflow", "pytorch", "keras", "scikit-learn", "pandas", "numpy",
-    "data analysis", "data science", "llm", "langchain", "openai",
-    # Cloud / DevOps
-    "aws", "azure", "gcp", "docker", "kubernetes", "terraform", "ci/cd",
-    "github actions", "jenkins", "linux",
-    # Databases
-    "postgresql", "mysql", "mongodb", "redis", "elasticsearch", "sqlite",
-    # Soft / general
-    "agile", "scrum", "rest api", "graphql", "microservices",
+    "machine learning", "deep learning", "blender", "vfx", "video editing",
+    "animation", "premiere pro", "after effects", "unity", "unreal engine",
+    "docker", "kubernetes", "linux", "cybersecurity", "networking",
 ]
 
 
 def extract_text_from_upload(file_bytes: bytes, filename: str) -> str:
-    """
-    Extract plain text from an uploaded file.
-    Supports: .txt, .pdf (via PyPDF2 if installed), everything else → raw decode.
-    """
     ext = os.path.splitext(filename)[-1].lower()
 
     if ext == ".txt":
@@ -89,25 +81,22 @@ def extract_text_from_upload(file_bytes: bytes, filename: str) -> str:
 
     if ext == ".pdf":
         try:
-            import PyPDF2  # optional dependency
+            import PyPDF2
+
             reader = PyPDF2.PdfReader(io.BytesIO(file_bytes))
             pages = [page.extract_text() or "" for page in reader.pages]
             return "\n".join(pages)
         except ImportError:
-            # Fallback: strip binary and return readable ASCII fragments
             return file_bytes.decode("ascii", errors="ignore")
 
-    # .docx or anything else — naive decode
     return file_bytes.decode("utf-8", errors="ignore")
 
 
 def detect_skills(text: str) -> list[str]:
-    """Case-insensitive keyword match against SKILL_KEYWORDS."""
     lower = text.lower()
     return sorted({kw for kw in SKILL_KEYWORDS if kw in lower})
 
 
-# ── Endpoints ────────────────────────────────────────────────────────────────
 @app.get("/", tags=["Health"])
 def health_check():
     return {"status": "ok", "service": "AI Career Mentor API"}
@@ -115,31 +104,29 @@ def health_check():
 
 @app.post("/analyze", response_model=AnalyzeResponse, tags=["Career"])
 def analyze(payload: CareerInput):
-    """
-    Run the career-mentor workflow and return recommended roles + analysis.
-    """
-    input_dict = payload.model_dump()
-
     try:
-        result = run_workflow(input_dict)
+        result = run_workflow(payload.model_dump())
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Workflow error: {exc}") from exc
 
     if not isinstance(result, dict):
-        raise HTTPException(
-            status_code=500,
-            detail="run_workflow() must return a dict. Check workflow.py.",
-        )
+        raise HTTPException(status_code=500, detail="run_workflow() must return a dict.")
 
     return {"status": "success", "data": result}
 
 
+@app.post("/chat", response_model=ChatResponse, tags=["Career"])
+def chat(payload: ChatInput):
+    try:
+        roles = load_roles()
+        answer = ask_career_chatbot(payload.question, roles)
+        return {"status": "success", "answer": answer}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Chat error: {exc}") from exc
+
+
 @app.post("/resume", response_model=ResumeResponse, tags=["Resume"])
 async def resume_upload(file: UploadFile = File(...)):
-    """
-    Accept a resume file (.txt / .pdf / .docx), extract text,
-    and return basic detected skills via keyword matching.
-    """
     allowed = {".txt", ".pdf", ".docx"}
     ext = os.path.splitext(file.filename or "")[-1].lower()
     if ext not in allowed:

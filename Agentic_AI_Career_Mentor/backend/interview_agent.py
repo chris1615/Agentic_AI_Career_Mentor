@@ -108,13 +108,45 @@ _TECHNICAL_QUESTIONS = {
         "How do you handle uncertainty and risk in financial projections?",
         "What tools do you use for financial modeling?",
     ],
-    "Teacher / Educator": [
+    "Teacher": [
         "How do you differentiate instruction for students with different learning needs?",
         "Describe how you use formative assessment in your classroom.",
         "How do you handle a student who is disruptive or disengaged?",
         "What strategies do you use to make complex topics accessible?",
         "How do you communicate with parents about student progress?",
         "Describe a lesson that didn't go as planned. What did you do?",
+    ],
+    "Game Developer": [
+        "What is the difference between a game loop and an event-driven system?",
+        "How do you optimize gameplay code for performance?",
+        "What are common patterns for character movement and input handling?",
+        "How do Unity and Unreal differ for gameplay programming?",
+        "How do you debug difficult state or physics bugs in a game?",
+        "How do you structure a portfolio-ready game project?",
+    ],
+    "VFX Artist": [
+        "How do you approach compositing a VFX shot from start to finish?",
+        "What is the difference between keying, tracking, and rotoscoping?",
+        "How do you balance realism with render performance?",
+        "Which tools do you use for particles, simulations, and shot cleanup?",
+        "How do you collaborate with editors or motion designers on delivery?",
+        "How do you present a strong VFX showreel?",
+    ],
+    "Video Editor": [
+        "How do you choose pacing and rhythm for a narrative edit?",
+        "What is your workflow for syncing audio and video efficiently?",
+        "How do you handle color correction versus color grading?",
+        "Which editing decisions most improve storytelling clarity?",
+        "How do you manage different delivery formats and export settings?",
+        "How do you organize large editing projects for collaboration?",
+    ],
+    "3D Animator": [
+        "What are the core principles of animation and how do you apply them?",
+        "How do you approach rigging limitations when animating a shot?",
+        "What is your workflow for blocking, splining, and polishing animation?",
+        "How do you create believable weight and timing in character motion?",
+        "How do you review and improve acting choices in an animation scene?",
+        "How do you build a strong animation reel?",
     ],
 }
 

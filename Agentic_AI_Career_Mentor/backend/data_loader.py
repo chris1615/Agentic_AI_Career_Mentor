@@ -12,6 +12,8 @@ REQUIRED_ROLE_FIELDS = {
     "skills": list,
     "domain": str,
     "required_degree": list,
+    "degree_required": bool,
+    "portfolio_required": bool,
     "education_level": str,
     "description": str,
     "roadmap": list,
