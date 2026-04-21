@@ -4,206 +4,344 @@
     "skills": ["Python", "JavaScript", "Git", "Algorithms", "Data Structures", "APIs", "SQL"],
     "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
     "education_level": "bachelor",
-    "learning_topics": ["Python", "Data Structures", "System Design", "REST APIs"],
     "description": "Build software applications and backend or frontend systems.",
-    "career_path_steps": ["Strengthen programming fundamentals", "Build full-stack or backend projects", "Practice coding interviews and version control workflows"]
+    "roadmap": [
+      "Programming Fundamentals",
+      "Version Control with Git",
+      "Data Structures and Algorithms",
+      "Backend API Development",
+      "Database Design with SQL",
+      "System Design and Deployment"
+    ]
   },
   "Data Scientist": {
     "domain": "Technology",
     "skills": ["Python", "Statistics", "Machine Learning", "SQL", "Data Visualization", "NumPy", "Pandas"],
     "required_degree": ["BCA", "BSc", "BE", "BTech", "MSc Data Science"],
     "education_level": "bachelor",
-    "learning_topics": ["Machine Learning", "Statistics", "Deep Learning", "Data Visualization"],
     "description": "Analyze data, build predictive models, and communicate insights.",
-    "career_path_steps": ["Learn Python for data work", "Study statistics and probability", "Build machine learning portfolio projects"]
+    "roadmap": [
+      "Python for Data Analysis",
+      "Statistics and Probability",
+      "SQL for Analytics",
+      "Exploratory Data Analysis",
+      "Machine Learning Fundamentals",
+      "Model Evaluation and Portfolio Projects"
+    ]
   },
   "Data Analyst": {
     "domain": "Technology",
     "skills": ["SQL", "Excel", "Python", "Data Visualization", "Statistics", "Tableau"],
     "required_degree": ["BCA", "BSc", "BCom", "BE", "BTech"],
     "education_level": "bachelor",
-    "learning_topics": ["SQL", "Excel Advanced", "Tableau", "Power BI"],
     "description": "Interpret business data and turn it into actionable insights.",
-    "career_path_steps": ["Master Excel and SQL", "Practice dashboarding with Tableau or Power BI", "Solve real-world analytics case studies"]
+    "roadmap": [
+      "Excel Fundamentals",
+      "SQL Querying",
+      "Statistics for Analytics",
+      "Data Cleaning and Reporting",
+      "Dashboarding with Tableau or Power BI",
+      "Business Case Analysis"
+    ]
   },
   "Machine Learning Engineer": {
     "domain": "Technology",
     "skills": ["Python", "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "MLOps", "Statistics"],
     "required_degree": ["BCA", "BSc", "BE", "BTech", "MTech AI"],
     "education_level": "bachelor",
-    "learning_topics": ["Deep Learning", "MLOps", "Model Deployment", "Cloud Platforms"],
     "description": "Design, train, and deploy machine learning systems at scale.",
-    "career_path_steps": ["Build strong foundations in ML and deep learning", "Learn model deployment and MLOps", "Create end-to-end production ML projects"]
+    "roadmap": [
+      "Python and Statistics Foundations",
+      "Machine Learning Algorithms",
+      "Deep Learning with TensorFlow or PyTorch",
+      "Feature Engineering and Model Tuning",
+      "Model Deployment and APIs",
+      "MLOps and Production Monitoring"
+    ]
   },
   "DevOps Engineer": {
     "domain": "Technology",
     "skills": ["Linux", "Docker", "Kubernetes", "CI/CD", "Cloud", "Scripting", "Networking"],
     "required_degree": ["BCA", "BSc IT", "BE", "BTech"],
     "education_level": "bachelor",
-    "learning_topics": ["Docker", "Kubernetes", "AWS/GCP", "Terraform"],
     "description": "Automate deployments and build reliable engineering infrastructure.",
-    "career_path_steps": ["Learn Linux and shell scripting", "Practice containers and CI/CD pipelines", "Deploy applications on cloud platforms"]
+    "roadmap": [
+      "Linux Fundamentals",
+      "Shell Scripting",
+      "Docker and Container Basics",
+      "CI/CD Pipelines",
+      "Kubernetes Orchestration",
+      "Cloud Infrastructure and Monitoring"
+    ]
   },
   "Cybersecurity Analyst": {
     "domain": "Technology",
     "skills": ["Networking", "Linux", "Python", "Penetration Testing", "Security Protocols", "Risk Assessment"],
     "required_degree": ["BCA", "BSc Cybersecurity", "BE", "BTech"],
     "education_level": "bachelor",
-    "learning_topics": ["Ethical Hacking", "Network Security", "SIEM Tools", "Compliance"],
     "description": "Protect systems, detect threats, and reduce security risk.",
-    "career_path_steps": ["Study networking and operating systems", "Learn security testing tools and practices", "Work on labs and capture-the-flag exercises"]
+    "roadmap": [
+      "Linux Fundamentals",
+      "Networking Basics",
+      "Python for Security",
+      "Security Protocols and Hardening",
+      "Ethical Hacking and Penetration Testing",
+      "Security Tools and Threat Detection"
+    ]
   },
   "Product Manager": {
     "domain": "Business",
     "skills": ["Communication", "Leadership", "Market Research", "Roadmapping", "Agile", "Analytics", "Stakeholder Management"],
     "required_degree": ["BBA", "BCom", "BTech", "MBA"],
     "education_level": "bachelor",
-    "learning_topics": ["Product Strategy", "Agile Methodology", "User Research", "OKRs"],
     "description": "Own product strategy and align teams around customer value.",
-    "career_path_steps": ["Build product thinking and market analysis skills", "Practice roadmap and requirement writing", "Lead cross-functional project simulations"]
+    "roadmap": [
+      "Product Thinking and Customer Research",
+      "Communication and Stakeholder Alignment",
+      "Roadmap Planning",
+      "Agile Delivery Practices",
+      "Product Metrics and Analytics",
+      "Strategy, Prioritization, and Launch Execution"
+    ]
   },
   "Business Analyst": {
     "domain": "Business",
     "skills": ["Communication", "SQL", "Excel", "Process Mapping", "Requirements Gathering", "Data Analysis"],
     "required_degree": ["BBA", "BCom", "BCA", "MBA"],
     "education_level": "bachelor",
-    "learning_topics": ["Business Process Modeling", "SQL", "Stakeholder Communication", "JIRA"],
     "description": "Translate business problems into structured technical solutions.",
-    "career_path_steps": ["Learn business process analysis", "Practice requirements documentation", "Use data to support business recommendations"]
+    "roadmap": [
+      "Business Communication Fundamentals",
+      "Excel and SQL Basics",
+      "Requirements Gathering",
+      "Process Mapping and Documentation",
+      "Data Analysis for Decision Making",
+      "Stakeholder Presentation and Tools"
+    ]
   },
   "Marketing Manager": {
     "domain": "Marketing",
     "skills": ["Communication", "Marketing Strategy", "SEO", "Social Media", "Content Creation", "Analytics", "Campaign Management"],
     "required_degree": ["BBA", "BCom", "BA Marketing", "MBA Marketing"],
     "education_level": "bachelor",
-    "learning_topics": ["Digital Marketing", "SEO", "Google Analytics", "Marketing Automation"],
     "description": "Plan and run marketing campaigns that drive brand growth.",
-    "career_path_steps": ["Learn digital campaign strategy", "Master analytics and SEO basics", "Run and measure sample campaigns"]
+    "roadmap": [
+      "Marketing Fundamentals",
+      "Audience Research and Positioning",
+      "Content and Social Strategy",
+      "SEO and Campaign Planning",
+      "Marketing Analytics",
+      "Multi-Channel Campaign Management"
+    ]
   },
   "Digital Marketing Specialist": {
     "domain": "Marketing",
     "skills": ["SEO", "SEM", "Social Media", "Content Writing", "Google Analytics", "Email Marketing", "Copywriting"],
     "required_degree": ["BBA", "BCom", "BA", "MBA Marketing"],
     "education_level": "bachelor",
-    "learning_topics": ["SEO/SEM", "Social Media Ads", "Email Marketing", "Content Strategy"],
     "description": "Execute online campaigns and optimize digital growth channels.",
-    "career_path_steps": ["Learn SEO, SEM, and content marketing", "Practice with analytics and ad platforms", "Build campaign case studies"]
+    "roadmap": [
+      "Digital Marketing Basics",
+      "Content Writing and Copywriting",
+      "SEO and SEM",
+      "Social Media Marketing",
+      "Email Marketing and Analytics",
+      "Campaign Optimization and Reporting"
+    ]
   },
   "Graphic Designer": {
     "domain": "Arts",
     "skills": ["Creativity", "Typography", "Adobe Photoshop", "Illustrator", "Color Theory", "Layout Design", "Branding"],
     "required_degree": ["BDes", "BFA", "BA Design"],
     "education_level": "bachelor",
-    "learning_topics": ["Adobe Creative Suite", "Typography", "UI Design Principles", "Motion Graphics"],
     "description": "Create visual assets that communicate messages clearly and attractively.",
-    "career_path_steps": ["Practice core design principles", "Build branding and poster projects", "Develop a strong visual portfolio"]
+    "roadmap": [
+      "Design Principles and Color Theory",
+      "Typography and Layout Basics",
+      "Photoshop and Illustrator Fundamentals",
+      "Brand Identity Design",
+      "Advanced Composition and Visual Systems",
+      "Portfolio Building and Client Workflows"
+    ]
   },
   "UX/UI Designer": {
     "domain": "Arts",
     "skills": ["User Research", "Wireframing", "Figma", "Prototyping", "Usability Testing", "Visual Design", "Information Architecture"],
     "required_degree": ["BDes", "BFA", "BCA", "BTech"],
     "education_level": "bachelor",
-    "learning_topics": ["Figma", "User Research Methods", "Interaction Design", "Accessibility"],
     "description": "Design intuitive user-centered digital products and interfaces.",
-    "career_path_steps": ["Learn UX research and wireframing", "Create interactive prototypes in Figma", "Run usability tests and iterate designs"]
+    "roadmap": [
+      "User Experience Foundations",
+      "Wireframing and Information Architecture",
+      "Figma and Prototyping",
+      "User Research and Usability Testing",
+      "Visual Design Systems",
+      "End-to-End Product Case Studies"
+    ]
   },
   "Doctor": {
     "domain": "Healthcare",
     "skills": ["Biology", "Medical Knowledge", "Diagnosis", "Patient Communication", "Anatomy", "Pharmacology"],
     "required_degree": ["MBBS"],
     "education_level": "professional",
-    "learning_topics": ["Clinical Guidelines", "Medical Research", "Telemedicine", "EHR Systems"],
     "description": "Diagnose illnesses, treat patients, and manage medical care.",
-    "career_path_steps": ["Study Biology and Chemistry thoroughly", "Qualify for MBBS admission", "Complete MBBS, internship, and licensing requirements"]
+    "roadmap": [
+      "Biology and Chemistry Foundations",
+      "Medical Entrance Preparation",
+      "Anatomy and Physiology",
+      "Clinical Medicine Fundamentals",
+      "Diagnosis and Patient Care",
+      "Internship and Medical Licensing"
+    ]
   },
   "Healthcare Administrator": {
     "domain": "Healthcare",
     "skills": ["Leadership", "Healthcare Policy", "Budget Management", "Communication", "Operations", "Compliance"],
     "required_degree": ["BHA", "BBA Healthcare", "MBA Healthcare"],
     "education_level": "bachelor",
-    "learning_topics": ["Healthcare Law", "Hospital Management", "Health Informatics", "Budgeting"],
     "description": "Manage healthcare operations, policy, and organizational performance.",
-    "career_path_steps": ["Learn healthcare systems and policy", "Build operations and budgeting skills", "Gain exposure to hospital administration workflows"]
+    "roadmap": [
+      "Healthcare Systems Fundamentals",
+      "Communication and Operations Basics",
+      "Healthcare Policy and Compliance",
+      "Budgeting and Administration",
+      "Hospital Operations Management",
+      "Leadership in Healthcare Environments"
+    ]
   },
   "Financial Analyst": {
     "domain": "Finance",
     "skills": ["Excel", "Financial Modeling", "Accounting", "Statistics", "SQL", "Bloomberg", "Communication"],
     "required_degree": ["BCom", "BBA Finance", "BSc Economics", "MBA Finance"],
     "education_level": "bachelor",
-    "learning_topics": ["Financial Modeling", "Valuation Techniques", "Excel Advanced", "CFA Preparation"],
     "description": "Analyze financial data and support investment or planning decisions.",
-    "career_path_steps": ["Study accounting and finance basics", "Practice Excel-based modeling", "Work through valuation and reporting case studies"]
+    "roadmap": [
+      "Accounting and Finance Basics",
+      "Excel for Finance",
+      "Statistics and Financial Data Analysis",
+      "Financial Modeling",
+      "Valuation and Market Research",
+      "Reporting, Communication, and Tools"
+    ]
   },
   "Investment Banker": {
     "domain": "Finance",
     "skills": ["Financial Modeling", "Valuation", "Excel", "Communication", "Market Analysis", "M&A Knowledge"],
     "required_degree": ["BCom", "BBA Finance", "MBA Finance"],
     "education_level": "bachelor",
-    "learning_topics": ["Mergers & Acquisitions", "DCF Modeling", "Capital Markets", "Deal Structuring"],
     "description": "Advise companies on mergers, acquisitions, and capital raising.",
-    "career_path_steps": ["Master corporate finance fundamentals", "Learn valuation and deal structuring", "Prepare for high-pressure finance case interviews"]
+    "roadmap": [
+      "Corporate Finance Fundamentals",
+      "Excel and Financial Modeling",
+      "Valuation Techniques",
+      "Capital Markets and Deal Structuring",
+      "Mergers and Acquisitions",
+      "Pitch Books, Communication, and Interviews"
+    ]
   },
   "Teacher": {
     "domain": "Education",
     "skills": ["Communication", "Curriculum Design", "Subject Expertise", "Patience", "Assessment", "Classroom Management"],
     "required_degree": ["BEd", "BA", "BSc", "MA Education"],
     "education_level": "bachelor",
-    "learning_topics": ["Instructional Design", "EdTech Tools", "Differentiated Learning", "Assessment Strategies"],
     "description": "Educate students and create supportive learning environments.",
-    "career_path_steps": ["Develop subject mastery", "Study pedagogy and classroom management", "Gain teaching practice and certification"]
+    "roadmap": [
+      "Subject Knowledge Foundation",
+      "Pedagogy and Lesson Planning",
+      "Classroom Management",
+      "Assessment Design",
+      "Student Engagement Methods",
+      "Teaching Practice and Certification"
+    ]
   },
   "Instructional Designer": {
     "domain": "Education",
     "skills": ["Curriculum Design", "E-Learning", "Communication", "Articulate Storyline", "LMS Platforms", "Adult Learning Theory"],
     "required_degree": ["BEd", "BA", "MA Education", "MEd"],
     "education_level": "bachelor",
-    "learning_topics": ["E-Learning Authoring Tools", "LMS Administration", "Learning Analytics", "SCORM"],
     "description": "Design digital and blended learning experiences for learners.",
-    "career_path_steps": ["Learn instructional design frameworks", "Use LMS and authoring tools", "Build sample e-learning modules"]
+    "roadmap": [
+      "Learning Theory Fundamentals",
+      "Curriculum Design Basics",
+      "LMS and E-Learning Platforms",
+      "Authoring Tools and Storyboarding",
+      "Interactive Module Design",
+      "Learning Analytics and Portfolio Modules"
+    ]
   },
   "Content Writer": {
     "domain": "Arts",
     "skills": ["Writing", "Research", "SEO", "Editing", "Storytelling", "Communication", "Grammar"],
     "required_degree": ["BA English", "BA Journalism", "BMM"],
     "education_level": "bachelor",
-    "learning_topics": ["SEO Writing", "Content Strategy", "Copywriting", "Brand Voice Development"],
     "description": "Write engaging articles, blogs, scripts, and brand content.",
-    "career_path_steps": ["Improve writing and editing fundamentals", "Learn SEO and audience targeting", "Build a writing portfolio across formats"]
+    "roadmap": [
+      "Writing and Grammar Foundations",
+      "Research and Audience Understanding",
+      "Storytelling and Editing",
+      "SEO Writing",
+      "Content Strategy and Brand Voice",
+      "Portfolio Development and Publishing"
+    ]
   },
   "Film Director": {
     "domain": "Arts",
     "skills": ["Storytelling", "Cinematography", "Leadership", "Visual Composition", "Script Writing", "Editing"],
     "required_degree": ["BFA Film", "BA Film Studies", "Diploma in Film Direction"],
     "education_level": "bachelor",
-    "learning_topics": ["Directing Techniques", "Film Production", "Screenwriting", "Post-Production"],
     "description": "Lead the creative and visual direction of film productions.",
-    "career_path_steps": ["Study filmmaking and storytelling", "Practice short-film production", "Build a directing showreel and crew experience"]
+    "roadmap": [
+      "Storytelling and Film Language",
+      "Script Writing Fundamentals",
+      "Cinematography and Visual Composition",
+      "Direction and Crew Leadership",
+      "Editing and Post-Production",
+      "Short Film Production and Showreel Building"
+    ]
   },
   "Lawyer": {
     "domain": "Law",
     "skills": ["Legal Research", "Argumentation", "Drafting", "Negotiation", "Critical Thinking", "Communication"],
     "required_degree": ["LLB"],
     "education_level": "professional",
-    "learning_topics": ["Constitutional Law", "Contract Law", "Courtroom Advocacy", "Legal Writing"],
     "description": "Advise clients, interpret law, and represent cases in legal settings.",
-    "career_path_steps": ["Build foundations in civics and legal reasoning", "Complete an LLB degree", "Pass bar or licensing requirements and gain legal practice exposure"]
+    "roadmap": [
+      "Legal Reasoning Foundations",
+      "Constitutional and Contract Law",
+      "Legal Research and Drafting",
+      "Argumentation and Negotiation",
+      "Courtroom Advocacy",
+      "Licensing and Legal Practice Preparation"
+    ]
   },
   "Pilot": {
     "domain": "Engineering",
     "skills": ["Physics", "Navigation", "Situational Awareness", "Decision Making", "Aircraft Systems", "Communication"],
     "required_degree": ["Commercial Pilot License", "Aviation License"],
     "education_level": "professional",
-    "learning_topics": ["Flight Theory", "Aviation Meteorology", "Aircraft Systems", "Flight Simulation"],
     "description": "Operate aircraft safely and make disciplined decisions in flight.",
-    "career_path_steps": ["Study physics and flight fundamentals", "Enroll in certified flight training", "Earn the required aviation license and flight hours"]
+    "roadmap": [
+      "Physics and Flight Fundamentals",
+      "Navigation Basics",
+      "Aircraft Systems",
+      "Flight Simulation and Decision Making",
+      "Advanced Flight Training",
+      "Licensing, Flight Hours, and Safety Protocols"
+    ]
   },
   "Architect": {
     "domain": "Engineering",
     "skills": ["Design Thinking", "AutoCAD", "3D Visualization", "Building Materials", "Structural Concepts", "Planning"],
     "required_degree": ["B.Arch", "BArch"],
     "education_level": "bachelor",
-    "learning_topics": ["Architectural Design", "CAD Tools", "Model Making", "Urban Planning"],
     "description": "Design buildings and spaces that balance function, safety, and aesthetics.",
-    "career_path_steps": ["Develop drawing and spatial design skills", "Complete a B.Arch degree", "Build studio projects and pursue licensure requirements"]
+    "roadmap": [
+      "Drawing and Design Fundamentals",
+      "Architectural Theory and Planning",
+      "AutoCAD and 3D Visualization",
+      "Building Materials and Structures",
+      "Studio Design Projects",
+      "Professional Practice and Licensure Preparation"
+    ]
   }
 }

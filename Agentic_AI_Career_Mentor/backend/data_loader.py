@@ -14,7 +14,7 @@ REQUIRED_ROLE_FIELDS = {
     "required_degree": list,
     "education_level": str,
     "description": str,
-    "career_path_steps": list,
+    "roadmap": list,
 }
 
 

@@ -172,22 +172,6 @@ html, body, [class*="css"] {
     border-radius: 50%;
     flex-shrink: 0;
 }
-
-/* ---- resume analyzer button & container ---- */
-.resume-analyzer-btn {
-    background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 0.6rem 1.5rem !important;
-    font-family: 'Syne', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 0.9rem !important;
-    width: 100%;
-    transition: opacity .2s !important;
-}
-.resume-analyzer-btn:hover { opacity: 0.88; }
-
 .resume-container {
     background: #1e1b4b;
     border-radius: 16px;
@@ -195,8 +179,6 @@ html, body, [class*="css"] {
     margin-top: 1rem;
     border: 1px solid #312e81;
 }
-
-/* ---- misc ---- */
 .divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, #7c3aed, transparent);
@@ -230,18 +212,68 @@ st.markdown(
     """
 <div class="hero-header">
     <h1>AI Career Mentor</h1>
-    <p>Explainable multi-agent career intelligence with role fit, eligibility, and learning pathways</p>
+    <p>Explainable multi-agent career intelligence with role-specific roadmaps and eligibility reasoning</p>
 </div>
 """,
     unsafe_allow_html=True,
 )
+
+
+def render_role_card(role: dict, rank_label: str) -> None:
+    score = role.get("match_score", 0)
+    confidence = role.get("confidence_score", score)
+    eligibility = role.get("eligibility_status", "Unknown")
+    if eligibility == "Eligible":
+        eligibility_color = "#6ee7b7"
+    elif eligibility == "Not Eligible":
+        eligibility_color = "#fca5a5"
+    else:
+        eligibility_color = "#fcd34d"
+
+    st.markdown(
+        f"""
+<div class='role-card'>
+    <div class='role-card-domain'>{role.get('domain', 'Unknown')}</div>
+    <div class='role-card-title'>{rank_label} {role.get('role', 'Unknown Role')}</div>
+    <p style='color:#94a3b8;font-size:0.88rem;margin:4px 0 8px 0'>{role.get('description', '')}</p>
+    <div style='font-size:0.83rem;color:{eligibility_color};margin-bottom:8px'><strong>Eligibility:</strong> {eligibility}</div>
+    <div style='display:flex;justify-content:space-between;font-size:0.82rem;color:#a78bfa;margin-bottom:4px'>
+        <span>Confidence Score</span><span><strong>{confidence}%</strong></span>
+    </div>
+    <div class='score-bar-bg'><div class='score-bar-fill' style='width:{min(confidence, 100)}%'></div></div>
+</div>
+""",
+        unsafe_allow_html=True,
+    )
+
+
+def render_roadmap(phases: list[dict]) -> None:
+    if not phases:
+        st.caption("No roadmap available for this role.")
+        return
+
+    for phase in phases:
+        topics = "".join(f"<li style='margin:4px 0;color:#cbd5e1'>{topic}</li>" for topic in phase.get("topics", []))
+        st.markdown(
+            f"""
+<div class='week-card'>
+    <div class='week-number'>{phase.get('phase', '')}</div>
+    <ul style='margin:0;padding-left:1.2rem'>{topics}</ul>
+    <div class='week-hint'>{phase.get('resource_hint', '')}</div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+        for step in phase.get("steps", []):
+            st.markdown(f"- {step}")
+
 
 with st.sidebar:
     st.markdown("### Agent Pipeline")
     agents = [
         ("1", "Skill Agent", "Measures semantic skill fit"),
         ("2", "Career Agent", "Ranks roles with weighted explainable scoring"),
-        ("3", "Learning Agent", "Builds a roadmap from missing skills"),
+        ("3", "Learning Agent", "Builds a role-specific roadmap"),
         ("4", "Interview Agent", "Generates targeted practice questions"),
     ]
     for num, name, desc in agents:
@@ -260,35 +292,31 @@ with st.sidebar:
         "OpenAI API Key (optional)",
         type="password",
         placeholder="sk-...",
-        help="Optional. The ranking engine works locally; this key is only used by optional OpenAI-backed features.",
+        help="Optional. Used for optional OpenAI-backed features only.",
     )
     if openai_key:
         os.environ["OPENAI_API_KEY"] = openai_key
 
-    # Groq API key for resume analyzer (reused)
     st.markdown("---")
     groq_api_key = st.text_input(
-        "🧠 Groq API Key (for Resume Analyzer)",
+        "Groq API Key (Resume Analyzer)",
         type="password",
         placeholder="gsk_...",
-        help="Free key from console.groq.com. Used to extract info from your resume."
+        help="Used to extract information from an uploaded resume.",
     )
     if groq_api_key:
         os.environ["GROQ_API_KEY"] = groq_api_key
 
 
-# ── main layout: two columns ─────────────────────────────────────────────────
 col_form, col_resume = st.columns([2, 1])
 
-col_form, col_examples = st.columns([2, 1])
-
-# ── left column: user profile form ──────────────────────────────────────────
 with col_form:
     st.markdown("<div class='section-title'>Your Profile</div>", unsafe_allow_html=True)
     skills_input = st.text_input(
         "Your Current Skills *",
         placeholder="e.g. Python, Communication, Excel, SQL",
         help="Separate multiple skills with commas.",
+        value=st.session_state.get("imported_skills_text", ""),
     )
     interests_input = st.text_input(
         "Your Interests",
@@ -307,92 +335,76 @@ with col_form:
         )
     analyze_btn = st.button("Analyze My Career", use_container_width=True)
 
-# ── right column: Resume Analyzer button (seamless) ─────────────────────────
 with col_resume:
-    st.markdown("<div class='section-title'>📄 Resume Analyzer</div>", unsafe_allow_html=True)
-    if st.button("📂 Upload & Analyze Resume", key="resume_btn", use_container_width=True):
+    st.markdown("<div class='section-title'>Resume Analyzer</div>", unsafe_allow_html=True)
+    if st.button("Upload and Analyze Resume", key="resume_btn", use_container_width=True):
         st.session_state.show_resume_upload = True
-    else:
-        if "show_resume_upload" not in st.session_state:
-            st.session_state.show_resume_upload = False
+    elif "show_resume_upload" not in st.session_state:
+        st.session_state.show_resume_upload = False
 
-    if st.session_state.show_resume_upload:
-        with st.container():
-            st.markdown("<div class='resume-container'>", unsafe_allow_html=True)
-            uploaded_file = st.file_uploader(
-                "Choose your resume (PDF, DOCX, or TXT)",
-                type=["pdf", "docx", "txt"],
-                key="resume_uploader"
-            )
-            if uploaded_file is not None:
-                if not groq_api_key:
-                    st.error("❌ Please enter your Groq API key in the sidebar first.")
-                else:
+    if st.session_state.get("show_resume_upload"):
+        st.markdown("<div class='resume-container'>", unsafe_allow_html=True)
+        uploaded_file = st.file_uploader(
+            "Choose your resume (PDF, DOCX, or TXT)",
+            type=["pdf", "docx", "txt"],
+            key="resume_uploader",
+        )
+        if uploaded_file is not None:
+            if not groq_api_key:
+                st.error("Please enter your Groq API key in the sidebar first.")
+            else:
+                try:
+                    from resume_analyzer import analyze_resume_with_groq, extract_resume_text
+
                     file_bytes = uploaded_file.read()
                     file_type = uploaded_file.name.split(".")[-1].lower()
-                    with st.spinner("🔍 Extracting text and analyzing with Groq AI..."):
-                        try:
-                            from resume_analyzer import extract_resume_text, analyze_resume_with_groq
-                            resume_text = extract_resume_text(file_bytes, file_type)
-                            if not resume_text:
-                                st.error("Could not extract text from the file. Try a different file.")
-                            else:
-                                result = analyze_resume_with_groq(resume_text, groq_api_key)
-                                st.success("✅ Analysis complete!")
+                    with st.spinner("Extracting text and analyzing your resume..."):
+                        resume_text = extract_resume_text(file_bytes, file_type)
+                        result = analyze_resume_with_groq(resume_text, groq_api_key)
 
-                                # Display extracted info
-                                st.markdown("**🛠️ Extracted Skills**")
-                                skills_list = result.get("skills", [])
-                                if skills_list:
-                                    for s in skills_list:
-                                        st.markdown(f"<span class='chip-green'>{s}</span>", unsafe_allow_html=True)
-                                else:
-                                    st.info("No skills detected.")
+                    st.success("Resume analysis complete.")
+                    skills_list = result.get("skills", [])
+                    st.markdown("**Extracted Skills**")
+                    for skill in skills_list:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
 
-                                st.markdown("**🎓 Education**")
-                                st.write(result.get("education", "Not detected"))
+                    st.markdown("**Education**")
+                    st.write(result.get("education", "Not detected"))
 
-                                st.markdown("**📅 Years of Experience**")
-                                st.write(f"{result.get('experience_years', 0)} years")
+                    st.markdown("**Years of Experience**")
+                    st.write(f"{result.get('experience_years', 0)} years")
 
-                                st.markdown("**🚀 Suggested Missing Skills**")
-                                missing_sug = result.get("missing_skills_suggestion", [])
-                                if missing_sug:
-                                    for s in missing_sug:
-                                        st.markdown(f"<span class='chip-red'>{s}</span>", unsafe_allow_html=True)
-                                else:
-                                    st.write("No suggestions.")
+                    st.markdown("**Suggested Missing Skills**")
+                    for skill in result.get("missing_skills_suggestion", []):
+                        st.markdown(f"<span class='chip-red'>{skill}</span>", unsafe_allow_html=True)
 
-                                st.markdown("**📝 Professional Summary**")
-                                st.info(result.get("summary", "No summary generated."))
+                    st.markdown("**Professional Summary**")
+                    st.info(result.get("summary", "No summary generated."))
 
-                                # Import skills button
-                                if skills_list and st.button("📋 Import these skills into your profile", key="import_skills"):
-                                    existing = set(st.session_state.get("user_skills", []))
-                                    new_skills = existing.union(set(skills_list))
-                                    st.session_state.user_skills = list(new_skills)
-                                    st.success(f"Added {len(skills_list)} skills! Refresh the page to see them in the skills input.")
-                                    st.rerun()
-                        except Exception as e:
-                            st.error(f"Error: {str(e)}")
-            st.markdown("</div>", unsafe_allow_html=True)
+                    if skills_list and st.button("Import These Skills Into My Profile", key="import_skills"):
+                        st.session_state["imported_skills_text"] = ", ".join(skills_list)
+                        st.success("Imported extracted skills into the profile input.")
+                        st.rerun()
+                except Exception as exc:
+                    st.error(f"Resume analysis failed: {exc}")
+        st.markdown("</div>", unsafe_allow_html=True)
 
 
-# ── run workflow (if Analyze button clicked) ─────────────────────────────────
-with col_examples:
+with st.container():
     st.markdown("<div class='section-title'>Try an Example</div>", unsafe_allow_html=True)
-    examples = {
-        "Tech / AI": ("Python, Statistics, Excel", "Machine Learning, AI", "BCA", "Data Scientist"),
-        "Healthcare": ("Biology, Communication", "Medicine, Patient Care", "BSc Biology", "Doctor"),
-        "Business": ("Communication, Excel, Presentation", "Strategy, Finance", "BBA", "Product Manager"),
-        "Design": ("Figma, Creativity, Typography", "UX, Visual Design", "BDes", "UX/UI Designer"),
-    }
-    for label, (skills, interests, education, goal) in examples.items():
-        if st.button(label, key=f"example_{label}"):
-            st.session_state["_skills"] = skills
-            st.session_state["_interests"] = interests
-            st.session_state["_education"] = education
-            st.session_state["_goal"] = goal
+    example_cols = st.columns(4)
+    examples = [
+        ("Tech / AI", ("Python, Statistics, Excel", "Machine Learning, AI", "BCA", "Data Scientist")),
+        ("Cybersecurity", ("Linux, Python", "Cybersecurity, Networks", "BCA", "Cybersecurity Analyst")),
+        ("Business", ("Communication, Excel, Presentation", "Strategy, Finance", "BBA", "Product Manager")),
+        ("Healthcare", ("Biology, Communication", "Medicine, Patient Care", "BSc Biology", "Doctor")),
+    ]
+    for index, (label, values) in enumerate(examples):
+        if example_cols[index].button(label, key=f"example_{label}"):
+            st.session_state["_skills"] = values[0]
+            st.session_state["_interests"] = values[1]
+            st.session_state["_education"] = values[2]
+            st.session_state["_goal"] = values[3]
             st.rerun()
 
 if "_skills" in st.session_state:
@@ -401,33 +413,6 @@ if "_skills" in st.session_state:
     education_input = st.session_state.pop("_education", "")
     goal_input = st.session_state.pop("_goal", "")
     analyze_btn = True
-
-
-def render_role_card(role: dict, rank_label: str) -> None:
-    score = role.get("match_score", 0)
-    eligibility = role.get("eligibility_status", "Unknown")
-    if eligibility == "Eligible":
-        eligibility_color = "#6ee7b7"
-    elif eligibility == "Not Eligible":
-        eligibility_color = "#fca5a5"
-    else:
-        eligibility_color = "#fcd34d"
-
-    st.markdown(
-        f"""
-<div class='role-card'>
-    <div class='role-card-domain'>{role.get('domain', 'Unknown')}</div>
-    <div class='role-card-title'>{rank_label} {role.get('role', 'Unknown Role')}</div>
-    <p style='color:#94a3b8;font-size:0.88rem;margin:4px 0 8px 0'>{role.get('description', '')}</p>
-    <div style='font-size:0.83rem;color:{eligibility_color};margin-bottom:8px'><strong>Eligibility:</strong> {eligibility}</div>
-    <div style='display:flex;justify-content:space-between;font-size:0.82rem;color:#a78bfa;margin-bottom:4px'>
-        <span>Match Score</span><span><strong>{score}%</strong></span>
-    </div>
-    <div class='score-bar-bg'><div class='score-bar-fill' style='width:{min(score, 100)}%'></div></div>
-</div>
-""",
-        unsafe_allow_html=True,
-    )
 
 
 if analyze_btn:
@@ -446,8 +431,8 @@ if analyze_btn:
     status_text = st.empty()
     steps = [
         (25, "Agent 1: Analyzing semantic skill fit"),
-        (50, "Agent 2: Ranking roles with explainable scoring"),
-        (75, "Agent 3: Building learning pathways"),
+        (50, "Agent 2: Ranking roles with weighted scoring"),
+        (75, "Agent 3: Building role-specific roadmaps"),
         (100, "Agent 4: Preparing interview guidance"),
     ]
     for pct, msg in steps:
@@ -475,9 +460,10 @@ if analyze_btn:
     with tab1:
         st.markdown("<div class='section-title'>Top Career Recommendations</div>", unsafe_allow_html=True)
         rank_labels = ["1.", "2.", "3."]
+
         for index, role in enumerate(result.get("recommended_roles", [])):
             render_role_card(role, rank_labels[index] if index < len(rank_labels) else f"{index + 1}.")
-            with st.expander(f"Role analysis - {role.get('role', 'Role')}"):
+            with st.expander(f"{role.get('role', 'Role')} - detailed analysis"):
                 col_left, col_right = st.columns(2)
                 with col_left:
                     st.markdown("**Matched Skills**")
@@ -485,7 +471,7 @@ if analyze_btn:
                         chips = "".join(f"<span class='chip-green'>{skill}</span>" for skill in role["matched_skills"])
                         st.markdown(chips, unsafe_allow_html=True)
                     else:
-                        st.caption("No strong matches yet.")
+                        st.caption("No strong matched skills yet.")
                 with col_right:
                     st.markdown("**Missing Skills**")
                     if role.get("missing_skills"):
@@ -494,84 +480,60 @@ if analyze_btn:
                     else:
                         st.caption("No major skill gaps detected.")
 
+                st.markdown("**Score Breakdown**")
                 breakdown = role.get("score_breakdown", {})
-                if breakdown:
-                    st.markdown("**Score Breakdown**")
-                    st.markdown(f"- Skill Score: {breakdown.get('skill_score', 0)}%")
-                    st.markdown(f"- Domain Score: {breakdown.get('domain_score', 0)}%")
-                    st.markdown(f"- Goal Score: {breakdown.get('goal_score', 0)}%")
-                    st.markdown(f"- Education Score: {breakdown.get('education_score', 0)}%")
+                st.markdown(f"- Skill Match: {breakdown.get('skill_score', 0)}%")
+                st.markdown(f"- Interest and Domain Match: {breakdown.get('domain_score', 0)}%")
+                st.markdown(f"- Career Goal Influence: {breakdown.get('goal_score', 0)}%")
+                st.markdown(f"- Education Match: {breakdown.get('education_score', 0)}%")
 
                 if role.get("reasoning_explanation"):
-                    st.markdown("**Reasoning Explanation**")
+                    st.markdown("**Reasoning**")
                     for line in role["reasoning_explanation"]:
                         st.markdown(f"- {line}")
 
-                if role.get("suggested_learning_path"):
-                    st.markdown("**Suggested Learning Path**")
-                    for step_index, step in enumerate(role["suggested_learning_path"], 1):
-                        st.markdown(f"{step_index}. {step}")
+                if role.get("eligibility_reasoning"):
+                    st.markdown("**Eligibility Reasoning**")
+                    for line in role["eligibility_reasoning"]:
+                        st.markdown(f"- {line}")
+
+                st.markdown("**Role-Specific Roadmap**")
+                render_roadmap(role.get("learning_plan", []))
 
         if result.get("rejected_roles"):
             st.markdown("<div class='section-title'>Rejected or Low-Fit Roles</div>", unsafe_allow_html=True)
             for role in result["rejected_roles"]:
-                with st.expander(f"{role.get('role', 'Role')} - {role.get('match_score', 0)}% match - {role.get('eligibility_status', 'Unknown')}"):
-                    st.markdown(f"**Eligibility Status:** {role.get('eligibility_status', 'Unknown')}")
+                with st.expander(f"{role.get('role', 'Role')} - {role.get('confidence_score', role.get('match_score', 0))}% confidence"):
                     if role.get("reasoning_explanation"):
                         for line in role["reasoning_explanation"]:
                             st.markdown(f"- {line}")
-                    if role.get("suggested_learning_path"):
-                        st.markdown("**Suggested Path**")
-                        for step_index, step in enumerate(role["suggested_learning_path"], 1):
-                            st.markdown(f"{step_index}. {step}")
+                    if role.get("eligibility_reasoning"):
+                        st.markdown("**Eligibility Reasoning**")
+                        for line in role["eligibility_reasoning"]:
+                            st.markdown(f"- {line}")
 
     with tab2:
-        st.markdown("<div class='section-title'>Skill Gap Analysis</div>", unsafe_allow_html=True)
-        col_have, col_need = st.columns(2)
-        with col_have:
-            st.markdown("#### Skills You Have")
-            for skill in result.get("user_skills", []):
-                st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
-        with col_need:
-            st.markdown("#### Skills to Acquire")
-            missing_skills = result.get("missing_skills", [])
-            if missing_skills:
-                for skill in missing_skills:
-                    st.markdown(f"<span class='chip-red'>{skill}</span>", unsafe_allow_html=True)
-            else:
-                st.success("You already cover the main skills for your top matches.")
+        st.markdown("<div class='section-title'>Role-Specific Skill Gaps</div>", unsafe_allow_html=True)
+        for role in result.get("recommended_roles", []):
+            with st.expander(f"{role.get('role', 'Role')} - missing skills"):
+                if role.get("missing_skills"):
+                    for skill in role["missing_skills"]:
+                        st.markdown(f"<span class='chip-red'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.success("No major missing skills for this role.")
 
-        top_role = result.get("recommended_roles", [{}])[0]
-        if top_role.get("reasoning_explanation"):
-            st.markdown("#### Why the top role ranked highest")
-            for line in top_role["reasoning_explanation"]:
-                st.markdown(f"- {line}")
+                if role.get("reasoning_explanation"):
+                    st.markdown("**Why this role was recommended**")
+                    for line in role["reasoning_explanation"]:
+                        st.markdown(f"- {line}")
 
     with tab3:
-        st.markdown("<div class='section-title'>Weekly Learning Roadmap</div>", unsafe_allow_html=True)
-        learning_plan = result.get("learning_plan", [])
-        if not learning_plan:
-            st.success("No learning plan needed for the selected top matches.")
-        else:
-            for week in learning_plan:
-                steps_html = "".join(f"<li style='margin:4px 0;color:#cbd5e1'>{step}</li>" for step in week.get("steps", []))
-                st.markdown(
-                    f"""
-<div class='week-card'>
-    <div class='week-number'>Week {week.get('week', '')}</div>
-    <div class='week-skill'>{week.get('skill', '')}</div>
-    <ul style='margin:0;padding-left:1.2rem'>{steps_html}</ul>
-    <div class='week-hint'>{week.get('resource_hint', '')}</div>
-</div>
-""",
-                    unsafe_allow_html=True,
-                )
-
-        top_role = result.get("recommended_roles", [{}])[0]
-        if top_role.get("suggested_learning_path"):
-            st.markdown("#### Suggested Career Path")
-            for step_index, step in enumerate(top_role["suggested_learning_path"], 1):
-                st.markdown(f"{step_index}. {step}")
+        st.markdown("<div class='section-title'>Separate Learning Paths For Each Role</div>", unsafe_allow_html=True)
+        for role in result.get("recommended_roles", []):
+            with st.expander(f"{role.get('role', 'Role')} - roadmap"):
+                st.markdown(f"**Confidence Score:** {role.get('confidence_score', role.get('match_score', 0))}%")
+                st.markdown(f"**Eligibility:** {role.get('eligibility_status', 'Unknown')}")
+                render_roadmap(role.get("learning_plan", []))
 
     with tab4:
         iq = result.get("interview_questions", {})

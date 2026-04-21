@@ -49,23 +49,26 @@ def _run_fallback_workflow(
 
     top_role_names = [role["role"] for role in recommended_roles]
     skill_analysis = analyze_skills(user_skills, roles)
-    missing_skills = []
-    seen = set()
-    for role in recommended_roles:
-        for skill in role.get("missing_skills", []):
-            normalized_skill = skill.strip().lower()
-            if normalized_skill not in seen:
-                missing_skills.append(skill)
-                seen.add(normalized_skill)
-
-    if not missing_skills:
-        missing_skills = get_overall_missing_skills(skill_analysis, top_role_names)
     rejected_roles = []
-    learning_plan = generate_learning_plan(missing_skills)
 
-    top_role = top_role_names[0] if top_role_names else "Software Developer"
-    interview_questions = generate_interview_questions(top_role)
-    interview_questions["role"] = top_role
+    for role in recommended_roles:
+        role_data = roles.get(role["role"], {})
+        role_missing_skills = role.get("missing_skills", [])
+        role["learning_plan"] = generate_learning_plan(
+            role_missing_skills,
+            role_name=role["role"],
+            role_data=role_data,
+        )
+
+    top_role = recommended_roles[0] if recommended_roles else {}
+    missing_skills = top_role.get("missing_skills", [])
+    if not missing_skills and top_role_names:
+        missing_skills = get_overall_missing_skills(skill_analysis, [top_role_names[0]])
+    learning_plan = top_role.get("learning_plan", [])
+
+    top_role_name = top_role_names[0] if top_role_names else "Software Developer"
+    interview_questions = generate_interview_questions(top_role_name)
+    interview_questions["role"] = top_role_name
 
     return {
         "status": "success",
@@ -76,6 +79,7 @@ def _run_fallback_workflow(
         "missing_skills": missing_skills,
         "learning_plan": learning_plan,
         "interview_questions": interview_questions,
+        "selected_role": top_role_name,
         "education": education,
         "interests": interests,
     }
@@ -121,8 +125,17 @@ def run_workflow(user_input: dict) -> dict:
                 roles=roles,
             )
             top_role_names = [role["role"] for role in result.get("recommended_roles", [])]
-            missing_skills = result.get("missing_skills", [])
-            learning_plan = generate_learning_plan(missing_skills)
+            for role in result.get("recommended_roles", []):
+                role_data = roles.get(role["role"], {})
+                role["learning_plan"] = generate_learning_plan(
+                    role.get("missing_skills", []),
+                    role_name=role["role"],
+                    role_data=role_data,
+                )
+
+            selected_role = result.get("recommended_roles", [{}])[0]
+            missing_skills = selected_role.get("missing_skills", [])
+            learning_plan = selected_role.get("learning_plan", [])
 
             top_role = top_role_names[0] if top_role_names else "Software Developer"
             interview_questions = generate_interview_questions(top_role)
@@ -135,8 +148,10 @@ def run_workflow(user_input: dict) -> dict:
                     "user_skills": user_skills,
                     "education": education,
                     "interests": interests,
+                    "missing_skills": missing_skills,
                     "learning_plan": learning_plan,
                     "interview_questions": interview_questions,
+                    "selected_role": top_role,
                 }
             )
             return result
