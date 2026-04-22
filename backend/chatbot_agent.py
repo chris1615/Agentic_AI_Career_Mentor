@@ -66,7 +66,7 @@ def ask_career_chatbot(
 
             client = groq.Groq(api_key=groq_key)
             response = client.chat.completions.create(
-                model="llama3-70b-8192",
+                model="llama-3.3-70b-versatile",
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.3,
             )
@@ -80,7 +80,7 @@ def ask_career_chatbot(
                 base_url="https://openrouter.ai/api/v1",
             )
             response = client.chat.completions.create(
-                model="meta-llama/llama-3.1-70b-instruct",
+                model="llama-3.3-70b-versatile",
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.3,
             )
