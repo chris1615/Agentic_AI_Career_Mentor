@@ -1,9 +1,49 @@
 {
   "Software Developer": {
-    "skills": ["Python", "JavaScript", "Git", "Algorithms", "Data Structures", "APIs", "SQL"],
+    "skills": ["JavaScript", "TypeScript", "React.js", "Node.js", "REST APIs", "GraphQL", "SQL", "MongoDB", "Git", "Algorithms", "Data Structures", "Database Systems"],
     "domain": "Technology",
-    "description": "Build software applications and backend or frontend systems.",
-    "roadmap": ["Programming Fundamentals", "Version Control with Git", "Data Structures and Algorithms", "Backend API Development", "Database Design", "System Design and Deployment"],
+    "description": "Build modern software applications across frontend, backend, and API-driven systems using contemporary JavaScript stacks.",
+    "roadmap": ["Programming Fundamentals", "JavaScript and TypeScript", "React.js and Frontend Architecture", "Backend API Development with Node.js", "Database Design with SQL and MongoDB", "System Design and Deployment"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
+    "education_level": "bachelor"
+  },
+  "Frontend Developer": {
+    "skills": ["JavaScript", "TypeScript", "React.js", "Next.js", "HTML", "CSS", "REST APIs", "GraphQL", "Frontend Development", "Git"],
+    "domain": "Technology",
+    "description": "Build responsive, component-driven user interfaces using modern frontend frameworks and API integrations.",
+    "roadmap": ["Web Fundamentals", "JavaScript and TypeScript", "React.js Components and State", "Next.js and Routing", "API Integration with REST and GraphQL", "Frontend Performance and Deployment"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
+    "education_level": "bachelor"
+  },
+  "Backend Developer": {
+    "skills": ["JavaScript", "Node.js", "Express.js", "Backend Development", "REST APIs", "GraphQL", "SQL", "MongoDB", "Database Systems", "Git"],
+    "domain": "Technology",
+    "description": "Design server-side systems, APIs, and databases that power modern web and mobile applications.",
+    "roadmap": ["Programming Fundamentals", "Node.js Runtime", "Express.js and API Development", "SQL and NoSQL Database Systems", "Authentication and Backend Architecture", "Deployment and Monitoring"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
+    "education_level": "bachelor"
+  },
+  "Full Stack Developer": {
+    "skills": ["JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "Express.js", "REST APIs", "GraphQL", "SQL", "MongoDB", "Database Systems", "Git"],
+    "domain": "Technology",
+    "description": "Build complete web applications across frontend, backend, APIs, and databases using modern full-stack tooling.",
+    "roadmap": ["Web Fundamentals", "JavaScript and TypeScript", "React.js and Next.js", "Node.js and Express.js", "Database Systems and API Design", "Full Stack Deployment"],
+    "degree_required": false,
+    "portfolio_required": true,
+    "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],
+    "education_level": "bachelor"
+  },
+  "MERN Stack Developer": {
+    "skills": ["JavaScript", "React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "GraphQL", "Frontend Development", "Backend Development", "Database Systems", "Git"],
+    "domain": "Technology",
+    "description": "Develop end-to-end applications with MongoDB, Express.js, React.js, and Node.js while integrating modern API patterns.",
+    "roadmap": ["JavaScript Foundations", "React.js UI Development", "Node.js and Express.js Services", "MongoDB Data Modeling", "REST APIs and GraphQL", "MERN Project Deployment"],
     "degree_required": false,
     "portfolio_required": true,
     "required_degree": ["BCA", "BSc Computer Science", "BE Computer Science", "BTech Computer Science"],

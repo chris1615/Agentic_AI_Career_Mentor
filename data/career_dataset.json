@@ -1,0 +1,3073 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "total_careers": 52,
+    "domains": ["Science", "Commerce", "Humanities"],
+    "last_updated": "2025-01",
+    "description": "Comprehensive career dataset for AI-based career recommendation, skill gap analysis, and roadmap generation"
+  },
+  "careers": [
+    {
+      "career_name": "Chartered Accountant (CA)",
+      "category": "Commerce",
+      "description": "A licensed financial expert responsible for auditing, taxation, financial reporting, and advisory services for individuals, firms, and corporations.",
+      "required_skills": [
+        "Financial accounting and reporting",
+        "Taxation laws (Direct and Indirect)",
+        "Auditing and assurance",
+        "Corporate law and compliance",
+        "Financial statement analysis",
+        "MS Excel and spreadsheet modeling",
+        "Attention to detail",
+        "Analytical reasoning"
+      ],
+      "education_required": [
+        "10+2 in any stream (Commerce preferred)",
+        "CA Foundation (entry route post-12th)",
+        "CA Intermediate (both groups)",
+        "3-year Articleship under a practicing CA",
+        "CA Final (both groups)"
+      ],
+      "specific_degree_requirements": "ICAI registration mandatory. Graduates can enter via CA Direct Entry route skipping Foundation. All three levels (Foundation, Intermediate, Final) must be cleared through ICAI.",
+      "certifications": [
+        "ICAI Certificate of Practice (COP)",
+        "Diploma in Information Systems Audit (DISA)",
+        "Certificate Course on Forensic Accounting and Fraud Detection",
+        "International Financial Reporting Standards (IFRS) Certification"
+      ],
+      "entrance_exams": [
+        "CA Foundation Exam (ICAI)",
+        "CA Intermediate Exam (ICAI)",
+        "CA Final Exam (ICAI)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in Commerce (or any stream)",
+        "Register with ICAI for CA Foundation",
+        "Clear CA Foundation exam (4 papers)",
+        "Register and clear CA Intermediate Group I and Group II",
+        "Begin 3-year Articleship under a registered CA firm",
+        "Complete Advanced IT Training and Management Training",
+        "Clear CA Final Group I and Group II during or after articleship",
+        "Obtain ICAI membership and Certificate of Practice (if practicing)",
+        "Choose specialization: Audit, Tax, Corporate Finance, or Advisory"
+      ],
+      "tools_or_technologies": [
+        "Tally ERP 9 / Tally Prime",
+        "SAP FICO",
+        "MS Excel (Advanced)",
+        "QuickBooks",
+        "Zoho Books",
+        "GSTN Portal",
+        "Income Tax e-filing Portal",
+        "MCA21 Portal"
+      ],
+      "experience_level": "Entry (Articleship) → Junior CA → Senior CA → Partner",
+      "average_salary_range": "INR 6–12 LPA (fresher); INR 15–40 LPA (5+ years); INR 50 LPA+ (Partner level)",
+      "future_scope": "High demand in Big 4 firms (Deloitte, PwC, EY, KPMG), corporate finance, CFO roles, government audits, and international practice with ACCA/CPA equivalency."
+    },
+    {
+      "career_name": "Company Secretary (CS)",
+      "category": "Commerce",
+      "description": "A corporate governance professional responsible for legal compliance, board advisory, secretarial functions, and ensuring adherence to corporate laws and regulations.",
+      "required_skills": [
+        "Corporate law and governance",
+        "Securities law and SEBI regulations",
+        "Company Act compliance",
+        "Board meeting management and minute drafting",
+        "Legal drafting and documentation",
+        "ROC filings and MCA compliance",
+        "Analytical and legal reasoning",
+        "Communication and presentation skills"
+      ],
+      "education_required": [
+        "10+2 in any stream",
+        "CS Foundation Program (ICSI)",
+        "CS Executive Program",
+        "CS Professional Program",
+        "15-month practical training"
+      ],
+      "specific_degree_requirements": "Graduates can directly enroll in CS Executive without clearing CS Foundation. Membership of ICSI is mandatory to practice as CS. LLB is an added advantage but not mandatory.",
+      "certifications": [
+        "ICSI Membership Certificate",
+        "Certificate of Practice (for independent practice)",
+        "Insolvency Professional Certificate (IBBI)",
+        "Diploma in Business Laws (ICSI)"
+      ],
+      "entrance_exams": [
+        "CS Foundation Exam (ICSI)",
+        "CS Executive Exam (ICSI)",
+        "CS Professional Exam (ICSI)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Register for CS Foundation with ICSI",
+        "Clear CS Foundation exam (4 papers)",
+        "Enroll in CS Executive Program and clear both modules",
+        "Enroll in CS Professional Program and clear all modules",
+        "Complete 15-month mandatory practical training",
+        "Obtain ICSI Associate Membership (ACS)",
+        "Apply for Certificate of Practice (optional, for independent practice)",
+        "Progress to Fellow Membership (FCS) after 5 years of experience"
+      ],
+      "tools_or_technologies": [
+        "MCA21 Portal",
+        "SEBI Complaint Redress System (SCORES)",
+        "Tally ERP",
+        "MS Office Suite",
+        "Legal drafting software",
+        "NESL (National E-Governance Services)",
+        "BSE/NSE listing portals"
+      ],
+      "experience_level": "Trainee → Junior CS → Company Secretary → Group CS → Independent Practice",
+      "average_salary_range": "INR 5–9 LPA (fresher); INR 12–25 LPA (5+ years); INR 30–60 LPA (listed companies/senior roles)",
+      "future_scope": "Mandatory role in all listed and public companies. Growing demand due to increasing compliance requirements, SEBI regulations, IBC proceedings, and ESG governance mandates."
+    },
+    {
+      "career_name": "Investment Banker",
+      "category": "Commerce",
+      "description": "A finance professional who helps organizations raise capital, execute mergers and acquisitions, manage IPOs, and provide strategic financial advisory services.",
+      "required_skills": [
+        "Financial modeling and valuation (DCF, LBO, precedent transactions)",
+        "Mergers and acquisitions (M&A) deal structuring",
+        "Capital markets knowledge (equity, debt)",
+        "Financial statement analysis",
+        "Pitch book and presentation creation",
+        "Excel and PowerPoint (advanced)",
+        "Quantitative reasoning and problem-solving",
+        "Client relationship management"
+      ],
+      "education_required": [
+        "Bachelor's in Finance, Economics, Commerce, or Engineering",
+        "MBA in Finance (highly preferred for senior roles)",
+        "CFA (CFA Institute) — strongly recommended"
+      ],
+      "specific_degree_requirements": "MBA from a top-tier institution (IIM, ISB, XLRI) is near-essential for front-office investment banking roles in India. Engineering graduates from IITs often enter via lateral hiring or top MBA programs.",
+      "certifications": [
+        "CFA Level I, II, III (CFA Institute)",
+        "Financial Modeling & Valuation Analyst (FMVA) — CFI",
+        "NISM Series certifications (for capital markets)",
+        "Bloomberg Market Concepts (BMC)"
+      ],
+      "entrance_exams": [
+        "CAT / GMAT (for MBA admission)",
+        "CFA exams (Level I, II, III)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in Commerce or Science",
+        "Pursue B.Com/BBA/B.Tech (Economics or Finance focus preferred)",
+        "Gain internship at a financial firm during undergraduate",
+        "Pursue MBA in Finance from a reputed institution OR directly enter as analyst via campus placement",
+        "Join as Investment Banking Analyst (IBA) at a bank or boutique firm",
+        "Progress to Associate, then Vice President (VP) level",
+        "Pursue CFA charter alongside career",
+        "Advance to Director and Managing Director (MD) roles",
+        "Specialize in sector: Healthcare, Tech, Real Estate, or Infrastructure banking"
+      ],
+      "tools_or_technologies": [
+        "Microsoft Excel (advanced financial modeling)",
+        "Microsoft PowerPoint (pitch decks)",
+        "Bloomberg Terminal",
+        "FactSet",
+        "Capital IQ (S&P Global)",
+        "Reuters Eikon",
+        "Dealogic"
+      ],
+      "experience_level": "Analyst → Associate → VP → Director → Managing Director",
+      "average_salary_range": "INR 10–18 LPA (analyst); INR 25–60 LPA (associate/VP); INR 80 LPA–2 Cr+ (MD level with bonuses)",
+      "future_scope": "Robust growth driven by India's increasing IPO activity, cross-border M&A, infrastructure investments, and startup ecosystem. Global mobility is high for CFA/MBA holders."
+    },
+    {
+      "career_name": "Financial Analyst",
+      "category": "Commerce",
+      "description": "Analyzes financial data, prepares reports, evaluates investment opportunities, and provides recommendations to help businesses and investors make informed financial decisions.",
+      "required_skills": [
+        "Financial modeling",
+        "Ratio analysis and financial statement interpretation",
+        "Equity and credit research",
+        "Budgeting and forecasting",
+        "Data visualization",
+        "Bloomberg/Reuters data usage",
+        "Advanced Excel and Python/R basics",
+        "Report writing and communication"
+      ],
+      "education_required": [
+        "Bachelor's in Finance, Economics, Commerce, or Statistics",
+        "MBA in Finance (preferred for senior roles)",
+        "CFA designation (highly valued)"
+      ],
+      "specific_degree_requirements": "B.Com/BBA with finance electives as minimum. CFA is internationally recognized and significantly boosts career prospects in equity research, asset management, and portfolio analysis.",
+      "certifications": [
+        "CFA (Chartered Financial Analyst) — Level I, II, III",
+        "Financial Risk Manager (FRM)",
+        "NISM Equity Derivatives Certification",
+        "Excel/VBA for Finance (Microsoft/Coursera)"
+      ],
+      "entrance_exams": [
+        "CFA Exams (Level I, II, III)",
+        "FRM Part I and II",
+        "CAT/GMAT (for MBA route)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in Commerce or Science (Math mandatory)",
+        "Pursue B.Com/BBA/BSc Economics",
+        "Gain internship in equity research, banking, or corporate finance",
+        "Start as Junior Financial Analyst",
+        "Pursue CFA Level I while working",
+        "Progress to Senior Analyst with specialization (equity/credit/FP&A)",
+        "Obtain full CFA charter",
+        "Move to portfolio management, research head, or CFO track"
+      ],
+      "tools_or_technologies": [
+        "Microsoft Excel (advanced)",
+        "Python (pandas, NumPy)",
+        "Bloomberg Terminal",
+        "Power BI / Tableau",
+        "SQL",
+        "Capital IQ",
+        "MATLAB (for quant roles)"
+      ],
+      "experience_level": "Junior Analyst → Senior Analyst → Lead Analyst → Research Head / Portfolio Manager",
+      "average_salary_range": "INR 5–10 LPA (entry); INR 15–30 LPA (3–6 years); INR 40–80 LPA (senior/fund management)",
+      "future_scope": "High demand across mutual funds, hedge funds, corporate finance, FP&A, and fintech. Increasing automation is shifting roles toward interpretation, strategy, and AI-driven analytics."
+    },
+    {
+      "career_name": "Banking Professional (Retail/Commercial Banking)",
+      "category": "Commerce",
+      "description": "Manages banking operations including customer accounts, credit appraisal, loan processing, branch management, and regulatory compliance for public or private sector banks.",
+      "required_skills": [
+        "Banking products and services knowledge",
+        "Credit appraisal and loan underwriting",
+        "KYC and AML compliance",
+        "Customer relationship management",
+        "Numerical aptitude",
+        "Branch operations and cash management",
+        "Financial regulation knowledge (RBI guidelines)",
+        "Communication in regional language"
+      ],
+      "education_required": [
+        "Bachelor's degree in any discipline (minimum for clerk/PO level)",
+        "MBA in Banking & Finance (for specialist/officer roles in private banks)"
+      ],
+      "specific_degree_requirements": "PSU banks (SBI, PNB, etc.) recruit via IBPS/SBI exams open to any graduate. Private banks (HDFC, ICICI) may prefer MBA or finance graduates for officer-track roles.",
+      "certifications": [
+        "JAIIB (Junior Associate of Indian Institute of Bankers)",
+        "CAIIB (Certified Associate of Indian Institute of Bankers)",
+        "NISM Certifications (for securities/insurance products)",
+        "Anti-Money Laundering (AML) Certification"
+      ],
+      "entrance_exams": [
+        "IBPS PO",
+        "IBPS Clerk",
+        "SBI PO",
+        "SBI Clerk",
+        "RBI Grade B",
+        "NABARD Grade A/B"
+      ],
+      "career_path_steps": [
+        "Complete graduation in any stream",
+        "Prepare for IBPS/SBI exams (Prelims + Mains + Interview)",
+        "Join as Probationary Officer (PO) or Clerk",
+        "Complete induction training at the bank's training institute",
+        "Clear JAIIB and CAIIB certifications",
+        "Progress to Branch Manager → Regional Manager",
+        "Pursue RBI Grade B for central banking / regulatory career",
+        "Specialize in credit, forex, treasury, or wealth management"
+      ],
+      "tools_or_technologies": [
+        "Finacle (Infosys Core Banking)",
+        "Temenos T24",
+        "MS Office",
+        "SWIFT (for international transfers)",
+        "CIBIL / credit bureau portals",
+        "RBI NEFT/RTGS systems"
+      ],
+      "experience_level": "Clerk/PO (Entry) → Officer → Branch Manager → Zonal Manager → General Manager",
+      "average_salary_range": "INR 3.5–6 LPA (clerk/PO entry); INR 8–15 LPA (branch manager); INR 20–40 LPA (GM/DGM level)",
+      "future_scope": "India's banking expansion, financial inclusion drives, and digital banking transformation ensure sustained demand. RBI Grade B and NABARD offer regulatory and development finance career tracks."
+    },
+    {
+      "career_name": "Human Resource Manager",
+      "category": "Commerce",
+      "description": "Manages recruitment, employee relations, performance management, training and development, payroll, and HR policy compliance within an organization.",
+      "required_skills": [
+        "Talent acquisition and sourcing",
+        "Employee relations and conflict resolution",
+        "Performance management systems",
+        "HR policy development and compliance",
+        "Payroll processing and HRIS management",
+        "Learning and development program design",
+        "Labor law knowledge",
+        "Organizational psychology"
+      ],
+      "education_required": [
+        "BBA/B.Com/BA (any discipline for entry level)",
+        "MBA in Human Resource Management (preferred for managerial roles)"
+      ],
+      "specific_degree_requirements": "MBA-HR from a recognized institution is the standard pathway for managerial HR roles. Postgraduate Diploma in Personnel Management (PGDPM) is an alternative.",
+      "certifications": [
+        "SHRM-CP or SHRM-SCP (Society for Human Resource Management)",
+        "PHRi (Professional in Human Resources - International)",
+        "Diploma in Labor Laws",
+        "SAP HCM / SuccessFactors Certification"
+      ],
+      "entrance_exams": [
+        "CAT / MAT / XAT (for MBA-HR admission)",
+        "XLRI XAT (BM/HRM programs)"
+      ],
+      "career_path_steps": [
+        "Complete 12th and pursue BBA/BA/B.Com",
+        "Pursue MBA in HRM from a recognized institution",
+        "Start as HR Executive or HR Generalist",
+        "Gain experience in recruitment, payroll, and employee relations",
+        "Progress to HR Manager handling full employee lifecycle",
+        "Specialize: Talent Acquisition, L&D, HRBP, or Compensation & Benefits",
+        "Advance to HR Business Partner (HRBP) or HR Head",
+        "Move toward Chief Human Resources Officer (CHRO)"
+      ],
+      "tools_or_technologies": [
+        "SAP HCM / SuccessFactors",
+        "Workday",
+        "Darwinbox",
+        "Zoho People",
+        "LinkedIn Recruiter",
+        "Keka HR",
+        "MS Excel (HR analytics)"
+      ],
+      "experience_level": "HR Executive → HR Manager → Senior HR Manager → HRBP → HR Head → CHRO",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–18 LPA (manager); INR 25–60 LPA (CHRO/HR Director)",
+      "future_scope": "Growing demand for HR tech expertise, people analytics, remote work management, DEI (Diversity, Equity, Inclusion) roles, and organizational design in global MNCs and startups."
+    },
+    {
+      "career_name": "Data Scientist",
+      "category": "Science",
+      "description": "Extracts actionable insights from large datasets using statistical modeling, machine learning, and programming. Builds predictive models to support business decisions across industries.",
+      "required_skills": [
+        "Python programming (pandas, NumPy, scikit-learn)",
+        "Machine learning algorithms (supervised, unsupervised, reinforcement)",
+        "Statistical analysis and hypothesis testing",
+        "Data wrangling and cleaning",
+        "SQL for data querying",
+        "Data visualization (Matplotlib, Seaborn, Tableau)",
+        "Deep learning basics (TensorFlow/PyTorch)",
+        "Business problem framing"
+      ],
+      "education_required": [
+        "Bachelor's in Computer Science, Statistics, Mathematics, or Engineering",
+        "Master's in Data Science, Statistics, or AI/ML (preferred for senior roles)"
+      ],
+      "specific_degree_requirements": "B.Tech/B.Sc in CS, Math, or Statistics is the most common entry route. Postgraduate degrees (M.Tech, M.Sc, MS) in Data Science or AI significantly improve placement prospects at top firms.",
+      "certifications": [
+        "Google Professional Data Engineer",
+        "AWS Certified Machine Learning – Specialty",
+        "IBM Data Science Professional Certificate (Coursera)",
+        "Microsoft Azure Data Scientist Associate (DP-100)",
+        "TensorFlow Developer Certificate"
+      ],
+      "entrance_exams": [
+        "JEE Main/Advanced (for B.Tech CS at IITs/NITs)",
+        "GATE (for M.Tech admission)",
+        "JEST / TIFR GS (for research-oriented MS/PhD)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with Math and Science",
+        "Pursue B.Tech CS / B.Sc Statistics or Mathematics",
+        "Learn Python, SQL, and ML fundamentals during undergrad",
+        "Build a portfolio of 3–5 projects on GitHub",
+        "Complete internship as Data Analyst or ML Intern",
+        "Start as Junior Data Scientist or Data Analyst",
+        "Pursue M.Sc/M.Tech Data Science or industry certifications",
+        "Advance to Senior Data Scientist or ML Engineer",
+        "Lead a data science team or transition to AI Product/Research"
+      ],
+      "tools_or_technologies": [
+        "Python (scikit-learn, pandas, NumPy)",
+        "R",
+        "SQL / NoSQL (MongoDB)",
+        "TensorFlow / PyTorch",
+        "Jupyter Notebooks",
+        "Apache Spark / Hadoop",
+        "Tableau / Power BI",
+        "AWS / GCP / Azure (cloud ML services)",
+        "MLflow / DVC (MLOps)"
+      ],
+      "experience_level": "Data Analyst → Junior Data Scientist → Data Scientist → Senior DS → Lead/Principal DS → Head of Data",
+      "average_salary_range": "INR 6–12 LPA (entry); INR 18–35 LPA (3–5 years); INR 40–80 LPA+ (senior/lead at top tech firms)",
+      "future_scope": "One of the fastest-growing roles globally. Increasing applications in healthcare AI, climate tech, fintech, autonomous systems, and GenAI products. Demand far exceeds supply in India."
+    },
+    {
+      "career_name": "Software Engineer",
+      "category": "Science",
+      "description": "Designs, develops, tests, and maintains software applications, systems, and platforms using programming languages and software development methodologies.",
+      "required_skills": [
+        "Proficiency in at least one programming language (Java, Python, C++, JavaScript)",
+        "Data structures and algorithms",
+        "Object-oriented programming (OOP)",
+        "Version control (Git)",
+        "Database management (SQL/NoSQL)",
+        "REST API design and integration",
+        "System design and architecture fundamentals",
+        "Agile/Scrum development process"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Computer Science, IT, or Electronics",
+        "B.Sc Computer Science (alternate route)",
+        "M.Tech CS (for research or senior roles at product companies)"
+      ],
+      "specific_degree_requirements": "B.Tech in Computer Science from NIT/IIT or a reputed private college is the primary route. Non-CS engineers or BCA/B.Sc graduates can transition via coding bootcamps or online courses.",
+      "certifications": [
+        "AWS Certified Developer – Associate",
+        "Google Associate Android Developer",
+        "Oracle Java SE Programmer (OCP)",
+        "Meta Frontend Developer Certificate",
+        "Kubernetes Administrator (CKA)"
+      ],
+      "entrance_exams": [
+        "JEE Main (for NIT/IIIT/GFTIs)",
+        "JEE Advanced (for IITs)",
+        "State CETs (for state engineering colleges)",
+        "GATE (for M.Tech/PSU software roles)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with Physics, Chemistry, Math (PCM)",
+        "Clear JEE or State CET for B.Tech admission",
+        "Learn core CS fundamentals: DSA, OOP, DBMS, OS",
+        "Build projects and contribute to open source",
+        "Complete software development internship",
+        "Join as Software Engineer I (entry level)",
+        "Progress to Software Engineer II → Senior Software Engineer",
+        "Specialize: Backend, Frontend, Full-Stack, DevOps, or Embedded",
+        "Move toward Principal Engineer, Tech Lead, or Engineering Manager"
+      ],
+      "tools_or_technologies": [
+        "Git / GitHub / GitLab",
+        "IntelliJ IDEA / VS Code",
+        "Docker / Kubernetes",
+        "AWS / GCP / Azure",
+        "Jenkins / CI-CD pipelines",
+        "MySQL / PostgreSQL / MongoDB",
+        "React / Angular / Node.js",
+        "Postman (API testing)",
+        "JIRA / Confluence"
+      ],
+      "experience_level": "Intern → SWE I → SWE II → Senior SWE → Staff/Principal Engineer → Engineering Manager → Director of Engineering",
+      "average_salary_range": "INR 5–12 LPA (fresher); INR 20–40 LPA (3–6 years); INR 50–150 LPA+ (senior/FAANG-level)",
+      "future_scope": "Continuously evolving role with demand in AI/ML, cloud computing, Web3, cybersecurity, and quantum computing. Remote work opportunities and global job markets are widely accessible."
+    },
+    {
+      "career_name": "Cybersecurity Analyst",
+      "category": "Science",
+      "description": "Protects organizational networks, systems, and data from cyber threats. Monitors security infrastructure, detects vulnerabilities, responds to incidents, and implements security policies.",
+      "required_skills": [
+        "Network security fundamentals (TCP/IP, firewalls, VPN)",
+        "Vulnerability assessment and penetration testing (VAPT)",
+        "Security Information and Event Management (SIEM)",
+        "Incident response and digital forensics",
+        "Knowledge of OWASP Top 10 vulnerabilities",
+        "Cryptography fundamentals",
+        "Linux and Windows security administration",
+        "Scripting (Python/Bash) for automation"
+      ],
+      "education_required": [
+        "B.Tech in CS, IT, or Electronics",
+        "B.Sc Computer Science (with cybersecurity electives)",
+        "M.Tech in Cybersecurity or Information Security (preferred for senior roles)"
+      ],
+      "specific_degree_requirements": "No single mandatory degree, but B.Tech CS or IT is the most common entry path. Industry certifications carry equal or greater weight than degrees in this domain.",
+      "certifications": [
+        "CompTIA Security+",
+        "Certified Ethical Hacker (CEH) — EC-Council",
+        "Certified Information Systems Security Professional (CISSP)",
+        "Offensive Security Certified Professional (OSCP)",
+        "GIAC Security Essentials (GSEC)",
+        "Certified Information Security Manager (CISM)"
+      ],
+      "entrance_exams": [
+        "JEE Main/Advanced (for B.Tech CS)",
+        "GATE CS (for M.Tech Cybersecurity)",
+        "NIELIT O/A/B/C Level Exams"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM",
+        "Pursue B.Tech in CS/IT or B.Sc CS",
+        "Build foundational knowledge in networking (CompTIA Network+)",
+        "Earn CompTIA Security+ certification",
+        "Practice on platforms: HackTheBox, TryHackMe, PicoCTF",
+        "Gain entry-level role: SOC Analyst Tier 1 or Security Intern",
+        "Earn CEH and OSCP certifications",
+        "Advance to Penetration Tester, Security Engineer, or Threat Intelligence Analyst",
+        "Pursue CISSP/CISM for senior governance and management roles",
+        "Lead as CISO (Chief Information Security Officer)"
+      ],
+      "tools_or_technologies": [
+        "Kali Linux",
+        "Metasploit Framework",
+        "Wireshark",
+        "Nmap / Nessus / Burp Suite",
+        "Splunk (SIEM)",
+        "Snort / Suricata (IDS/IPS)",
+        "CrowdStrike / Palo Alto NGFW",
+        "OWASP ZAP",
+        "Python / Bash scripting"
+      ],
+      "experience_level": "SOC Analyst Tier 1 → Tier 2 Analyst → Penetration Tester → Security Engineer → Security Architect → CISO",
+      "average_salary_range": "INR 5–10 LPA (entry); INR 15–30 LPA (3–5 years); INR 40–80 LPA (CISO/senior architect)",
+      "future_scope": "Critical shortage of cybersecurity professionals globally. India's growing digital economy, government mandates (DPDP Act), and fintech expansion make this one of the highest-demand roles for the next decade."
+    },
+    {
+      "career_name": "Artificial Intelligence / Machine Learning Engineer",
+      "category": "Science",
+      "description": "Develops and deploys AI/ML models and systems including neural networks, NLP models, computer vision systems, and recommendation engines for production environments.",
+      "required_skills": [
+        "Deep learning (CNNs, RNNs, Transformers)",
+        "Machine learning model development (scikit-learn, XGBoost)",
+        "Natural Language Processing (NLP/NLU)",
+        "Python programming (PyTorch, TensorFlow, Hugging Face)",
+        "MLOps and model deployment (Docker, Kubernetes, MLflow)",
+        "Feature engineering and data pipelines",
+        "Cloud ML services (AWS SageMaker, GCP Vertex AI)",
+        "Linear algebra, calculus, and probability"
+      ],
+      "education_required": [
+        "B.Tech in CS, Mathematics, or Statistics",
+        "M.Tech or M.Sc in AI/ML, Data Science, or CS (strongly preferred)",
+        "PhD (for research-oriented roles at AI labs)"
+      ],
+      "specific_degree_requirements": "Strong mathematical foundation is essential. M.Tech or MS from top institutions (IITs, IISc, CMU, Stanford) significantly enhances prospects for top AI roles. Research publications are valued at product AI labs.",
+      "certifications": [
+        "Deep Learning Specialization — Andrew Ng (Coursera/DeepLearning.AI)",
+        "AWS Certified Machine Learning – Specialty",
+        "TensorFlow Developer Certificate",
+        "NVIDIA Deep Learning Institute Certification",
+        "Hugging Face NLP Course Certificate"
+      ],
+      "entrance_exams": [
+        "JEE Advanced (IIT for B.Tech CS/Math)",
+        "GATE CS/DA (Data Science paper for M.Tech)",
+        "GRE (for MS abroad)",
+        "JEST / TIFR GS (for research positions)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM (strong Math background)",
+        "Pursue B.Tech CS or B.Sc Math/Statistics",
+        "Master Python, linear algebra, calculus, and probability",
+        "Complete Deep Learning Specialization and hands-on projects",
+        "Build NLP or computer vision portfolio projects",
+        "Intern as ML Research Intern or AI Engineer Intern",
+        "Join as Junior ML Engineer or AI Researcher",
+        "Pursue M.Tech AI or contribute to open-source AI projects",
+        "Advance to Senior ML Engineer → ML Lead → AI Architect",
+        "Contribute to foundation model development or pursue PhD for AI Research Scientist roles"
+      ],
+      "tools_or_technologies": [
+        "Python (PyTorch, TensorFlow, Keras)",
+        "Hugging Face Transformers",
+        "CUDA / GPU computing",
+        "MLflow / Weights & Biases",
+        "Kubernetes / Docker (MLOps)",
+        "Apache Airflow (pipeline orchestration)",
+        "Spark / Dask (distributed computing)",
+        "LangChain (LLM applications)",
+        "FAISS / Pinecone (vector databases)"
+      ],
+      "experience_level": "ML Intern → Junior ML Engineer → ML Engineer → Senior ML Engineer → Staff ML Engineer → Principal AI Researcher",
+      "average_salary_range": "INR 8–15 LPA (entry); INR 25–60 LPA (3–6 years); INR 80 LPA–2 Cr+ (senior at top AI firms/FAANG)",
+      "future_scope": "Explosive growth driven by generative AI, large language models, autonomous systems, healthcare AI, and climate modeling. Among the top 3 most in-demand technical roles globally through 2030."
+    },
+    {
+      "career_name": "Civil Engineer",
+      "category": "Science",
+      "description": "Plans, designs, constructs, and oversees infrastructure projects including roads, bridges, buildings, dams, water supply systems, and urban development projects.",
+      "required_skills": [
+        "Structural analysis and design",
+        "AutoCAD and structural design software",
+        "Construction project management",
+        "Soil mechanics and geotechnical engineering",
+        "Material science and concrete technology",
+        "Cost estimation and quantity surveying",
+        "Environmental impact assessment",
+        "Building codes and IS standards"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Civil Engineering",
+        "M.Tech in Structural Engineering, Transportation, or Environmental Engineering (for specialization)",
+        "PhD (for academic/research roles)"
+      ],
+      "specific_degree_requirements": "B.Tech Civil Engineering from an AICTE-approved institution is the minimum. PE (Professional Engineer) license or institution membership (MIE) is valued for senior roles. GATE is required for PSU and government roles.",
+      "certifications": [
+        "Project Management Professional (PMP)",
+        "LEED Green Associate / LEED AP",
+        "AutoCAD Professional Certification",
+        "BIM Manager Certification (Autodesk Revit)",
+        "Member of Institution of Engineers India (MIE)"
+      ],
+      "entrance_exams": [
+        "JEE Main (for NIT/IIIT/GFTIs)",
+        "JEE Advanced (for IITs)",
+        "GATE Civil Engineering (for M.Tech, PSU jobs)",
+        "State CETs"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM",
+        "Clear JEE / State CET and join B.Tech Civil Engineering",
+        "Learn AutoCAD, STAAD Pro, and structural design during undergrad",
+        "Complete internship at a construction firm or consulting company",
+        "Join as Junior Civil Engineer or Site Engineer",
+        "Clear GATE for PSU roles (NHAI, NTPC, CPWD) or pursue M.Tech",
+        "Progress to Project Manager → Senior Project Manager",
+        "Pursue PMP certification for leadership roles",
+        "Advance to Project Director or start independent consultancy"
+      ],
+      "tools_or_technologies": [
+        "AutoCAD / AutoCAD Civil 3D",
+        "STAAD Pro / ETABS (structural analysis)",
+        "Autodesk Revit (BIM)",
+        "Primavera P6 (project management)",
+        "MS Project",
+        "ANSYS (FEM analysis)",
+        "SAP2000",
+        "Google Earth / GIS Tools"
+      ],
+      "experience_level": "Junior Engineer → Civil Engineer → Senior Engineer → Project Manager → Project Director → VP Projects",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–20 LPA (5 years); INR 25–60 LPA (senior/PM level); PSU: INR 5–15 LPA",
+      "future_scope": "Strong government investment in infrastructure (PM GatiShakti, Smart Cities, AMRUT), real estate growth, metro rail expansion, and increasing adoption of BIM and smart construction technologies."
+    },
+    {
+      "career_name": "Mechanical Engineer",
+      "category": "Science",
+      "description": "Designs, develops, tests, and manufactures mechanical systems, machinery, automotive components, HVAC systems, robotics, and industrial equipment.",
+      "required_skills": [
+        "CAD/CAM design (SolidWorks, CATIA, AutoCAD)",
+        "Thermodynamics and heat transfer",
+        "Manufacturing processes (CNC, casting, welding)",
+        "Finite Element Analysis (FEA)",
+        "Engineering drawing and GD&T",
+        "Material science and selection",
+        "Robotics and automation basics",
+        "Lean manufacturing and Six Sigma"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Mechanical Engineering",
+        "M.Tech in Thermal, Manufacturing, Design, or Automotive Engineering",
+        "PhD (for academic/R&D roles)"
+      ],
+      "specific_degree_requirements": "B.Tech Mechanical from AICTE-approved or NITs/IITs is the primary path. Specialization in robotics, EV powertrain, or aerospace significantly boosts career prospects.",
+      "certifications": [
+        "SolidWorks Certified Professional (CSWP)",
+        "CATIA V5/V6 Certification (Dassault Systèmes)",
+        "Six Sigma Green Belt / Black Belt",
+        "PMP (for project management track)",
+        "Lean Manufacturing Certification"
+      ],
+      "entrance_exams": [
+        "JEE Main/Advanced",
+        "GATE Mechanical Engineering (for M.Tech/PSUs)",
+        "State CETs"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM",
+        "Pursue B.Tech in Mechanical Engineering",
+        "Learn SolidWorks / CATIA and thermodynamics during undergrad",
+        "Complete internship in an automotive, aerospace, or manufacturing firm",
+        "Join as Graduate Engineer Trainee or Design Engineer",
+        "Clear GATE for PSU roles (BHEL, ONGC, HAL) or pursue M.Tech",
+        "Gain experience in design, manufacturing, or maintenance",
+        "Progress to Senior Engineer → Technical Lead → Engineering Manager",
+        "Specialize in EV, robotics, or renewable energy systems"
+      ],
+      "tools_or_technologies": [
+        "SolidWorks / CATIA",
+        "AutoCAD (2D/3D)",
+        "ANSYS (FEA/CFD)",
+        "MATLAB / Simulink",
+        "MasterCAM (CNC programming)",
+        "HyperMesh",
+        "Arena (simulation)",
+        "SAP Plant Maintenance (PM)"
+      ],
+      "experience_level": "Trainee → Design/Manufacturing Engineer → Senior Engineer → Lead Engineer → Engineering Manager → VP Engineering",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–18 LPA (5 years); INR 20–50 LPA (senior/managerial roles)",
+      "future_scope": "Growing demand in EV manufacturing, aerospace, defense, robotics and automation, hydrogen energy, and smart factories (Industry 4.0). Core to India's Make in India initiative."
+    },
+    {
+      "career_name": "Electrical Engineer",
+      "category": "Science",
+      "description": "Designs, develops, and maintains electrical systems, power infrastructure, control systems, and electronic devices across industries including power utilities, manufacturing, and telecoms.",
+      "required_skills": [
+        "Circuit analysis and design",
+        "Power systems and electrical machines",
+        "Control systems and PLC programming",
+        "Embedded systems basics",
+        "MATLAB / SIMULINK modeling",
+        "Electrical safety standards (IEC, IEEE)",
+        "Power electronics (inverters, converters)",
+        "Load analysis and energy audit"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Electrical or Electrical & Electronics Engineering",
+        "M.Tech in Power Systems, Control Systems, or Embedded Systems"
+      ],
+      "specific_degree_requirements": "B.Tech EE from accredited institution. GATE is important for PSU recruitment (NTPC, PGCIL, BHEL). Renewable energy and smart grid specializations are increasingly relevant.",
+      "certifications": [
+        "Six Sigma Green Belt",
+        "Certified Energy Auditor (BEE — Bureau of Energy Efficiency)",
+        "PLC Programming Certifications (Siemens, Allen-Bradley)",
+        "AutoCAD Electrical Certification",
+        "ETAP Software Training (Power System Analysis)"
+      ],
+      "entrance_exams": [
+        "JEE Main/Advanced",
+        "GATE Electrical Engineering",
+        "State CET"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM",
+        "Pursue B.Tech in Electrical Engineering",
+        "Learn circuit theory, power systems, and MATLAB",
+        "Intern at a power company, substation, or manufacturing plant",
+        "Join as Electrical Engineer / Graduate Engineer Trainee",
+        "Clear GATE for PSU roles (NTPC, PGCIL, BHEL, BPCL)",
+        "Advance to Senior Electrical Engineer → Project Manager",
+        "Specialize in renewables, smart grids, or power electronics"
+      ],
+      "tools_or_technologies": [
+        "MATLAB / SIMULINK",
+        "AutoCAD Electrical",
+        "ETAP (Power System Analysis)",
+        "PLC Software (Siemens TIA Portal, Allen-Bradley Studio 5000)",
+        "LabVIEW",
+        "PSCAD",
+        "SCADA systems",
+        "DIgSILENT PowerFactory"
+      ],
+      "experience_level": "Trainee → Electrical Engineer → Senior Engineer → Project Manager → Chief Electrical Engineer",
+      "average_salary_range": "INR 3.5–7 LPA (entry); INR 8–20 LPA (5 years); INR 15–40 LPA PSU scale with DAs (senior level)",
+      "future_scope": "Critical for India's power sector expansion, renewable energy transition (solar, wind), EV charging infrastructure, and smart grid modernization."
+    },
+    {
+      "career_name": "Doctor (MBBS / MD Physician)",
+      "category": "Science",
+      "description": "A licensed medical professional who diagnoses, treats, and manages patient health across various specialties including general medicine, surgery, pediatrics, and others.",
+      "required_skills": [
+        "Clinical diagnosis and patient assessment",
+        "Medical history taking and physical examination",
+        "Pharmacology and prescription management",
+        "Emergency and trauma care",
+        "Anatomy, physiology, and pathology knowledge",
+        "Surgical assistance skills (specialty-dependent)",
+        "Empathy and patient communication",
+        "Medical ethics and confidentiality"
+      ],
+      "education_required": [
+        "12th with Physics, Chemistry, Biology (PCB)",
+        "MBBS (5.5 years including 1-year internship)",
+        "MD/MS (3-year postgraduate specialization — optional but required for specialists)",
+        "DM/MCh (super-specialization — 3 years, for fields like Cardiology, Neurology)"
+      ],
+      "specific_degree_requirements": "NEET-UG is mandatory for MBBS admission in India. NEET-PG is required for MD/MS admissions. NEET-SS for super-specialty (DM/MCh). MCI/NMC registration is compulsory to practice.",
+      "certifications": [
+        "NMC (National Medical Commission) Registration",
+        "BLS / ACLS / ATLS Certification",
+        "Fellowship programs (FICP, FICS, etc.)",
+        "Subspecialty Diploma (DNB, Diploma in Cardiology, etc.)"
+      ],
+      "entrance_exams": [
+        "NEET-UG (for MBBS admission)",
+        "NEET-PG (for MD/MS admission)",
+        "NEET-SS (for DM/MCh super-specialization)",
+        "FMGE (for foreign medical graduates practicing in India)",
+        "USMLE (for practice in the USA)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB (minimum 50% for NEET eligibility)",
+        "Prepare for and clear NEET-UG",
+        "Enroll in MBBS (4.5 years academic + 1 year compulsory rotating internship)",
+        "Obtain provisional NMC registration after internship",
+        "Prepare for NEET-PG and choose specialty (MD/MS/DNB)",
+        "Complete 3-year MD/MS residency",
+        "Optional: Clear NEET-SS for super-specialty (DM/MCh — 3 more years)",
+        "Register with State Medical Council and begin practice",
+        "Join as Consultant, RMO, or open private practice"
+      ],
+      "tools_or_technologies": [
+        "Electronic Health Records (Epic, Meditech, Practo)",
+        "Diagnostic imaging review (PACS/DICOM viewers)",
+        "Stethoscope, ECG machine, spirometer (clinical tools)",
+        "Telemedicine platforms (Practo, Apollo 247)",
+        "Medical databases (PubMed, UpToDate, NEJM)",
+        "Clinical decision support tools"
+      ],
+      "experience_level": "Medical Student → MBBS Intern → Junior Resident → Senior Resident (MD) → Consultant/Specialist",
+      "average_salary_range": "INR 6–10 LPA (junior doctor/RMO); INR 15–40 LPA (MBBS consultant); INR 30–150 LPA+ (senior specialist/superspecialist)",
+      "future_scope": "Perpetually high demand, especially in Tier 2/3 cities. Telemedicine growth, AI-assisted diagnostics, and health tech integration are transforming clinical practice. India faces a severe doctor shortage."
+    },
+    {
+      "career_name": "Pharmacist",
+      "category": "Science",
+      "description": "Specializes in medicinal drugs, their formulation, dispensing, safety, and therapeutic use. Works in retail pharmacies, hospitals, pharmaceutical companies, and drug regulatory agencies.",
+      "required_skills": [
+        "Pharmacology and drug interactions",
+        "Drug dispensing and patient counseling",
+        "Quality control and formulation",
+        "Hospital pharmacy management",
+        "Regulatory affairs knowledge (CDSCO, FDA)",
+        "Compounding and drug preparation",
+        "Inventory and supply chain management",
+        "Patient medication adherence communication"
+      ],
+      "education_required": [
+        "D.Pharm (2-year diploma for entry-level dispensing)",
+        "B.Pharm (4-year degree — preferred)",
+        "M.Pharm (2-year PG for specialization)",
+        "Pharm.D (6-year integrated clinical pharmacy)"
+      ],
+      "specific_degree_requirements": "Pharmacy Council of India (PCI) registration mandatory for all pharmacists. B.Pharm is the industry standard for pharmaceutical company roles. Pharm.D for clinical pharmacy practice in hospitals.",
+      "certifications": [
+        "PCI Registration (mandatory)",
+        "Clinical Research Associate (CRA) Certification",
+        "Regulatory Affairs Certification (RAC) — RAPS",
+        "Good Manufacturing Practice (GMP) Certification"
+      ],
+      "entrance_exams": [
+        "NEET (for B.Pharm in some states)",
+        "State-level pharmacy entrance exams (WBJEE, KCET, etc.)",
+        "GPAT — Graduate Pharmacy Aptitude Test (for M.Pharm admission)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB or PCM",
+        "Pursue B.Pharm or Pharm.D",
+        "Register with State Pharmacy Council",
+        "Start as Retail/Hospital Pharmacist or Pharma Sales Rep",
+        "Pursue M.Pharm for specialization (Pharmaceutics, Pharmacology, Clinical Pharmacy)",
+        "Move to pharmaceutical R&D, regulatory affairs, or clinical research",
+        "Advance to Senior Pharmacist → Drug Inspector → R&D Lead",
+        "Clear GPAT for M.Pharm or fellowship programs"
+      ],
+      "tools_or_technologies": [
+        "PharmNet (hospital pharmacy software)",
+        "Tally (inventory management)",
+        "CDSCO drug approval portals",
+        "SAP (supply chain in pharma)",
+        "LIMS (Laboratory Information Management System)",
+        "Clinical trial management software (CTMS)"
+      ],
+      "experience_level": "Junior Pharmacist → Senior Pharmacist → Chief Pharmacist → Drug Inspector / Regulatory Affairs Manager",
+      "average_salary_range": "INR 2.5–5 LPA (D.Pharm/B.Pharm entry); INR 5–12 LPA (M.Pharm/hospital); INR 15–30 LPA (R&D/regulatory)",
+      "future_scope": "Strong demand driven by India's pharmaceutical sector (world's largest generic drug supplier), expanding hospital pharmacies, clinical trial growth, and regulatory career opportunities with CDSCO."
+    },
+    {
+      "career_name": "Biomedical Engineer",
+      "category": "Science",
+      "description": "Applies engineering principles to design and develop medical equipment, prosthetics, diagnostic devices, and healthcare technologies. Works at the intersection of medicine and engineering.",
+      "required_skills": [
+        "Medical device design and prototyping",
+        "Biomechanics and biomaterials",
+        "Electronics and signal processing",
+        "Medical imaging basics (MRI, CT, Ultrasound)",
+        "Regulatory compliance (MDR, ISO 13485, FDA 510k)",
+        "Clinical data analysis",
+        "Programming basics (MATLAB, Python)",
+        "Laboratory and testing skills"
+      ],
+      "education_required": [
+        "B.Tech in Biomedical Engineering",
+        "B.Tech in Electronics/Electrical + specialization",
+        "M.Tech in Biomedical Engineering or Medical Devices",
+        "M.Sc in Biomedical Science (research track)"
+      ],
+      "specific_degree_requirements": "B.Tech Biomedical Engineering from recognized institutions. For R&D roles at medical device companies (Siemens Healthineers, GE Healthcare, Philips), M.Tech or international MS degrees are preferred.",
+      "certifications": [
+        "Regulatory Affairs Certification (RAC) — RAPS",
+        "ISO 13485 Lead Auditor (Medical Devices QMS)",
+        "MATLAB Biomedical Signal Processing",
+        "Clinical Engineering Certification"
+      ],
+      "entrance_exams": [
+        "JEE Main/Advanced (B.Tech admission)",
+        "GATE Biomedical Engineering (BM paper, new) or GATE EC",
+        "GATE Life Sciences (for M.Sc research track)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM or PCB",
+        "Pursue B.Tech Biomedical Engineering",
+        "Learn signal processing, electronics, and biomedical instrumentation",
+        "Intern at hospital biomedical department or medical device company",
+        "Start as Biomedical Engineer Trainee in hospital or device firm",
+        "Pursue M.Tech Biomedical or Regulatory Affairs certification",
+        "Advance to Senior Biomedical Engineer → R&D Engineer",
+        "Specialize in medical imaging, implants, wearables, or diagnostics",
+        "Move to regulatory affairs, clinical engineering, or product management"
+      ],
+      "tools_or_technologies": [
+        "MATLAB / Simulink",
+        "SolidWorks (device design)",
+        "LabVIEW (biosignal acquisition)",
+        "COMSOL Multiphysics",
+        "Python (biomedical data analysis)",
+        "DICOM / medical imaging viewers",
+        "EGSIM / SPICE (circuit simulation)",
+        "Clinical trial management systems"
+      ],
+      "experience_level": "Trainee → Biomedical Engineer → Senior Engineer → Project Lead → R&D Manager",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–18 LPA (5 years); INR 20–45 LPA (R&D/regulatory senior roles)",
+      "future_scope": "Growing rapidly due to India's medical device manufacturing push, hospital expansion, wearable health tech, AI diagnostics, and global demand for biomedical innovators."
+    },
+    {
+      "career_name": "Environmental Scientist / Ecologist",
+      "category": "Science",
+      "description": "Studies the environment, ecosystems, and the impact of human activities. Works on pollution control, environmental impact assessment, conservation, and sustainable development policy.",
+      "required_skills": [
+        "Environmental impact assessment (EIA)",
+        "GIS and remote sensing",
+        "Water and air quality testing",
+        "Ecological fieldwork and sampling",
+        "Environmental law and policy knowledge",
+        "Data analysis (R/Python for ecological data)",
+        "Report writing and stakeholder communication",
+        "Climate modeling basics"
+      ],
+      "education_required": [
+        "B.Sc in Environmental Science, Botany, Zoology, or Chemistry",
+        "M.Sc in Environmental Science or Environmental Management",
+        "M.Tech in Environmental Engineering (alternate route)",
+        "PhD (for research or academic roles)"
+      ],
+      "specific_degree_requirements": "M.Sc Environmental Science is the standard for most roles. EIA roles require certification from MoEFCC-recognized consultants. Government roles (PCBs, CPCB) often require M.Sc + competitive exams.",
+      "certifications": [
+        "ISO 14001 Lead Auditor (Environmental Management)",
+        "GIS Professional (GISP) Certification",
+        "Environmental Impact Assessment Consultant Accreditation (MoEFCC)",
+        "Climate Change Leadership Certificate (TERI)"
+      ],
+      "entrance_exams": [
+        "IIT JAM (for M.Sc admission)",
+        "BHU PET",
+        "CSIR-UGC NET (Environmental Science — for JRF and lectureship)",
+        "GATE Environmental Science (ES paper)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB or PCM",
+        "Pursue B.Sc Environmental Science or related science",
+        "Pursue M.Sc Environmental Science",
+        "Clear CSIR-UGC NET for lectureship or research fellowship",
+        "Work as EIA Consultant, Environmental Analyst, or Lab Technician",
+        "Gain MoEFCC EIA accreditation for consulting",
+        "Advance to Senior Environmental Consultant → Environmental Manager",
+        "Pursue PhD for academic or senior policy roles",
+        "Work with government bodies: CPCB, SPCBs, MoEFCC, TERI, NGOs"
+      ],
+      "tools_or_technologies": [
+        "ArcGIS / QGIS",
+        "ENVI (remote sensing)",
+        "R / Python (ecological statistics)",
+        "Google Earth Engine",
+        "AERMOD (air dispersion modeling)",
+        "MIKE FLOOD / HEC-HMS (hydrological modeling)",
+        "Environmental monitoring instruments (DO meter, pH meter, sound level meter)"
+      ],
+      "experience_level": "Research Assistant → Environmental Analyst → Senior Analyst → Environmental Manager → Chief Environmental Officer",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 7–15 LPA (5 years); INR 18–35 LPA (senior/consulting); Government scale varies",
+      "future_scope": "Growing importance due to climate change, India's green energy transition, mandatory EIA requirements, corporate ESG mandates, and international climate finance (Green Climate Fund projects)."
+    },
+    {
+      "career_name": "Research Scientist (Basic / Applied Science)",
+      "category": "Science",
+      "description": "Conducts original research to advance scientific knowledge in fields such as physics, chemistry, biology, or materials science. Works at universities, national labs, or R&D divisions of companies.",
+      "required_skills": [
+        "Experimental design and laboratory techniques",
+        "Scientific literature review and synthesis",
+        "Statistical analysis of experimental data",
+        "Scientific writing and publication",
+        "Specific domain expertise (field-dependent)",
+        "Critical thinking and hypothesis formation",
+        "Grant writing and funding proposal",
+        "Collaboration and peer review"
+      ],
+      "education_required": [
+        "B.Sc in relevant science discipline",
+        "M.Sc in specialized field",
+        "PhD (essential for independent research positions)"
+      ],
+      "specific_degree_requirements": "PhD from a reputed institution (IITs, IISc, TIFR, IISER, CSIR Labs) is the minimum for independent research scientist positions. Postdoctoral experience is often required for faculty or senior scientist roles.",
+      "certifications": [
+        "CSIR-UGC NET JRF (for research fellowship funding)",
+        "DST-INSPIRE Fellowship",
+        "Postdoctoral Fellowships (Ramanujan, DBT BioCARE, NBHM)",
+        "Patent filing and intellectual property certification"
+      ],
+      "entrance_exams": [
+        "IIT JAM (for M.Sc at IITs)",
+        "CSIR-UGC NET (for JRF fellowship and lectureship)",
+        "JEST (for physics/theoretical science PhD)",
+        "TIFR GS (for TIFR PhD programs)",
+        "IISER Aptitude Test (for IISER BS-MS programs)",
+        "DBT JRF (for biological sciences)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM or PCB",
+        "Pursue B.Sc in relevant science with first-class marks",
+        "Clear IIT JAM for M.Sc at IIT/IISc or top state universities",
+        "Clear CSIR-UGC NET or JEST/TIFR for PhD fellowship",
+        "Complete PhD (4–6 years) with published research output",
+        "Pursue postdoctoral position in India or abroad",
+        "Join as Assistant Research Scientist or Assistant Professor",
+        "Build research group, secure grants (DST, DBT, SERB)",
+        "Progress to Associate → Senior Scientist / Professor"
+      ],
+      "tools_or_technologies": [
+        "Domain-specific lab equipment",
+        "Python / R / MATLAB (data analysis)",
+        "Origin Pro (scientific graphing)",
+        "LaTeX (scientific writing)",
+        "Mendeley / Zotero (reference management)",
+        "SPSS / GraphPad Prism",
+        "Bioinformatics tools (if life sciences: BLAST, Bioconductor)",
+        "Computational chemistry tools (Gaussian, VASP, LAMMPS)"
+      ],
+      "experience_level": "PhD Student → Postdoctoral Fellow → Research Associate → Scientist B/C → Senior Scientist → Principal Scientist",
+      "average_salary_range": "INR 3–5 LPA (PhD stipend); INR 6–10 LPA (postdoc/RA); INR 10–20 LPA (Scientist C/D); INR 20–40 LPA (Principal Scientist / faculty equivalent)",
+      "future_scope": "Growing investment in Indian R&D (National Research Foundation), space science (ISRO expansion), biotech, advanced materials, quantum computing, and defense R&D (DRDO)."
+    },
+    {
+      "career_name": "Data Analyst",
+      "category": "Science",
+      "description": "Collects, processes, and performs statistical analysis on large datasets to identify trends, generate reports, and support business decision-making across industries.",
+      "required_skills": [
+        "SQL for data querying and manipulation",
+        "Microsoft Excel (pivot tables, VLOOKUP, Power Query)",
+        "Python or R for data analysis",
+        "Data visualization (Tableau, Power BI)",
+        "Statistical analysis and descriptive statistics",
+        "Business acumen and domain knowledge",
+        "Dashboard creation and reporting",
+        "Data cleaning and preprocessing"
+      ],
+      "education_required": [
+        "Bachelor's in Statistics, Mathematics, Computer Science, Commerce, or Economics",
+        "PG Diploma or M.Sc in Data Analytics (beneficial)"
+      ],
+      "specific_degree_requirements": "No single mandatory degree. Strong SQL, Excel, and visualization skills often matter more than degree specifics. Domain knowledge in finance, healthcare, or retail adds significant value.",
+      "certifications": [
+        "Google Data Analytics Certificate (Coursera)",
+        "Microsoft Power BI Data Analyst Associate (PL-300)",
+        "Tableau Desktop Specialist",
+        "IBM Data Analyst Professional Certificate",
+        "SQL for Data Science (UC Davis / Coursera)"
+      ],
+      "entrance_exams": [
+        "JEE / State CETs (for B.Tech/B.Sc CS route)",
+        "No mandatory entrance exam for analyst roles"
+      ],
+      "career_path_steps": [
+        "Complete 12th with Math/Statistics background",
+        "Pursue B.Sc Statistics/CS/Mathematics or B.Com",
+        "Learn SQL, Excel, and Python/R fundamentals",
+        "Complete data analytics certification (Google/IBM)",
+        "Build a portfolio of analytics projects",
+        "Start as Junior Data Analyst or Business Analyst Intern",
+        "Progress to Mid-Level Data Analyst with domain expertise",
+        "Pursue Power BI/Tableau certification",
+        "Advance to Senior Analyst or transition to Data Scientist track"
+      ],
+      "tools_or_technologies": [
+        "SQL (PostgreSQL, MySQL, BigQuery)",
+        "Microsoft Excel / Google Sheets",
+        "Python (pandas, Matplotlib)",
+        "R (ggplot2, dplyr)",
+        "Tableau / Power BI",
+        "Looker / Metabase",
+        "Google Analytics",
+        "Snowflake / Redshift (cloud warehousing)"
+      ],
+      "experience_level": "Junior Data Analyst → Data Analyst → Senior Data Analyst → Lead Analyst → Analytics Manager",
+      "average_salary_range": "INR 3.5–7 LPA (entry); INR 10–20 LPA (3–5 years); INR 25–40 LPA (senior/lead analyst)",
+      "future_scope": "High demand across all industries. Strong stepping stone to Data Science, Business Intelligence, or Product Analytics. Increasing automation of basic tasks will shift demand toward interpretation and strategy."
+    },
+    {
+      "career_name": "Network Engineer",
+      "category": "Science",
+      "description": "Designs, implements, and manages computer network infrastructure including LANs, WANs, data centers, cloud networks, and telecommunications systems.",
+      "required_skills": [
+        "TCP/IP networking protocols",
+        "Router and switch configuration (Cisco, Juniper)",
+        "Firewall and VPN management",
+        "Network monitoring and troubleshooting",
+        "Cloud networking (AWS VPC, Azure Virtual Network)",
+        "BGP, OSPF, EIGRP routing protocols",
+        "Network security fundamentals",
+        "SDN (Software Defined Networking) basics"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Computer Science, IT, or Electronics",
+        "B.Sc Computer Science or IT",
+        "Diploma in Networking (entry-level roles)"
+      ],
+      "specific_degree_requirements": "Industry certifications (CCNA, CCNP) often outweigh degree specifics for networking roles. Many professionals enter via diploma + CCNA pathway.",
+      "certifications": [
+        "Cisco CCNA (Cisco Certified Network Associate)",
+        "Cisco CCNP Enterprise",
+        "Cisco CCIE (Expert level)",
+        "CompTIA Network+",
+        "Juniper JNCIA / JNCIP",
+        "AWS Advanced Networking Specialty"
+      ],
+      "entrance_exams": [
+        "JEE Main (for B.Tech IT/CS)",
+        "State CETs",
+        "No mandatory government exam for private sector networking roles"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM or any science stream",
+        "Pursue B.Tech CS/IT or B.Sc CS",
+        "Earn CompTIA Network+ and Cisco CCNA",
+        "Start as Network Technician or L1 Support Engineer",
+        "Gain hands-on experience with routers, switches, and firewalls",
+        "Earn CCNP Enterprise / Security certification",
+        "Advance to Network Engineer → Senior Network Engineer",
+        "Specialize in cloud networking, SDN, or cybersecurity",
+        "Pursue CCIE for architect-level roles"
+      ],
+      "tools_or_technologies": [
+        "Cisco IOS / NX-OS",
+        "Juniper Junos",
+        "Wireshark",
+        "SolarWinds (network monitoring)",
+        "PRTG Network Monitor",
+        "Cisco DNA Center (SD-WAN)",
+        "AWS / Azure / GCP networking tools",
+        "GNS3 / Packet Tracer (simulation)"
+      ],
+      "experience_level": "L1 Support → L2 Network Engineer → Senior Network Engineer → Network Architect → Head of Network Operations",
+      "average_salary_range": "INR 3–6 LPA (entry with CCNA); INR 8–18 LPA (CCNP level); INR 20–45 LPA (architect/CCIE level)",
+      "future_scope": "Critical infrastructure role with growing demand in cloud networking, SD-WAN, 5G deployment, data center networking, and zero-trust network architecture."
+    },
+    {
+      "career_name": "Lawyer / Advocate",
+      "category": "Humanities",
+      "description": "Provides legal advice, drafts legal documents, represents clients in courts, and ensures compliance with laws in areas such as criminal, civil, corporate, intellectual property, and constitutional law.",
+      "required_skills": [
+        "Legal research and case analysis",
+        "Legal drafting and documentation",
+        "Oral advocacy and courtroom argumentation",
+        "Knowledge of Indian Penal Code, CPC, CrPC, Constitution",
+        "Client counseling and negotiation",
+        "Critical legal reasoning",
+        "Contract law and drafting",
+        "Mediation and alternative dispute resolution"
+      ],
+      "education_required": [
+        "LLB (3-year, after graduation) — standard route",
+        "BA LLB / B.Com LLB / B.Sc LLB (5-year integrated) — preferred for early entry",
+        "LLM (Master of Laws) for specialization"
+      ],
+      "specific_degree_requirements": "Bar Council of India (BCI) registration and enrollment with State Bar Council is mandatory to practice. CLAT is optional but required for NLU admissions. Some state universities have their own law entrance exams.",
+      "certifications": [
+        "State Bar Council Enrollment Certificate (mandatory)",
+        "Mediation Certification (Supreme Court / High Court mediation centers)",
+        "Company Secretary (CS) dual qualification (for corporate law track)",
+        "Arbitration certifications (ICA, CIArb)"
+      ],
+      "entrance_exams": [
+        "CLAT (Common Law Admission Test — for NLUs)",
+        "AILET (NLU Delhi)",
+        "LSAT India",
+        "State-level law entrance exams (DU LLB, MH CET Law, AP LAWCET)",
+        "Judicial Services Examination (for becoming a civil judge)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream with min. 45% marks",
+        "Clear CLAT / AILET for NLU (5-year BA LLB) or pursue graduation then LLB",
+        "Complete BA LLB / B.Com LLB or 3-year LLB",
+        "Enroll with the State Bar Council after clearing All India Bar Exam (AIBE)",
+        "Practice under a senior advocate for 2–5 years",
+        "Specialize in Corporate, Criminal, IP, Family, or Constitutional law",
+        "Build independent practice or join a law firm",
+        "Pursue LLM for academia or senior corporate counsel roles",
+        "Appear for Judicial Services Exam for judgeship, or target High Court/Supreme Court"
+      ],
+      "tools_or_technologies": [
+        "SCC Online (Supreme Court Cases)",
+        "Manupatra",
+        "LexisNexis India",
+        "IndianKanoon.org",
+        "MS Word (legal drafting)",
+        "Vakil Search / LegalDocs (for corporate compliance)",
+        "eCourts Services Portal",
+        "Video conferencing for virtual hearings"
+      ],
+      "experience_level": "Junior Advocate → Advocate → Senior Advocate → Partner (Law Firm) → Judicial Officer / Senior Counsel",
+      "average_salary_range": "INR 2–5 LPA (junior/pupillage); INR 8–20 LPA (5 years, mid-level); INR 30–150 LPA+ (senior corporate counsel / top litigation partners)",
+      "future_scope": "Growing demand in corporate law (M&A, startup legal), cybercrime, IP law, arbitration, and environmental law. Judicial services offer stable government careers. Global LLM opens international law firm opportunities."
+    },
+    {
+      "career_name": "Civil Servant (IAS / IPS / IFS) — UPSC CSE",
+      "category": "Humanities",
+      "description": "A senior government officer (IAS, IPS, IFS, etc.) responsible for public administration, policy implementation, law enforcement, or foreign relations at state and national levels.",
+      "required_skills": [
+        "General awareness and current affairs (national and international)",
+        "Public administration and governance knowledge",
+        "Constitutional and legal understanding",
+        "Essay writing and analytical thinking",
+        "Leadership and decision-making under pressure",
+        "Ethical reasoning and integrity",
+        "Interpersonal and communication skills",
+        "Regional language proficiency (for district-level work)"
+      ],
+      "education_required": [
+        "Bachelor's degree in any discipline from a recognized university (minimum eligibility)",
+        "No specific degree required — but Arts, Humanities, Political Science, and Public Administration graduates have content advantage for optional subjects"
+      ],
+      "specific_degree_requirements": "Any undergraduate degree is eligible. Age limit: 21–32 years (General), with relaxations for OBC, SC/ST. Graduation must be complete by the time of examination. Final year students can apply for Prelims.",
+      "certifications": [
+        "LBSNAA (Lal Bahadur Shastri National Academy of Administration) — mandatory training for IAS",
+        "Sardar Vallabhbhai Patel National Police Academy — IPS training",
+        "Foreign Service Institute — IFS training"
+      ],
+      "entrance_exams": [
+        "UPSC Civil Services Examination (CSE) — Prelims, Mains, Interview",
+        "UPSC CAPF (for Central Armed Police Forces)",
+        "State PCS (for state civil services — HAS, PCS, RAS, etc.)"
+      ],
+      "career_path_steps": [
+        "Complete graduation in any discipline",
+        "Begin UPSC CSE preparation 1–2 years in advance",
+        "Clear UPSC Prelims (GS Paper I + CSAT)",
+        "Clear UPSC Mains (9 papers: GS I-IV, Essay, Optional I & II, languages)",
+        "Clear Personality Test (Interview)",
+        "Join LBSNAA / respective training academy based on allotted service",
+        "Complete foundation training and field posting",
+        "Serve as Sub-Divisional Magistrate (SDM) / ASP / attache",
+        "Progress to District Collector / SP / IFS First Secretary",
+        "Advance to Joint Secretary, Secretary, or Ambassador level"
+      ],
+      "tools_or_technologies": [
+        "eOffice / PFMS (Public Financial Management System)",
+        "National Informatics Centre (NIC) portals",
+        "GeM Portal (Government e-Marketplace)",
+        "PRAGATI (PM's office project monitoring)",
+        "Census and data analysis tools (for planning)",
+        "CPGRAMS (grievance management)"
+      ],
+      "experience_level": "SDM/ASP (entry) → District Collector/SP → Commissioner → Secretary → Additional Secretary → Secretary to GoI",
+      "average_salary_range": "INR 56,100–2,50,000/month (7th Pay Commission scale, Pay Level 10–18); IAS officers receive housing, transport, and extensive allowances",
+      "future_scope": "Lifelong career with significant societal impact. Roles in policy formulation, international diplomacy, law enforcement, and public development. IFS cadre allows international postings. Lateral entry reforms are gradually opening select positions."
+    },
+    {
+      "career_name": "Psychologist / Clinical Psychologist",
+      "category": "Humanities",
+      "description": "Studies human behavior and mental processes; provides assessment, diagnosis, and therapeutic interventions for mental health conditions. Works in clinical, educational, organizational, or research settings.",
+      "required_skills": [
+        "Psychological assessment and testing (WAIS, MMPI, Rorschach)",
+        "Therapeutic techniques (CBT, DBT, psychoanalysis, ACT)",
+        "Mental health diagnosis (DSM-5 / ICD-11)",
+        "Counseling and active listening",
+        "Psychopathology and abnormal psychology",
+        "Research methodology and statistics",
+        "Report writing and case documentation",
+        "Empathy, non-judgment, and ethical practice"
+      ],
+      "education_required": [
+        "BA/B.Sc in Psychology",
+        "MA/M.Sc in Applied Psychology or Clinical Psychology (mandatory for clinical practice)",
+        "M.Phil in Clinical Psychology (RCI-recognized — required to practice as clinical psychologist)",
+        "PhD in Psychology (for academic and research roles)"
+      ],
+      "specific_degree_requirements": "Rehabilitation Council of India (RCI) registration is mandatory for clinical psychologists in India. M.Phil Clinical Psychology (2-year, approved by RCI) is required for hospital-based clinical practice. Counselors (non-clinical) typically need MA Psychology with counseling specialization.",
+      "certifications": [
+        "RCI Registration (Rehabilitation Council of India — clinical psychologists)",
+        "CBT Practitioner Certification (BABCP or Indian CBT institutes)",
+        "School Counselor Certification (NCERT or state boards)",
+        "Neuropsychology Assessment Certification"
+      ],
+      "entrance_exams": [
+        "CUET-PG (for MA/M.Sc Psychology in central universities)",
+        "University-specific entrance tests (DU, BHU, JNU)",
+        "RCI-affiliated M.Phil entrance exams (NIMHANS, RINPAS, CIP Ranchi)",
+        "UGC-NET Psychology (for lectureship)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream (Science/Humanities)",
+        "Pursue BA/B.Sc in Psychology",
+        "Pursue MA/M.Sc in Clinical or Applied Psychology",
+        "Clear entrance for M.Phil Clinical Psychology (RCI-recognized institution)",
+        "Complete M.Phil (2 years including supervised clinical training)",
+        "Register with RCI as Clinical Psychologist",
+        "Work in hospital, NGO, rehabilitation center, or private practice",
+        "Pursue PhD for academic or specialized research roles",
+        "Obtain CBT/DBT/other therapy certification for specialization"
+      ],
+      "tools_or_technologies": [
+        "Standardized psychological tests (WAIS-IV, MMPI-2, Beck Depression Inventory)",
+        "Teletherapy platforms (YourDost, InnerHour, iCall, BetterHelp)",
+        "Electronic Health Records (mental health modules)",
+        "SPSS / R (for research and statistics)",
+        "Neuropsychological software (CANTAB, PEBL)"
+      ],
+      "experience_level": "Psychology Graduate → Trainee/Intern → Junior Clinical Psychologist → Senior Psychologist → Head of Department / Private Practitioner",
+      "average_salary_range": "INR 3–6 LPA (entry-level in hospitals/NGOs); INR 8–18 LPA (senior clinical); INR 15–40 LPA (private practice, corporate, or academic); Academic scale: as per 7th Pay Commission",
+      "future_scope": "Mental health awareness surge, teletherapy growth, corporate wellness programs, school mental health mandates, and increasing integration with neuroscience and AI make this a high-growth field in India."
+    },
+    {
+      "career_name": "Journalist / Media Professional",
+      "category": "Humanities",
+      "description": "Researches, investigates, and reports news and information across print, digital, broadcast, and social media platforms. Holds power to influence public opinion and ensure accountability.",
+      "required_skills": [
+        "News gathering and investigative reporting",
+        "Writing and editing for multiple media formats",
+        "Interviewing and source cultivation",
+        "Fact-checking and verification",
+        "Digital journalism and SEO writing",
+        "Video production and editing basics",
+        "Social media management",
+        "Media law and ethics"
+      ],
+      "education_required": [
+        "BA in Journalism and Mass Communication",
+        "BA in English/Political Science/History (lateral entry route)",
+        "MA in Journalism / Mass Communication (preferred for senior roles)",
+        "PG Diploma in Journalism"
+      ],
+      "specific_degree_requirements": "No single mandatory degree. Portfolio of published work often matters more. IIMC, AJK-MCRC (JMI), ACJ (Chennai) PG diploma programs are highly respected in India.",
+      "certifications": [
+        "IIMC PG Diploma in Journalism",
+        "Reuters Digital Journalism Course",
+        "Google News Initiative Digital Journalism Certificate",
+        "DATAFQ Data Journalism Certificate",
+        "Verified Press ID (PIB accreditation for central government)"
+      ],
+      "entrance_exams": [
+        "IIMC Entrance Exam",
+        "JMI AJK-MCRC Entrance",
+        "ACJ (Asian College of Journalism) Entrance",
+        "CUET-PG (for MA Journalism in central universities)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Pursue BA Journalism and Mass Communication or BA English/Humanities",
+        "Build portfolio through college newspaper, blogging, or freelancing",
+        "Pursue MA Journalism or IIMC PG Diploma",
+        "Start as Reporter / Sub-Editor / Content Writer at media house",
+        "Cover a specific beat (politics, business, crime, sports, science)",
+        "Build byline reputation and network",
+        "Advance to Senior Reporter → Correspondent → Bureau Chief → Editor",
+        "Explore digital journalism, documentary filmmaking, or data journalism"
+      ],
+      "tools_or_technologies": [
+        "Adobe Premiere Pro (video editing)",
+        "Audacity (audio editing)",
+        "WordPress / CMS platforms",
+        "Canva / Adobe Express (social graphics)",
+        "Datawrapper (data journalism visuals)",
+        "Hootsuite (social media management)",
+        "Google Analytics (digital audience analysis)",
+        "OSINT tools for investigation (Maltego, Wayback Machine)"
+      ],
+      "experience_level": "Reporter → Senior Reporter → Correspondent → Assistant Editor → Deputy Editor → Editor-in-Chief",
+      "average_salary_range": "INR 2.5–5 LPA (entry); INR 7–15 LPA (5 years); INR 20–50 LPA (senior editor/anchor at major outlets); Freelance varies widely",
+      "future_scope": "Digital media growth, independent journalism, video journalism, and fact-checking organizations are growing. Data journalism, science journalism, and investigative journalism are premium skill areas."
+    },
+    {
+      "career_name": "School Teacher — Physics",
+      "category": "Humanities",
+      "description": "Imparts knowledge of physics concepts, principles, and practical applications to students at secondary and higher secondary levels in schools.",
+      "required_skills": [
+        "In-depth subject knowledge of Physics (mechanics, electromagnetism, optics, modern physics)",
+        "Lesson planning and curriculum design",
+        "Pedagogy and instructional strategies",
+        "Laboratory demonstration and safety",
+        "Student assessment and evaluation",
+        "Classroom management",
+        "Communication and patience",
+        "Numeracy and problem-solving demonstration"
+      ],
+      "education_required": [
+        "B.Sc Physics (Hons) or B.Sc with Physics as main subject",
+        "B.Ed (Bachelor of Education) — mandatory for government and CBSE-affiliated private schools",
+        "M.Sc Physics (for teaching at Class 11–12 or for higher salary bands)"
+      ],
+      "specific_degree_requirements": "B.Ed from an NCTE-recognized institution is mandatory for government school teaching. For KV (Kendriya Vidyalaya) and NVS schools, PGT Physics requires M.Sc Physics + B.Ed. Some international or private schools may waive B.Ed if the candidate has M.Sc Physics.",
+      "certifications": [
+        "CTET (Central Teacher Eligibility Test) — mandatory for central government school teaching",
+        "State TET (REET, UPTET, TNTET etc.) — for state government schools",
+        "B.Ed (NCTE-recognized)",
+        "National Initiative for School Heads and Teachers Holistic Advancement (NISHTHA) training"
+      ],
+      "entrance_exams": [
+        "CTET (Paper II for Class 6–8; PGT requires state exams)",
+        "State TET (varies by state)",
+        "KVS PGT Physics Exam",
+        "NVS PGT Physics Exam"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM",
+        "Pursue B.Sc Physics (Hons) or B.Sc with Physics",
+        "Pursue B.Ed from NCTE-recognized institution",
+        "Clear CTET / State TET",
+        "Apply for TGT/PGT Physics positions in government/private schools",
+        "Optionally pursue M.Sc Physics for PGT-level eligibility and higher pay",
+        "Advance to Senior Teacher → Head of Department → Vice Principal → Principal"
+      ],
+      "tools_or_technologies": [
+        "PhET Interactive Simulations (University of Colorado)",
+        "Geogebra (for graphs and visualizations)",
+        "Google Classroom / MS Teams",
+        "DIKSHA Platform (NCERT)",
+        "Smart board and projector tools",
+        "YouTube physics channels for supplementary teaching"
+      ],
+      "experience_level": "Junior Teacher → TGT → PGT → Senior Teacher → Head of Department → Vice Principal",
+      "average_salary_range": "INR 2.5–4 LPA (private unaided schools); INR 5–9 LPA (KV/NV schools as per 7th Pay Commission); INR 6–12 LPA (senior international schools)",
+      "future_scope": "Strong job security in government schools. Growing demand for quality science teachers in private, international, and online education platforms. Coaching institutes offer high income for experienced Physics teachers."
+    },
+    {
+      "career_name": "School Teacher — Computer Science",
+      "category": "Humanities",
+      "description": "Teaches computer science concepts including programming, algorithms, databases, networking, and computational thinking to school students at primary, secondary, or senior secondary level.",
+      "required_skills": [
+        "Programming languages relevant to curriculum (Python, Java, C++)",
+        "Database fundamentals (MySQL)",
+        "Networking concepts",
+        "Computational thinking and algorithms",
+        "Web technologies basics",
+        "Lesson planning for CS curriculum (CBSE/ICSE)",
+        "Practical lab management",
+        "Classroom management and pedagogy"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Computer Science or IT (B.Ed may or may not be required — institution dependent)",
+        "BCA + B.Ed (for non-engineering graduates)",
+        "MCA or M.Sc CS (for PGT-level posts)",
+        "B.Ed from NCTE-recognized institution (required for government schools)"
+      ],
+      "specific_degree_requirements": "For government schools (KV, NV, State): B.Tech CS + B.Ed OR MCA/M.Sc CS + B.Ed. Some private international/CBSE schools hire B.Tech CS holders without B.Ed if they demonstrate strong teaching aptitude. Unlike Physics or History, CS teachers in some private institutions may not require B.Ed due to talent scarcity.",
+      "certifications": [
+        "CTET Paper II (for middle school CS teacher)",
+        "State TET",
+        "KVS/NVS Computer Instructor exam",
+        "Python Institute PCEP (entry-level Python certification — useful for credibility)"
+      ],
+      "entrance_exams": [
+        "CTET",
+        "State TET",
+        "KVS PGT Computer Science Exam",
+        "NVS Computer Instructor Exam"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM",
+        "Pursue B.Tech CS/IT or BCA",
+        "Pursue B.Ed (NCTE-recognized) if targeting government school teaching",
+        "Clear CTET and state TET",
+        "Apply for CS Teacher / PGT CS positions",
+        "Continuously update skills with evolving CBSE CS curriculum (Python, AI, Data Science elective)",
+        "Advance to HOD → Vice Principal → Principal"
+      ],
+      "tools_or_technologies": [
+        "Python 3 / IDLE",
+        "MySQL Workbench",
+        "Scratch (for primary level programming)",
+        "MIT App Inventor",
+        "Google Classroom",
+        "CBSE AI/Data Science curriculum tools",
+        "Code.org (coding education platform)"
+      ],
+      "experience_level": "Junior CS Teacher → Senior CS Teacher → PGT CS → HOD → Vice Principal",
+      "average_salary_range": "INR 3–5 LPA (private unaided); INR 5–10 LPA (KV/NV/reputed private schools); INR 8–15 LPA (international or high-demand schools)",
+      "future_scope": "Rapidly growing demand as schools integrate AI, coding, data science, and cybersecurity in curriculum. Hybrid teaching, EdTech platforms, and coaching institutes offer significant alternate income."
+    },
+    {
+      "career_name": "School Teacher — History",
+      "category": "Humanities",
+      "description": "Teaches history, social science, and civics to students at secondary and higher secondary levels, covering Indian and world history, political science, geography, and economics.",
+      "required_skills": [
+        "Comprehensive knowledge of Indian and world history",
+        "Understanding of NCERT/state board curriculum",
+        "Narrative and storytelling pedagogy",
+        "Map reading and interpretation",
+        "Source-based and document analysis skills",
+        "Lesson planning and curriculum alignment",
+        "Student engagement techniques",
+        "Written and verbal communication"
+      ],
+      "education_required": [
+        "BA History (Hons) or BA with History",
+        "B.Ed — mandatory for all government schools and most private CBSE/ICSE schools",
+        "MA History (required for PGT Social Science or PGT History positions)"
+      ],
+      "specific_degree_requirements": "MA History + B.Ed is the standard requirement for PGT Social Science in KVS and NVS. State government schools require TET qualification. B.Ed from NCTE-recognized institution is non-negotiable for government school roles.",
+      "certifications": [
+        "CTET Paper II / Paper I",
+        "State TET",
+        "B.Ed (NCTE)",
+        "UGC-NET History (for higher education / lectureship track)"
+      ],
+      "entrance_exams": [
+        "CTET",
+        "State TET (UPTET, MPTET, REET, etc.)",
+        "KVS PGT Social Science Exam",
+        "NVS PGT Exam"
+      ],
+      "career_path_steps": [
+        "Complete 12th in Humanities stream",
+        "Pursue BA History (Hons)",
+        "Pursue MA History",
+        "Pursue B.Ed from NCTE-recognized college",
+        "Clear CTET and State TET",
+        "Apply for TGT Social Science or PGT History roles",
+        "Continue professional development through NISHTHA and DIKSHA",
+        "Advance to HOD → Vice Principal → Principal"
+      ],
+      "tools_or_technologies": [
+        "DIKSHA (NCERT digital content)",
+        "Google Classroom",
+        "Timeline JS (for historical timelines)",
+        "NCERT e-textbooks",
+        "Smart board and multimedia presentations",
+        "YouTube documentaries for supplemental teaching"
+      ],
+      "experience_level": "Junior Teacher (TGT) → Senior Teacher → PGT → HOD Social Science → Vice Principal",
+      "average_salary_range": "INR 2–4 LPA (private unaided); INR 4–8 LPA (KV/NV government scale); INR 5–9 LPA (reputed private schools)",
+      "future_scope": "Steady demand in government schools with job security. Growing interest in UPSC coaching creates parallel market for history teachers in coaching institutes at premium pay."
+    },
+    {
+      "career_name": "Professor / University Faculty",
+      "category": "Humanities",
+      "description": "Teaches, conducts research, and contributes to knowledge in a specific discipline at degree college or university level. Engages in academic publishing, student mentoring, and institutional governance.",
+      "required_skills": [
+        "Deep subject matter expertise",
+        "Academic research and publishing",
+        "Curriculum design for undergraduate/postgraduate programs",
+        "Scientific/academic writing and peer review",
+        "Grant proposal writing",
+        "Student supervision and mentoring",
+        "Public speaking and lecture delivery",
+        "Critical analysis and synthesis"
+      ],
+      "education_required": [
+        "Bachelor's in relevant discipline",
+        "Master's in the same or related field",
+        "PhD (mandatory for Assistant Professor roles in universities)",
+        "Postdoctoral experience (preferred for research-intensive institutions)"
+      ],
+      "specific_degree_requirements": "UGC-NET with JRF or PhD is mandatory for Assistant Professor roles in central/state universities under UGC guidelines. PhD from NAAC-accredited or IIT/IISc-equivalent institutions strongly preferred for top colleges.",
+      "certifications": [
+        "UGC-NET JRF (Junior Research Fellowship — for PhD funding and lectureship)",
+        "SLET/SET (State-level Eligibility Test — alternative to NET for state colleges)",
+        "Faculty Development Program (FDP) certifications",
+        "Postdoctoral Fellowship completion"
+      ],
+      "entrance_exams": [
+        "UGC-NET (National Eligibility Test) — for Assistant Professor and JRF",
+        "CSIR-NET (for science disciplines)",
+        "SLET / SET (for state university teaching)",
+        "GATE + PhD (alternate route for science/engineering professors)"
+      ],
+      "career_path_steps": [
+        "Complete relevant Bachelor's degree",
+        "Pursue Master's degree in specialization",
+        "Clear UGC-NET/CSIR-NET with JRF for PhD fellowship",
+        "Complete PhD (4–6 years) with published research",
+        "Pursue postdoctoral position or Guest Lecturer role",
+        "Apply for Assistant Professor position",
+        "Publish research papers and secure research grants (SERB, DST, UGC)",
+        "Progress to Associate Professor (after 8 years + research output)",
+        "Advance to Professor (after 10+ years + significant contributions)"
+      ],
+      "tools_or_technologies": [
+        "LaTeX / MS Word (academic writing)",
+        "SPSS / R / MATLAB (research data analysis)",
+        "Mendeley / Zotero (reference management)",
+        "Turnitin / iThenticate (plagiarism checking)",
+        "Scopus / Web of Science (publication tracking)",
+        "Google Scholar",
+        "LMS platforms (Moodle, Blackboard)",
+        "Research Gate / Academia.edu"
+      ],
+      "experience_level": "PhD Candidate → Postdoc / Guest Lecturer → Assistant Professor → Associate Professor → Professor → Dean",
+      "average_salary_range": "INR 5–10 LPA (Assistant Professor, 7th CPC Level 10); INR 12–18 LPA (Associate Professor); INR 18–28 LPA (Professor); IIT/IIM scales are significantly higher",
+      "future_scope": "National Education Policy 2020 is transforming higher education, creating more research positions and interdisciplinary roles. Growing demand for professors in private universities, online education, and international collaborations."
+    },
+    {
+      "career_name": "Social Worker",
+      "category": "Humanities",
+      "description": "Works to improve the welfare of individuals, families, and communities facing social, economic, or psychological challenges through counseling, advocacy, rehabilitation, and community development.",
+      "required_skills": [
+        "Community assessment and needs analysis",
+        "Case management and documentation",
+        "Counseling and active listening",
+        "Knowledge of social welfare schemes (government programs)",
+        "Advocacy and policy engagement",
+        "Fieldwork and data collection",
+        "NGO and project management",
+        "Cultural sensitivity and inclusivity"
+      ],
+      "education_required": [
+        "BA in Social Work",
+        "BSW (Bachelor of Social Work)",
+        "MSW (Master of Social Work) — preferred for senior roles",
+        "PhD in Social Work (for academic and senior policy roles)"
+      ],
+      "specific_degree_requirements": "MSW from a recognized institution is the standard for professional social work positions. TISS (Mumbai), Delhi University, JNU, and Jamia are top institutions. Some NGOs hire BA/BSW graduates for field roles.",
+      "certifications": [
+        "Certificate in Child Rights and Protection (UNICEF / TISS)",
+        "Gender and Development Studies Certificate",
+        "NGO Management Certificate (IGNOU / XIMB)",
+        "Community Development Practitioner Certification"
+      ],
+      "entrance_exams": [
+        "TISS NET (for MSW at TISS campuses — nationally competitive)",
+        "CUET-PG (MSW in central universities)",
+        "University-specific MSW entrance tests (DU, BHU, JNU, Jamia)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Pursue BA/BSW in Social Work",
+        "Pursue MSW with specialization (Medical, Psychiatric, Rural, Urban, HR, or Community Development)",
+        "Complete field placement / social work practicum during MSW",
+        "Join as Social Work Trainee, Field Officer, or Case Manager at NGO/hospital",
+        "Build expertise in a domain: child protection, disability, mental health, women empowerment",
+        "Progress to Program Manager → Senior Social Worker",
+        "Pursue UGC-NET for academic roles or PhD for research/policy",
+        "Move toward NGO Director, policy advisor, or UN/INGO roles"
+      ],
+      "tools_or_technologies": [
+        "MS Office (case documentation and reporting)",
+        "KoBoToolbox / ODK (field data collection)",
+        "NITI Aayog / government scheme portals",
+        "Salesforce NPSP (NGO management)",
+        "GIS tools (community mapping)",
+        "Zoom / Google Meet (community outreach)"
+      ],
+      "experience_level": "Field Worker → Social Work Assistant → Social Worker → Senior Social Worker → Program Manager → NGO Director",
+      "average_salary_range": "INR 2–4 LPA (NGO entry); INR 5–10 LPA (Program Manager); INR 12–25 LPA (Director/International NGO); Government social worker scales vary by department",
+      "future_scope": "Growing need in mental health outreach, disaster response, urban migration management, women's safety, tribal welfare, and UN SDG implementation across India."
+    },
+    {
+      "career_name": "Chartered Financial Analyst (CFA)",
+      "category": "Commerce",
+      "description": "A globally recognized finance professional specializing in investment analysis, portfolio management, equity research, risk assessment, and asset management.",
+      "required_skills": [
+        "Investment analysis and security valuation",
+        "Portfolio construction and management",
+        "Fixed income and equity markets",
+        "Derivatives and alternative investments",
+        "Quantitative methods and statistics",
+        "Financial reporting and analysis",
+        "Ethics in investment management",
+        "Risk management frameworks"
+      ],
+      "education_required": [
+        "Bachelor's degree in any discipline (or enrolled in final year)",
+        "4,000 hours of relevant professional experience (for charter award)",
+        "CFA Program completion (Level I, II, III)"
+      ],
+      "specific_degree_requirements": "The CFA charter is awarded by CFA Institute (USA) and requires passing all three exam levels plus 4,000 hours of qualifying work experience. The charter itself is the key qualification — no specific degree is mandatory.",
+      "certifications": [
+        "CFA Charter (CFA Institute) — Level I, II, III",
+        "Financial Risk Manager (FRM) — GARP",
+        "CAIA (Chartered Alternative Investment Analyst)",
+        "Bloomberg Market Concepts (BMC)"
+      ],
+      "entrance_exams": [
+        "CFA Level I Exam",
+        "CFA Level II Exam",
+        "CFA Level III Exam"
+      ],
+      "career_path_steps": [
+        "Complete graduation in any discipline",
+        "Register for CFA Level I (computer-based testing, multiple windows annually)",
+        "Clear CFA Level I (covering 10 topic areas)",
+        "Clear CFA Level II (application and analysis of investment tools)",
+        "Clear CFA Level III (portfolio management and wealth planning)",
+        "Accumulate 4,000 hours of qualifying investment experience",
+        "Receive CFA charter",
+        "Work in equity research, asset management, risk, or investment banking",
+        "Progress to Portfolio Manager, Research Director, or CIO"
+      ],
+      "tools_or_technologies": [
+        "Bloomberg Terminal",
+        "FactSet / Capital IQ",
+        "MS Excel (advanced financial modeling)",
+        "Python / R (for quantitative analysis)",
+        "Morningstar Direct",
+        "Reuters Eikon",
+        "MATLAB (for quantitative/risk finance)"
+      ],
+      "experience_level": "Research Analyst → Senior Analyst → Portfolio Manager → Director of Research → CIO",
+      "average_salary_range": "INR 8–15 LPA (entry with Level I/II); INR 20–45 LPA (charter holder, 3–7 years); INR 60–150 LPA+ (senior PM/CIO level)",
+      "future_scope": "Gold standard in investment management globally. Growing demand from Indian mutual funds, pension funds, family offices, and hedge funds. High international mobility."
+    },
+    {
+      "career_name": "Actuary",
+      "category": "Commerce",
+      "description": "Uses mathematics, statistics, and financial theory to assess and manage financial risk in insurance, pension, investment, and health sectors.",
+      "required_skills": [
+        "Advanced mathematics (calculus, linear algebra)",
+        "Probability theory and statistics",
+        "Actuarial modeling and risk assessment",
+        "Financial mathematics and time value of money",
+        "Programming (R, Python, Excel VBA)",
+        "Insurance and pension law basics",
+        "Communication of complex risk to management",
+        "Knowledge of IRDAI regulations"
+      ],
+      "education_required": [
+        "B.Sc or B.Tech in Mathematics, Statistics, or Actuarial Science",
+        "Actuarial Science B.Sc (specialized programs at Amity, Christ University, etc.)",
+        "Institute and Faculty of Actuaries (IFoA) or IAI exam pathway"
+      ],
+      "specific_degree_requirements": "Actuarial career is exam-driven. Institute of Actuaries of India (IAI) offers Fellowship program. Alternatively, pursuing exams through Society of Actuaries (SOA, USA) or IFoA (UK) is common. Strong mathematical foundation is essential.",
+      "certifications": [
+        "Fellow of IAI (FIAI) — India",
+        "Fellow of Society of Actuaries (FSA) — USA",
+        "Fellow of IFoA (FIA) — UK",
+        "Certified Enterprise Risk Analyst (CERA)"
+      ],
+      "entrance_exams": [
+        "IAI Actuarial Common Entrance Test (ACET) — for student membership",
+        "IAI Core Technical (CT/CS/CA) exam series",
+        "SOA Exam P, FM, IFM, etc. (for US pathway)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with strong math background",
+        "Pursue B.Sc Mathematics/Statistics or Actuarial Science",
+        "Register with IAI and clear ACET",
+        "Clear Core Technical (CT1–CT9 / CS/CM series) exams progressively",
+        "Join an insurance or consulting firm as Actuarial Analyst",
+        "Clear Core Applications (CA) and Subject (SA) papers",
+        "Become Associate of IAI (AIAI) after Core stage",
+        "Clear remaining Fellowship exams and become FIAI",
+        "Advance to Chief Actuary or head of risk at insurer"
+      ],
+      "tools_or_technologies": [
+        "Excel / VBA",
+        "R (actuarial packages: actuar, ChainLadder)",
+        "Python (pandas, scipy.stats)",
+        "Prophet (actuarial modeling software)",
+        "AXIS (actuarial modeling system)",
+        "MoSes (life insurance modeling)",
+        "SQL"
+      ],
+      "experience_level": "Actuarial Analyst → Actuarial Associate → Senior Actuary → Appointed Actuary → Chief Actuary",
+      "average_salary_range": "INR 5–10 LPA (entry); INR 15–30 LPA (associate/5+ CT papers cleared); INR 40–100 LPA (Fellow Actuary/Chief Actuary)",
+      "future_scope": "Severe shortage of qualified actuaries in India. Massive demand from IRDAI-regulated insurance sector, NPS/pension funds, government health insurance (Ayushman Bharat), and ERM in banks."
+    },
+    {
+      "career_name": "Urban Planner",
+      "category": "Science",
+      "description": "Develops plans and programs for the use of land and the growth of communities. Works on urban development, housing, transport, infrastructure, and sustainable city planning.",
+      "required_skills": [
+        "GIS and remote sensing",
+        "Urban design and land use planning",
+        "Transportation and infrastructure planning",
+        "Zoning laws and building regulations",
+        "Environmental impact assessment",
+        "Public consultation and stakeholder engagement",
+        "Project management",
+        "Statistical data analysis"
+      ],
+      "education_required": [
+        "B.Tech in Civil Engineering / Architecture (entry route for PG planning)",
+        "B.Arch (5-year architecture degree)",
+        "M.Plan / M.Tech Urban Planning (2-year postgraduate — primary qualification)",
+        "PhD in Urban Planning / Regional Planning (for research/academic roles)"
+      ],
+      "specific_degree_requirements": "M.Plan from SPA (School of Planning and Architecture, New Delhi/Bhopal/Vijayawada) or CEPT University is the gold standard. Entry to M.Plan requires GATE AR or specific state-level planning entrance exams.",
+      "certifications": [
+        "GISP — GIS Professional Certification",
+        "AICP — American Institute of Certified Planners (for international practice)",
+        "LEED AP Neighbourhood Development",
+        "AutoCAD / ArcGIS Professional Certification"
+      ],
+      "entrance_exams": [
+        "GATE Architecture and Planning (AR)",
+        "SPA entrance exams",
+        "CEPT entrance exam",
+        "JEE/State CET (for B.Tech Civil, entry to planning PG route)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM or arts",
+        "Pursue B.Tech Civil or B.Arch",
+        "Clear GATE AR for M.Plan at SPA/CEPT/IIT Kharagpur",
+        "Complete M.Plan with specialization (housing, transport, urban design, environment)",
+        "Join urban local body, DUDA, CMDA, or private consultancy",
+        "Work on Smart Cities Mission, AMRUT, RERA compliance projects",
+        "Advance to Senior Planner → Chief Planner → Director Town Planning"
+      ],
+      "tools_or_technologies": [
+        "ArcGIS / QGIS",
+        "AutoCAD",
+        "SketchUp / Revit (urban design visualization)",
+        "CityEngine (3D city modeling)",
+        "VISSIM (traffic simulation)",
+        "Census data analysis tools",
+        "Google Earth Pro"
+      ],
+      "experience_level": "Junior Planner → Urban Planner → Senior Planner → Chief Planner → Director",
+      "average_salary_range": "INR 4–8 LPA (entry); INR 10–20 LPA (5 years); INR 20–45 LPA (senior/government director level)",
+      "future_scope": "Central to India's Smart Cities Mission, AMRUT 2.0, Metro Rail projects, transit-oriented development, and climate-resilient urban design. Growing international opportunities with climate-focused urban planning."
+    },
+    {
+      "career_name": "Product Manager (Tech)",
+      "category": "Science",
+      "description": "Defines product vision, roadmap, and strategy. Works with engineering, design, marketing, and sales teams to build and launch successful digital products that meet user and business needs.",
+      "required_skills": [
+        "Product roadmap and backlog management",
+        "User story writing and requirements gathering",
+        "Data-driven decision making",
+        "Market research and competitive analysis",
+        "Wireframing and prototyping basics (Figma)",
+        "Agile / Scrum methodology",
+        "Stakeholder management",
+        "A/B testing and product analytics"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Computer Science or related field (most common)",
+        "MBA in Technology Management or General Management (common for career switchers)",
+        "BBA/B.Sc with strong tech and analytics background (alternate route)"
+      ],
+      "specific_degree_requirements": "No mandatory degree. B.Tech CS + 2–3 years of engineering experience or MBA from top institutes (IIMs, ISB) are the most common entry paths. Strong portfolios and side projects can substitute for traditional credentials at many startups.",
+      "certifications": [
+        "Certified Product Manager — AIPMM",
+        "Product Management Certification — Pragmatic Institute",
+        "Google Analytics Individual Qualification",
+        "Agile Certified Practitioner (PMI-ACP)",
+        "Product School PM Certificate"
+      ],
+      "entrance_exams": [
+        "CAT / GMAT (for MBA route)",
+        "JEE (for B.Tech CS route)"
+      ],
+      "career_path_steps": [
+        "Complete B.Tech CS or related field OR pursue MBA",
+        "Gain 2–3 years of experience as Software Engineer, Data Analyst, or Business Analyst",
+        "Transition to Associate Product Manager (APM) or junior PM",
+        "Lead end-to-end product features with cross-functional teams",
+        "Build product intuition through user research and data analysis",
+        "Advance to Product Manager → Senior PM → Group PM",
+        "Specialize: B2B SaaS, consumer apps, platform, or AI products",
+        "Progress to Director of Product → VP Product → CPO"
+      ],
+      "tools_or_technologies": [
+        "JIRA / Linear (agile tracking)",
+        "Figma (design collaboration)",
+        "Amplitude / Mixpanel (product analytics)",
+        "Notion / Confluence (documentation)",
+        "Google Analytics",
+        "Looker / Metabase (data visualization)",
+        "Miro (whiteboarding/roadmapping)",
+        "SQL (for self-serve data analysis)"
+      ],
+      "experience_level": "APM / Junior PM → Product Manager → Senior PM → Group PM → Director → VP Product → CPO",
+      "average_salary_range": "INR 8–15 LPA (APM/junior); INR 20–40 LPA (PM, 3–5 years); INR 50–100 LPA+ (Director/VP at top tech firms)",
+      "future_scope": "One of the most sought-after roles in tech. Demand driven by India's startup ecosystem, SaaS companies, and global product teams. AI product management is emerging as a premium subspecialty."
+    },
+    {
+      "career_name": "DevOps Engineer",
+      "category": "Science",
+      "description": "Bridges development and operations by automating software delivery pipelines, managing infrastructure as code, and ensuring reliability, scalability, and security of production systems.",
+      "required_skills": [
+        "Linux system administration",
+        "CI/CD pipeline design (Jenkins, GitHub Actions, GitLab CI)",
+        "Containerization (Docker) and orchestration (Kubernetes)",
+        "Infrastructure as Code (Terraform, Ansible)",
+        "Cloud platforms (AWS, Azure, GCP)",
+        "Scripting (Bash, Python)",
+        "Monitoring and observability (Prometheus, Grafana, ELK)",
+        "Version control (Git)"
+      ],
+      "education_required": [
+        "B.Tech/B.E. in Computer Science or IT",
+        "B.Sc Computer Science (alternate route)",
+        "Diploma in Cloud Computing (for bootcamp transitions)"
+      ],
+      "specific_degree_requirements": "B.Tech CS/IT is the standard. DevOps is often entered via software engineering or system administration roles. Cloud certifications hold significant weight alongside or above degree qualifications.",
+      "certifications": [
+        "AWS Certified DevOps Engineer – Professional",
+        "Certified Kubernetes Administrator (CKA)",
+        "HashiCorp Certified: Terraform Associate",
+        "Linux Foundation Certified System Administrator (LFCS)",
+        "Google Professional DevOps Engineer"
+      ],
+      "entrance_exams": [
+        "JEE Main/Advanced (for B.Tech CS/IT)",
+        "State CET",
+        "No mandatory exam for industry entry — certifications more relevant"
+      ],
+      "career_path_steps": [
+        "Complete B.Tech CS/IT",
+        "Start as Software Engineer or Linux System Administrator",
+        "Learn Docker and Kubernetes hands-on",
+        "Set up and manage CI/CD pipelines (Jenkins, GitHub Actions)",
+        "Earn AWS Associate Certification",
+        "Transition to DevOps Engineer or SRE role",
+        "Earn CKA and Terraform certifications",
+        "Advance to Senior DevOps → DevOps Lead → Platform Engineering Lead",
+        "Specialize in SRE, MLOps, DataOps, or Cloud Architecture"
+      ],
+      "tools_or_technologies": [
+        "Docker / Kubernetes",
+        "Terraform / Ansible / Chef",
+        "Jenkins / GitHub Actions / GitLab CI",
+        "AWS / Azure / GCP",
+        "Prometheus / Grafana / ELK Stack",
+        "Vault (secrets management)",
+        "ArgoCD / Flux (GitOps)",
+        "Helm (Kubernetes package manager)"
+      ],
+      "experience_level": "Junior DevOps → DevOps Engineer → Senior DevOps → DevOps Lead → Platform Engineering Manager → VP Infrastructure",
+      "average_salary_range": "INR 6–12 LPA (entry); INR 18–35 LPA (3–5 years); INR 40–80 LPA (senior/lead/architect)",
+      "future_scope": "High demand as every company moves to cloud-native development. Site Reliability Engineering (SRE), MLOps, FinOps, and Platform Engineering are high-paying evolutions of the DevOps role."
+    },
+    {
+      "career_name": "UX/UI Designer",
+      "category": "Science",
+      "description": "Designs intuitive, accessible, and visually appealing digital product interfaces by conducting user research, creating wireframes, prototypes, and collaborating with engineering teams.",
+      "required_skills": [
+        "User research and usability testing",
+        "Wireframing and prototyping (Figma, Adobe XD)",
+        "Visual design and typography",
+        "Design systems and component libraries",
+        "Interaction design and microinteractions",
+        "Accessibility standards (WCAG)",
+        "Design thinking methodology",
+        "Collaboration with developers and PMs"
+      ],
+      "education_required": [
+        "B.Des in Interaction Design, Visual Communication, or Product Design",
+        "B.Tech CS + UX self-study / certification (common career switch route)",
+        "BA in Design or Fine Arts",
+        "M.Des in Interaction Design (for senior/academic roles)"
+      ],
+      "specific_degree_requirements": "NID (National Institute of Design) and IIT (Industrial Design Centre) B.Des/M.Des programs are premium. However, portfolios carry equal or greater weight than degrees in UX hiring. Career transitions from CS/engineering backgrounds are common.",
+      "certifications": [
+        "Google UX Design Certificate (Coursera)",
+        "Interaction Design Foundation UX Certificate",
+        "Nielsen Norman Group UX Certification",
+        "Adobe Certified Professional",
+        "Human-Computer Interaction — GeorgiaTech (edX)"
+      ],
+      "entrance_exams": [
+        "UCEED (Undergraduate Common Entrance Examination for Design — for IIT IDC and NID)",
+        "NID DAT (Design Aptitude Test)",
+        "CEED (Common Entrance Examination for Design — for M.Des at IITs)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Pursue B.Des in Interaction/Visual Design from NID/IIT/NIFT or complete B.Tech with UX self-study",
+        "Build portfolio with case studies on real or practice projects",
+        "Complete Google UX Design Certificate or similar",
+        "Internship as UX Intern or UI Designer",
+        "Join as Junior UX/UI Designer",
+        "Progress to UX Designer → Senior Designer → Lead Designer",
+        "Specialize in product design, motion design, or design ops",
+        "Advance to Design Lead → Head of Design → VP Design / CDO"
+      ],
+      "tools_or_technologies": [
+        "Figma",
+        "Adobe XD",
+        "InVision",
+        "Sketch",
+        "Zeplin (developer handoff)",
+        "Maze / UserTesting (usability testing)",
+        "Lottie / After Effects (motion/animation)",
+        "Notion / Confluence (documentation)"
+      ],
+      "experience_level": "Intern → Junior Designer → UX/UI Designer → Senior Designer → Lead Designer → Design Director → CDO",
+      "average_salary_range": "INR 4–8 LPA (entry); INR 12–25 LPA (3–5 years); INR 30–60 LPA (senior lead/director at top product companies)",
+      "future_scope": "Growing demand for design in SaaS, fintech, healthtech, and AI products. Voice UI, AR/VR/XR design, AI-augmented design tools, and design systems engineering are emerging high-value subspecialties."
+    },
+    {
+      "career_name": "Economist",
+      "category": "Commerce",
+      "description": "Studies production, distribution, and consumption of goods and services. Analyzes economic data, creates models, advises on policy, and works in research, government, or corporate settings.",
+      "required_skills": [
+        "Microeconomics and macroeconomics theory",
+        "Econometrics and statistical modeling",
+        "Data analysis (R, Stata, Python)",
+        "Economic policy analysis",
+        "Research methodology",
+        "Mathematical modeling (optimization, game theory)",
+        "Report writing and policy brief preparation",
+        "Academic/policy publication"
+      ],
+      "education_required": [
+        "B.Sc/BA in Economics (Hons)",
+        "MA/M.Sc in Economics (required for professional roles)",
+        "PhD in Economics (for research economist or faculty positions)"
+      ],
+      "specific_degree_requirements": "MA Economics from DSE (Delhi School of Economics), JNU, IGIDR, or ISI is the gold standard in India. For corporate or government roles, MA Economics suffices. PhD is needed for research institutions (RBI, NITI Aayog, world bank), universities, or international organizations.",
+      "certifications": [
+        "UGC-NET Economics (for lectureship)",
+        "Stata / R Econometrics Certification (DataCamp, Coursera)",
+        "Development Economics Certificate (J-PAL / MITx)",
+        "World Bank MOOC on Economic Development"
+      ],
+      "entrance_exams": [
+        "Delhi School of Economics Entrance Test",
+        "JNU Entrance Test (CEE)",
+        "ISI Admission Test (for M.Stat and related programs)",
+        "IGIDR Entrance Test",
+        "UGC-NET Economics"
+      ],
+      "career_path_steps": [
+        "Complete 12th with strong Math and Economics background",
+        "Pursue BA/B.Sc Economics (Hons) from top college",
+        "Clear DSE/JNU/IGIDR entrance for MA Economics",
+        "Complete MA with focus on econometrics and research methodology",
+        "Join as Research Associate at think tank, RBI, or consulting firm",
+        "Pursue PhD from top Indian or international institution",
+        "Work as Policy Economist, Research Economist, or Consultant",
+        "Advance to Senior Economist → Lead Economist → Chief Economist"
+      ],
+      "tools_or_technologies": [
+        "Stata",
+        "R (econometric packages)",
+        "Python (pandas, statsmodels)",
+        "MATLAB / EViews",
+        "Excel (data analysis)",
+        "CMIE Prowess / NSSO datasets",
+        "FRED / World Bank / IMF data portals"
+      ],
+      "experience_level": "Research Assistant → Research Associate → Economist → Senior Economist → Lead Economist → Chief Economist",
+      "average_salary_range": "INR 4–8 LPA (research associate); INR 10–20 LPA (economist, 5 years); INR 25–60 LPA (senior/chief economist at RBI, MNC, international org)",
+      "future_scope": "High demand in policy think tanks (NITI Aayog, RBI, IMF, World Bank), fintech data analytics, corporate strategy, and global development organizations. Behavioral economics is a growing field."
+    },
+    {
+      "career_name": "Dental Surgeon (BDS / MDS)",
+      "category": "Science",
+      "description": "Diagnoses and treats dental conditions including cavities, gum disease, orthodontic issues, and oral surgery. Specializes in restorative, cosmetic, or surgical dentistry.",
+      "required_skills": [
+        "Clinical diagnosis of dental conditions",
+        "Restorative dentistry (fillings, crowns, bridges)",
+        "Oral surgery and extraction",
+        "Orthodontic assessment and treatment planning",
+        "Radiograph interpretation (dental X-rays, OPG)",
+        "Patient communication and anxiety management",
+        "Asepsis and infection control",
+        "Aesthetic/cosmetic dentistry basics"
+      ],
+      "education_required": [
+        "12th with PCB",
+        "BDS — Bachelor of Dental Surgery (4 years + 1 year internship)",
+        "MDS — Master of Dental Surgery (3 years, specialization) — optional"
+      ],
+      "specific_degree_requirements": "NEET-UG is mandatory for BDS admission. Dental Council of India (DCI) registration is compulsory to practice. MDS through NEET-MDS for specialization.",
+      "certifications": [
+        "DCI Registration (mandatory)",
+        "State Dental Council Enrollment",
+        "BLS / Infection Control Certification",
+        "Advanced Implantology Courses",
+        "Fellowship in Oral and Maxillofacial Surgery (FOMS)"
+      ],
+      "entrance_exams": [
+        "NEET-UG (for BDS admission)",
+        "NEET-MDS (for MDS specialization admission)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB (min 50% for NEET eligibility)",
+        "Clear NEET-UG and secure BDS admission",
+        "Complete BDS (4 years + 1 year compulsory internship)",
+        "Register with State Dental Council and DCI",
+        "Begin practice as General Dental Surgeon or join hospital",
+        "Prepare for NEET-MDS and pursue specialization (Orthodontics, Endodontics, Prosthodontics, Oral Surgery)",
+        "Complete MDS (3 years)",
+        "Open private dental clinic or join dental chain/hospital",
+        "Pursue advanced implantology or cosmetic dentistry courses"
+      ],
+      "tools_or_technologies": [
+        "Dental chair and handpieces",
+        "Digital X-ray / OPG machine",
+        "CAD/CAM systems (for prosthetics)",
+        "Intraoral camera",
+        "Dental practice management software (Dentbird, Curve Dental)",
+        "Laser dentistry equipment"
+      ],
+      "experience_level": "BDS Intern → Junior Dentist → Associate Dentist → Specialist (MDS) → Senior Consultant → Clinic Owner",
+      "average_salary_range": "INR 3–6 LPA (fresh BDS); INR 8–20 LPA (experienced/private practice); INR 15–50 LPA (MDS specialist/cosmetic dentist); Own clinic income varies significantly",
+      "future_scope": "Growing oral healthcare awareness, dental tourism, dental chains expansion (Clove Dental, Sabka Dentist), and cosmetic dentistry demand are strong growth drivers. Tele-dentistry is an emerging area."
+    },
+    {
+      "career_name": "Nutritionist / Dietitian",
+      "category": "Science",
+      "description": "Assesses dietary needs and provides evidence-based nutrition advice and therapeutic diet plans for individuals managing weight, chronic diseases, sports performance, or general wellness.",
+      "required_skills": [
+        "Clinical nutrition and medical nutrition therapy",
+        "Diet planning and nutritional counseling",
+        "Food science and biochemistry",
+        "Reading and interpreting medical reports",
+        "Nutrient calculation and meal planning software",
+        "Behavior change counseling",
+        "Sports nutrition fundamentals",
+        "Public health and community nutrition"
+      ],
+      "education_required": [
+        "B.Sc in Nutrition and Dietetics / Home Science (Food & Nutrition)",
+        "M.Sc Dietetics/Clinical Nutrition (required for hospital clinical roles)",
+        "PG Diploma in Dietetics"
+      ],
+      "specific_degree_requirements": "Indian Dietetic Association (IDA) membership requires M.Sc or PG Diploma in Dietetics with supervised clinical training. Registered Dietitian (RD) status requires IDA/RCI-recognized qualifications for clinical settings.",
+      "certifications": [
+        "Registered Dietitian (RD) — IDA accreditation",
+        "Certified Diabetes Educator (CDE)",
+        "Sports Nutrition Certification (ISSA, Precision Nutrition)",
+        "Integrative Nutrition Health Coach — IIN"
+      ],
+      "entrance_exams": [
+        "State-level science entrance exams for B.Sc admission",
+        "IIT JAM or university entrance for M.Sc",
+        "No central mandatory exam for practice — IDA membership is the key credential"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB",
+        "Pursue B.Sc Nutrition and Dietetics",
+        "Pursue M.Sc Clinical Nutrition or PG Diploma in Dietetics",
+        "Complete supervised clinical internship (minimum 6 months)",
+        "Register with IDA as Registered Dietitian",
+        "Work in hospital, wellness center, or sports organization",
+        "Build online practice / telehealth nutrition consulting",
+        "Specialize: Oncology nutrition, pediatric nutrition, sports nutrition, bariatric",
+        "Advance to Head Dietitian / HOD / independent practice"
+      ],
+      "tools_or_technologies": [
+        "Nutritional analysis software (Dietmaster Pro, Nutritics)",
+        "EatRight India (IDA resources)",
+        "USDA FoodData Central",
+        "Anthropometric measurement tools",
+        "Telehealth platforms for virtual consulting",
+        "Excel / Google Sheets (diet charting)"
+      ],
+      "experience_level": "Intern Dietitian → Junior Dietitian → Dietitian → Senior Dietitian → Chief Dietitian / Consultant",
+      "average_salary_range": "INR 3–5 LPA (entry hospital); INR 6–12 LPA (5 years); INR 15–30 LPA (consultant/online practice with brand); Sports dietitian for athletes can earn significantly more",
+      "future_scope": "Booming wellness industry, diabetes epidemic, sports nutrition, and corporate wellness programs are driving growth. Online nutrition consulting and social media-based practice are high-income alternate models."
+    },
+    {
+      "career_name": "Forensic Scientist",
+      "category": "Science",
+      "description": "Applies scientific methods to analyze physical evidence from crime scenes to assist in criminal investigations and court proceedings. Specializes in areas like DNA analysis, toxicology, ballistics, or digital forensics.",
+      "required_skills": [
+        "Evidence collection and preservation protocols",
+        "Laboratory analysis techniques (chromatography, spectroscopy)",
+        "DNA profiling and serology",
+        "Toxicology and drug analysis",
+        "Chain of custody documentation",
+        "Report writing for court admissibility",
+        "Digital forensics basics",
+        "Critical attention to detail"
+      ],
+      "education_required": [
+        "B.Sc in Forensic Science, Chemistry, Biology, or Physics",
+        "M.Sc in Forensic Science (preferred for FSL/CBI/police roles)",
+        "LLB (additional, for forensic legal roles)"
+      ],
+      "specific_degree_requirements": "M.Sc Forensic Science from GFSU (Gujarat Forensic Sciences University), Panjab University, or Osmania University is highly valued for government forensic labs. CBI, CID, and state FSLs recruit through government exams.",
+      "certifications": [
+        "GFSU Forensic Science Certification courses",
+        "Digital Forensics Certification (EnCase, Cellebrite)",
+        "ISFCE CCE (Certified Computer Examiner)",
+        "Forensic document examination courses"
+      ],
+      "entrance_exams": [
+        "IIT JAM (for M.Sc in science, then specialize)",
+        "GFSU Entrance Exam",
+        "University-specific M.Sc Forensic entrance tests",
+        "SSC (for some forensic assistant roles in government labs)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB or PCM",
+        "Pursue B.Sc Forensic Science or B.Sc Chemistry/Biology",
+        "Pursue M.Sc Forensic Science (GFSU, Panjab University preferred)",
+        "Intern at state Forensic Science Laboratory (FSL)",
+        "Join as Forensic Analyst or Scientific Assistant at FSL/CBI",
+        "Specialize: DNA, toxicology, digital forensics, or document examination",
+        "Advance to Senior Scientist → Expert Witness → Director FSL"
+      ],
+      "tools_or_technologies": [
+        "GC-MS / LC-MS (chemical analysis)",
+        "CODIS (DNA database system)",
+        "FDR Analysis Kit (gunshot residue)",
+        "Encase / FTK (digital forensics)",
+        "LIMS (Laboratory Information Management System)",
+        "Comparison microscope",
+        "UV/FTIR Spectrophotometer"
+      ],
+      "experience_level": "Scientific Assistant → Junior Scientific Officer → Scientific Officer → Senior Scientist → Director FSL",
+      "average_salary_range": "INR 3–6 LPA (FSL entry); INR 7–14 LPA (senior officer); INR 15–25 LPA (Director/private forensic consulting)",
+      "future_scope": "Growing demand with increasing cyber crimes, NDPS cases, digital forensics needs, and court-mandated scientific analysis. Private forensic consulting for corporates and law firms is an emerging area."
+    },
+    {
+      "career_name": "Counselor / Guidance Counselor",
+      "category": "Humanities",
+      "description": "Provides emotional support, career guidance, and therapeutic counseling to individuals facing personal, academic, or career-related challenges. Works in schools, colleges, NGOs, or private practice.",
+      "required_skills": [
+        "Active listening and empathy",
+        "Individual and group counseling techniques",
+        "Career assessment tools (MBTI, Holland Code, aptitude tests)",
+        "Knowledge of mental health and psychoeducation",
+        "Crisis intervention basics",
+        "Confidentiality and professional ethics",
+        "Referral network management",
+        "Documentation and progress notes"
+      ],
+      "education_required": [
+        "BA/B.Sc in Psychology",
+        "MA in Applied Psychology with Counseling specialization",
+        "PG Diploma in Counseling and Psychotherapy",
+        "M.Ed with guidance and counseling specialization (for school setting)"
+      ],
+      "specific_degree_requirements": "For school guidance counselors, M.Ed with counseling specialization is recognized. For clinical counseling, MA Psychology with counseling + therapy certifications. RCI M.Phil is required for clinical psychologist title specifically.",
+      "certifications": [
+        "IAGC (Indian Association of Guidance Counselors) membership",
+        "CBT Counselor Training Certification",
+        "Career Counselor Certification — iCARE, Univariety, CareerPrinceton",
+        "Positive Psychology Practitioner Certificate"
+      ],
+      "entrance_exams": [
+        "University-level MA Psychology entrance tests",
+        "CUET-PG",
+        "CTET / State TET (for school counselor in government schools)"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Pursue BA/B.Sc Psychology",
+        "Pursue MA Applied Psychology with counseling focus",
+        "Complete internship at school, NGO, or hospital counseling center",
+        "Earn CBT or career counseling certification",
+        "Work as Junior Counselor at school or NGO",
+        "Build specialization: school counseling, career, or wellness",
+        "Progress to Senior Counselor → Head of Student Wellness → Independent Practice"
+      ],
+      "tools_or_technologies": [
+        "Career assessment platforms (iCARE, Univariety, PathFinder)",
+        "MBTI and Holland Code assessments",
+        "Teletherapy platforms (BetterHelp, Practo Consult, iCall)",
+        "Zoom / Google Meet",
+        "Case management software / MS Excel",
+        "Mindfulness apps (Calm, Headspace for supplementary tools)"
+      ],
+      "experience_level": "Trainee Counselor → Junior Counselor → Counselor → Senior Counselor → Head of Wellness / Independent Practitioner",
+      "average_salary_range": "INR 2.5–5 LPA (school/NGO entry); INR 5–12 LPA (senior); INR 15–30 LPA (corporate wellness/independent practice)",
+      "future_scope": "National Mental Health Policy mandates school counselors in all schools. Corporate mental health programs, employee assistance programs (EAPs), and edtech wellness integrations are growing rapidly."
+    },
+    {
+      "career_name": "Architect",
+      "category": "Science",
+      "description": "Designs buildings and structures, balancing aesthetics, functionality, safety, and sustainability. Oversees construction from concept to completion for residential, commercial, institutional, and urban projects.",
+      "required_skills": [
+        "Architectural design and drafting",
+        "Building materials and construction technology",
+        "Structural systems understanding",
+        "AutoCAD and BIM (Revit)",
+        "Site analysis and urban context",
+        "Client interaction and brief interpretation",
+        "Building codes and NBC compliance",
+        "Interior space planning"
+      ],
+      "education_required": [
+        "B.Arch (Bachelor of Architecture — 5 years)",
+        "M.Arch (Master of Architecture — 2 years, for specialization)"
+      ],
+      "specific_degree_requirements": "B.Arch must be from a Council of Architecture (CoA)-approved institution. CoA registration is mandatory to practice as an Architect in India (under the Architects Act, 1972). JEE Paper 2 / NATA is required for B.Arch admission.",
+      "certifications": [
+        "Council of Architecture (CoA) Registration — mandatory",
+        "LEED AP (Green architecture)",
+        "Autodesk Revit Certified Professional",
+        "GRIHA Evaluator (Green Rating for Integrated Habitat Assessment)"
+      ],
+      "entrance_exams": [
+        "NATA (National Aptitude Test in Architecture) — for most B.Arch colleges",
+        "JEE Main Paper 2 (for NITs/SPAs/IITs offering B.Arch)",
+        "GATE AR (for M.Arch at IITs and SPAs)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with Math (mandatory for architecture)",
+        "Clear NATA / JEE Paper 2",
+        "Complete B.Arch (5 years)",
+        "Register with the Council of Architecture (CoA)",
+        "Work in an architecture firm as Junior Architect",
+        "Build design portfolio across residential, commercial, and institutional projects",
+        "Pursue M.Arch for academic or specialized sustainable/urban architecture",
+        "Become a licensed independent architect and open practice",
+        "Advance to Principal Architect → Design Director"
+      ],
+      "tools_or_technologies": [
+        "AutoCAD",
+        "Autodesk Revit (BIM)",
+        "SketchUp",
+        "Rhino / Grasshopper (parametric design)",
+        "Lumion / V-Ray (visualization/rendering)",
+        "Adobe Creative Suite (presentations)",
+        "Primavera (project management)",
+        "Enscape (real-time rendering)"
+      ],
+      "experience_level": "Junior Architect → Architect → Senior Architect → Associate → Principal Architect → Design Director",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–18 LPA (5 years); INR 20–50 LPA (senior/principal); Own practice income is highly variable",
+      "future_scope": "India's real estate growth, Smart Cities Mission, affordable housing projects, green building mandates, and heritage conservation create sustained demand. Sustainable and parametric architecture are high-value niches."
+    },
+    {
+      "career_name": "Aviation Pilot (Commercial)",
+      "category": "Science",
+      "description": "Operates commercial aircraft transporting passengers or cargo. Responsible for pre-flight checks, navigation, communication with ATC, and safe operation of the aircraft.",
+      "required_skills": [
+        "Aircraft systems knowledge",
+        "Instrument flying and navigation",
+        "Air Traffic Control (ATC) communication",
+        "Meteorology and weather interpretation",
+        "Emergency and abnormal procedures",
+        "Crew Resource Management (CRM)",
+        "Spatial orientation and situational awareness",
+        "Physical fitness and stress management"
+      ],
+      "education_required": [
+        "12th with Physics and Mathematics (mandatory)",
+        "CPL (Commercial Pilot License) — from DGCA-approved flying school",
+        "Type Rating on specific aircraft (B737, A320, etc.) — required for airline employment"
+      ],
+      "specific_degree_requirements": "DGCA (Directorate General of Civil Aviation) issues CPL after medical clearance (Class I), minimum 200 flight hours, and passing 8 DGCA written exams plus skill tests. Age minimum is 17 (student pilot) and 18 (CPL).",
+      "certifications": [
+        "DGCA Commercial Pilot License (CPL)",
+        "Instrument Rating (IR)",
+        "Multi-Engine Rating (MER)",
+        "Type Rating (B737, A320, ATR72 — mandatory per aircraft type)",
+        "ATPL (Airline Transport Pilot License — for Captain upgrade)"
+      ],
+      "entrance_exams": [
+        "DGCA Class I Medical Examination",
+        "DGCA CPL Written Exams (Air Navigation, Meteorology, Air Regulations, Technical General, Technical Specific)",
+        "Airline aptitude and assessment tests (varied by airline)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with Physics and Mathematics",
+        "Pass DGCA Class I Medical Exam",
+        "Enroll in DGCA-approved flying training organization (FTO)",
+        "Complete Private Pilot License (PPL) — 40 hours minimum",
+        "Accumulate 200 flight hours (total)",
+        "Clear all 8 DGCA CPL theory papers",
+        "Obtain Instrument Rating and Multi-Engine Rating",
+        "Apply for CPL from DGCA",
+        "Complete airline selection process and Type Rating training",
+        "Join as First Officer → upgrade to Captain after 1,500 ATPL hours"
+      ],
+      "tools_or_technologies": [
+        "Flight Management Systems (FMS)",
+        "Glass cockpit avionics (Garmin G1000, Honeywell Primus)",
+        "Jeppesen charts and navigation databases",
+        "Flight simulators (Full Flight Simulator — Level D)",
+        "EFIS (Electronic Flight Instrument System)",
+        "ATC communication radio systems",
+        "Weather radar and TCAS"
+      ],
+      "experience_level": "Student Pilot → PPL → CPL → First Officer → Senior First Officer → Captain → Training Captain",
+      "average_salary_range": "CPL training cost: INR 40–80 lakhs; First Officer: INR 15–25 LPA; Captain: INR 40–120 LPA; Narrow body Captain at major carrier: INR 80–1.5 Cr PA",
+      "future_scope": "India's aviation sector is one of the fastest growing globally. IndiGo, Air India, and new carriers are creating thousands of pilot positions. Pilot shortage is a global structural issue for the next decade."
+    },
+    {
+      "career_name": "Marine Engineer",
+      "category": "Science",
+      "description": "Designs, operates, and maintains propulsion systems, machinery, and onboard systems of ships, submarines, and offshore platforms. Works aboard vessels or in shipyards and consulting.",
+      "required_skills": [
+        "Marine propulsion systems (diesel engines, gas turbines)",
+        "Electrical and automation systems on ships",
+        "STCW maritime conventions knowledge",
+        "Fluid mechanics and thermodynamics",
+        "Safety management (ISM Code)",
+        "Troubleshooting heavy machinery",
+        "Drawing and technical documentation",
+        "Bilingual communication (English mandatory for STCW)"
+      ],
+      "education_required": [
+        "B.E./B.Tech Marine Engineering (4 years) from IMU-approved institution",
+        "B.Sc Nautical Science (for Deck Officers — different track)",
+        "Diploma in Marine Engineering (for junior marine engineer track)"
+      ],
+      "specific_degree_requirements": "Indian Maritime University (IMU) or DG Shipping-approved college. STCW certification (Standards of Training, Certification and Watchkeeping) is internationally mandatory. Pre-sea training and cadetship are compulsory.",
+      "certifications": [
+        "STCW Basic Safety Training (mandatory)",
+        "IMU / DG Shipping approved degree",
+        "Certificate of Competency (CoC) — Class 4, 2, 1 (progressive)",
+        "Chief Engineer's License (Class I CoC)"
+      ],
+      "entrance_exams": [
+        "IMU-CET (Indian Maritime University Common Entrance Test)",
+        "IMUCET / JEE for affiliated colleges",
+        "Medical fitness examination (DGMS approved)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM (Math and Physics essential)",
+        "Clear IMU-CET and join approved Marine Engineering college",
+        "Complete pre-sea training and cadetship",
+        "Sail as Marine Engineer Cadet",
+        "Clear MEO Class 4 CoC (Certificate of Competency)",
+        "Progress through Class 4 → Class 2 → Class 1 Engineer certificates",
+        "Achieve Chief Engineer rank (Class I CoC required)",
+        "Transition to shore-based roles: Superintendent, DPA, or Shipyard"
+      ],
+      "tools_or_technologies": [
+        "Ship maintenance management systems (AMOS, DNV GL Smart)",
+        "CAD software (for shipyard roles)",
+        "Vibration analysis and condition monitoring tools",
+        "GMDSS communication systems",
+        "Electronic Chart Display and Information System (ECDIS)",
+        "Engine monitoring and automation systems"
+      ],
+      "experience_level": "Cadet → 4th Engineer → 3rd Engineer → 2nd Engineer → Chief Engineer → Superintendent (Shore)",
+      "average_salary_range": "Junior Engineer (sea): USD 1,500–3,000/month; 2nd Engineer: USD 4,000–6,000/month; Chief Engineer: USD 8,000–15,000+/month",
+      "future_scope": "India is among the top suppliers of maritime officers globally. Growing demand for LNG, offshore, and specialized vessel engineers. Shore-based roles in shipyards, classification societies, and shipbuilding are expanding."
+    },
+    {
+      "career_name": "Geologist / Geoscientist",
+      "category": "Science",
+      "description": "Studies the Earth's structure, composition, and processes. Works in mineral exploration, oil and gas, groundwater, environmental geology, and hazard assessment.",
+      "required_skills": [
+        "Rock and mineral identification",
+        "Geological mapping and field survey",
+        "Stratigraphy and sedimentology",
+        "Hydrogeology and groundwater analysis",
+        "Remote sensing and GIS for geological applications",
+        "Petroleum geology basics",
+        "Scientific report writing",
+        "Data logging and interpretation"
+      ],
+      "education_required": [
+        "B.Sc Geology (Hons)",
+        "M.Sc Geology or Applied Geology (required for professional roles)",
+        "PhD Geology (for academic or senior research roles)"
+      ],
+      "specific_degree_requirements": "M.Sc Geology is the minimum for GSI, ONGC, CGWB, and mining company roles. IIT JAM Geology paper is the main entry for M.Sc at IITs. UPSC exams include Geology as an optional subject for state geological survey roles.",
+      "certifications": [
+        "GATE Geology and Geophysics (GG) — for PSU roles",
+        "GIS Professional Certification (GISP)",
+        "Petroleum Geology Short Courses (AAPG)",
+        "Remote Sensing and GIS Training (IIRS, Dehradun)"
+      ],
+      "entrance_exams": [
+        "IIT JAM Geology",
+        "GATE GG (Geology and Geophysics)",
+        "GSI Geological Survey of India Recruitment Exam",
+        "ONGC Geoscientist Exam"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCM or PCB",
+        "Pursue B.Sc Geology (Hons)",
+        "Clear IIT JAM for M.Sc Geology at IITs/IISc",
+        "Pursue M.Sc with specialization in petroleum, mining, or hydrogeology",
+        "Clear GATE GG for PSU/government geology roles",
+        "Join GSI, ONGC, CGWB, or private mining firm",
+        "Pursue PhD for academic or senior research scientist track",
+        "Advance to Senior Geologist → Deputy Director → Director"
+      ],
+      "tools_or_technologies": [
+        "ArcGIS / QGIS (geological mapping)",
+        "Petrel (petroleum geoscience software)",
+        "RockWorks (borehole logging)",
+        "ENVI (remote sensing)",
+        "MOVE (structural geology)",
+        "Google Earth Pro",
+        "Leica GPS instruments (field survey)"
+      ],
+      "experience_level": "Field Geologist → Geologist → Senior Geologist → Principal Geologist → Geological Officer → Director",
+      "average_salary_range": "INR 4–8 LPA (entry GSI/private); INR 10–20 LPA (ONGC scale 5+ years); INR 20–45 LPA (senior/ONGC senior grade); International upstream oil companies offer higher packages",
+      "future_scope": "Critical for India's mineral exploration (critical minerals for EVs), oil and gas, groundwater management, disaster risk reduction (earthquake, landslide), and environmental geotechnics."
+    },
+    {
+      "career_name": "Chartered Surveyor / Quantity Surveyor",
+      "category": "Commerce",
+      "description": "Manages costs in construction and infrastructure projects — from initial estimates to final accounts. Ensures financial efficiency, contract compliance, and value for money in built environment projects.",
+      "required_skills": [
+        "Quantity estimation and bill of quantities (BOQ)",
+        "Contract administration (FIDIC, NEC, CPWD)",
+        "Cost planning and value engineering",
+        "Tender management and procurement",
+        "Construction project financial management",
+        "Building measurement and specification writing",
+        "AutoCAD and BIM for quantity take-offs",
+        "Dispute resolution and claims management"
+      ],
+      "education_required": [
+        "B.Tech Civil Engineering or B.Arch",
+        "B.Sc Quantity Surveying (offered in some institutions)",
+        "M.Tech Construction Management or MSc Quantity Surveying",
+        "RICS accredited programs (for MRICS designation)"
+      ],
+      "specific_degree_requirements": "RICS (Royal Institution of Chartered Surveyors) Assessment of Professional Competence (APC) is the globally recognized professional qualification. In India, B.Tech Civil + work experience + RICS APC is the standard path.",
+      "certifications": [
+        "MRICS (Member of RICS) — via APC route",
+        "FRICS (Fellow of RICS — senior level)",
+        "PMP (Project Management Professional)",
+        "Autodesk Revit / Navisworks (for BIM-based quantity surveying)"
+      ],
+      "entrance_exams": [
+        "JEE Main (for B.Tech Civil)",
+        "GATE Civil (for M.Tech Construction Management)",
+        "RICS APC (professional competency assessment — not a written exam)"
+      ],
+      "career_path_steps": [
+        "Complete B.Tech Civil Engineering",
+        "Join a construction company or PMC as Graduate Trainee",
+        "Learn BOQ preparation, cost estimation, and contract administration",
+        "Pursue RICS APC candidacy through recognized employer or self-sponsorship",
+        "Complete RICS APC assessment (typically 2 years structured training)",
+        "Obtain MRICS designation",
+        "Progress to Senior QS → Associate Director → Director",
+        "Specialize in commercial management, claims, or infrastructure"
+      ],
+      "tools_or_technologies": [
+        "CostX (quantity take-off software)",
+        "Autodesk Revit + Navisworks (BIM quantities)",
+        "MS Excel (cost reports)",
+        "Primavera P6 (project controls)",
+        "ERP systems (SAP, Oracle Primavera Unifier)",
+        "FIDIC/NEC contract suites"
+      ],
+      "experience_level": "Graduate QS → Quantity Surveyor → Senior QS → Associate Director → Director → Partner",
+      "average_salary_range": "INR 4–8 LPA (entry); INR 12–25 LPA (MRICS, 5 years); INR 30–70 LPA (Director level, international projects)",
+      "future_scope": "Strong growth in infrastructure projects, PPP contracts, real estate development, and international construction markets (Middle East, Africa, SE Asia). BIM-integrated cost management is a high-demand specialization."
+    },
+    {
+      "career_name": "Digital Marketing Specialist",
+      "category": "Commerce",
+      "description": "Plans and executes marketing campaigns across digital channels including SEO, SEM, social media, email, and content marketing to drive brand awareness, lead generation, and customer acquisition.",
+      "required_skills": [
+        "Search Engine Optimization (SEO)",
+        "Google Ads / Meta Ads campaign management",
+        "Content marketing and copywriting",
+        "Social media marketing (Instagram, LinkedIn, X)",
+        "Email marketing (Mailchimp, HubSpot)",
+        "Analytics and data interpretation (Google Analytics 4)",
+        "Marketing funnel design and conversion rate optimization",
+        "A/B testing and campaign optimization"
+      ],
+      "education_required": [
+        "BBA / B.Com / BA Mass Communication (most common entry routes)",
+        "MBA in Marketing (for senior leadership track)",
+        "B.Tech (for growth marketing / data-driven roles)"
+      ],
+      "specific_degree_requirements": "No mandatory degree for entry-level roles — skills and portfolio of campaigns are more important. MBA Marketing from a top B-school accelerates growth to senior brand and growth leadership positions.",
+      "certifications": [
+        "Google Analytics 4 Certification",
+        "Google Ads Search / Display / Video Certification",
+        "Meta Blueprint Certification",
+        "HubSpot Inbound Marketing Certification",
+        "SEMrush SEO Certification"
+      ],
+      "entrance_exams": [
+        "CAT / MAT / XAT (for MBA Marketing route)",
+        "No mandatory exam for direct industry entry"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Pursue BBA / B.Com / BA Mass Communication",
+        "Learn SEO, Google Ads, and social media fundamentals through online courses",
+        "Complete Google Analytics and Google Ads certifications",
+        "Build portfolio: run live campaigns, manage social accounts, or work on freelance projects",
+        "Start as Digital Marketing Executive or Intern",
+        "Progress to Digital Marketing Analyst → Manager → Head of Digital",
+        "Specialize: SEO, PPC, influencer marketing, growth hacking, or MarTech"
+      ],
+      "tools_or_technologies": [
+        "Google Analytics 4 / Google Tag Manager",
+        "Google Ads / Meta Ads Manager",
+        "SEMrush / Ahrefs / Moz (SEO)",
+        "HubSpot / Mailchimp (email/CRM)",
+        "Canva / Adobe Express (content creation)",
+        "Hootsuite / Buffer (social scheduling)",
+        "Hotjar (UX analytics)",
+        "WordPress / Webflow (CMS)"
+      ],
+      "experience_level": "Digital Marketing Executive → Analyst → Manager → Senior Manager → VP Marketing / CMO",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–18 LPA (manager, 3–5 years); INR 25–60 LPA (VP/CMO at scaling brands); Freelance rates vary widely",
+      "future_scope": "Growing exponentially with D2C brand boom, OTT advertising, influencer marketing, and AI-driven personalization. Marketing technology (MarTech) and performance marketing specialists are among the most sought-after profiles."
+    },
+    {
+      "career_name": "Supply Chain Manager / Logistics Professional",
+      "category": "Commerce",
+      "description": "Plans, implements, and controls the efficient flow of goods, services, and information from origin to end customer. Manages procurement, warehousing, transportation, and demand forecasting.",
+      "required_skills": [
+        "Supply chain planning and demand forecasting",
+        "Procurement and vendor management",
+        "Inventory optimization",
+        "Warehouse management systems (WMS)",
+        "Logistics and transportation management",
+        "SAP MM / SAP SCM",
+        "Contract and cost negotiation",
+        "Analytics and process improvement (Lean, Six Sigma)"
+      ],
+      "education_required": [
+        "BBA / B.Com / B.Tech (Engineering, especially industrial or mechanical)",
+        "MBA in Operations / Supply Chain Management",
+        "PG Diploma in Supply Chain Management (IIPM, IIMM, etc.)"
+      ],
+      "specific_degree_requirements": "MBA in Operations/SCM from a top institution (IIM, NITIE, XLRI) is the preferred route for managerial roles. B.Tech Industrial Engineering also a strong pathway. APICS certifications are industry gold standards.",
+      "certifications": [
+        "APICS CPIM (Certified in Production and Inventory Management)",
+        "APICS CSCP (Certified Supply Chain Professional)",
+        "Six Sigma Green/Black Belt",
+        "SAP Certified Application Associate – SCM",
+        "Certified Purchasing Professional (CPP) — NISM"
+      ],
+      "entrance_exams": [
+        "CAT / MAT / XAT (MBA Operations/SCM)",
+        "GATE (for NITIE, IIT Bombay M.Tech IEOR)",
+        "IIMM entrance exams (Indian Institute of Materials Management)"
+      ],
+      "career_path_steps": [
+        "Complete B.Tech or BBA/B.Com",
+        "Pursue MBA in Operations / Supply Chain or APICS CPIM certification",
+        "Start as Supply Chain Executive, Purchase Executive, or Logistics Coordinator",
+        "Learn SAP MM/WM and ERP usage",
+        "Advance to Manager → Senior Manager → AGM Supply Chain",
+        "Obtain APICS CSCP and Six Sigma certification",
+        "Lead cross-functional supply chain transformation projects",
+        "Progress to VP Operations → Supply Chain Director → COO"
+      ],
+      "tools_or_technologies": [
+        "SAP MM / SAP SCM / SAP S4HANA",
+        "Oracle SCM Cloud",
+        "Manhattan Associates WMS",
+        "Coupa (procurement)",
+        "MS Excel / Power BI (analytics)",
+        "Tableau (supply chain visualization)",
+        "Flexport / FreightTech platforms"
+      ],
+      "experience_level": "Executive → Manager → Senior Manager → AGM → VP Operations → Supply Chain Director",
+      "average_salary_range": "INR 3–7 LPA (entry); INR 10–20 LPA (manager, 4–6 years); INR 25–60 LPA (VP/Director level at large corporates/MNCs)",
+      "future_scope": "Supply chain resilience, near-shoring, India's PLI scheme driving manufacturing, e-commerce logistics boom, and cold chain infrastructure investment make this a high-growth domain."
+    },
+    {
+      "career_name": "Statistician / Biostatistician",
+      "category": "Science",
+      "description": "Designs studies, collects data, and applies statistical models to solve problems in medicine, public health, economics, government, and industry. Biostatisticians specialize in health/clinical trial data.",
+      "required_skills": [
+        "Probability theory and statistical inference",
+        "Regression modeling and multivariate analysis",
+        "Clinical trial design and analysis (biostatistics)",
+        "Programming in R and SAS",
+        "Survival analysis and longitudinal data methods",
+        "Bayesian statistics",
+        "Survey design and sampling theory",
+        "Statistical reporting and writing"
+      ],
+      "education_required": [
+        "B.Sc Statistics (Hons) or B.Sc Mathematics",
+        "M.Sc Statistics or Biostatistics",
+        "PhD Statistics or Biostatistics (for research and academic roles)"
+      ],
+      "specific_degree_requirements": "M.Sc Statistics from ISI, IITK, DSE, or CMI is highly regarded. For biostatistics, M.Sc Public Health / Epidemiology with statistics focus at SCTIMST, AIIMS, or CMC Vellore is valued. PhD is required for academic and principal scientist positions.",
+      "certifications": [
+        "SAS Base Programmer Certification",
+        "SAS Advanced Programmer Certification",
+        "SAS Clinical Trials Programming",
+        "Coursera / Johns Hopkins Biostatistics Specialization"
+      ],
+      "entrance_exams": [
+        "ISI Admission Test (for M.Stat at Indian Statistical Institute)",
+        "IIT JAM Statistics",
+        "CMI Entrance Exam",
+        "CSIR-UGC NET (Mathematical Sciences)",
+        "AIIMS and ICMR fellowship exams (for biostatistics research roles)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with Math background",
+        "Pursue B.Sc Statistics (Hons)",
+        "Clear ISI/IIT JAM for M.Sc Statistics",
+        "Complete M.Sc with focus on applied/biostatistics",
+        "Join pharmaceutical company, CROS, or research institution",
+        "Earn SAS programming certifications",
+        "Progress to Biostatistician → Senior Biostatistician → Lead Statistician",
+        "Pursue PhD for principal statistician or faculty roles"
+      ],
+      "tools_or_technologies": [
+        "SAS (primary tool in clinical/pharma industry)",
+        "R (academic and growing industry use)",
+        "SPSS",
+        "Stata",
+        "Python (statsmodels, scipy)",
+        "CDISC standards (SDTM, ADaM — for clinical trials)",
+        "Medidata Rave / Oracle Clinical (CTMS)"
+      ],
+      "experience_level": "Junior Statistician / SAS Programmer → Statistician → Senior Statistician → Principal Statistician → Head of Biostatistics",
+      "average_salary_range": "INR 4–8 LPA (entry); INR 10–20 LPA (senior, 3–6 years); INR 20–45 LPA (principal/head in pharma/CRO); ISI faculty scale as per 7th CPC",
+      "future_scope": "Clinical trial growth in India, pharmaceutical statistics demand, healthcare analytics, and precision medicine are major drivers. AI/ML and statistics integration creates a new generation of data-driven statistical scientists."
+    },
+    {
+      "career_name": "Radiographer / Radiologic Technologist",
+      "category": "Science",
+      "description": "Operates medical imaging equipment including X-ray, CT, MRI, and ultrasound machines to produce diagnostic images for physicians. Ensures patient safety and image quality.",
+      "required_skills": [
+        "Operation of radiological equipment (X-ray, CT, MRI, Ultrasound)",
+        "Patient positioning and immobilization",
+        "Radiation safety and protection",
+        "DICOM and PACS image management",
+        "Image quality assessment",
+        "Anatomy knowledge for image interpretation context",
+        "Patient communication and care",
+        "Contrast media administration protocols"
+      ],
+      "education_required": [
+        "12th with PCB (preferred) or PCM",
+        "B.Sc Medical Imaging Technology / Radiography (3–4 years)",
+        "PG Diploma or M.Sc in Medical Imaging / Radiotherapy (for specialization)"
+      ],
+      "specific_degree_requirements": "B.Sc Medical Imaging Technology from an AICTE/university-recognized college. AERB (Atomic Energy Regulatory Board) certification is required for operating radiation-producing equipment in India.",
+      "certifications": [
+        "AERB Radiation Safety Certificate (mandatory for operating X-ray/CT/radiation therapy equipment)",
+        "ARRT Certification (American Registry of Radiologic Technologists — for international practice)",
+        "CCRT (Certified Cardiac Radiologic Technologist)",
+        "MRI Safety Officer Certification"
+      ],
+      "entrance_exams": [
+        "NEET (some states use for B.Sc Paramedical admissions)",
+        "State-level paramedical entrance exams",
+        "University-specific entrance tests"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB",
+        "Pursue B.Sc Medical Imaging Technology",
+        "Complete mandatory clinical internship",
+        "Obtain AERB radiation safety certification",
+        "Join hospital or diagnostic center as Radiographer",
+        "Specialize in CT, MRI, Mammography, or Interventional Radiology",
+        "Pursue M.Sc for senior technologist or academic roles",
+        "Advance to Senior Radiographer → Chief Radiographer → Imaging Head"
+      ],
+      "tools_or_technologies": [
+        "CT Scanner (Siemens Somatom, GE Revolution)",
+        "MRI Machine (GE Signa, Philips Ingenia)",
+        "Digital X-ray systems",
+        "Ultrasound machine",
+        "PACS (Picture Archiving and Communication System)",
+        "DICOM viewers (OsiriX, Horos)",
+        "RIS (Radiology Information System)"
+      ],
+      "experience_level": "Junior Radiographer → Radiographer → Senior Radiographer → Chief Radiographer → Quality Control Manager",
+      "average_salary_range": "INR 2.5–5 LPA (entry); INR 5–10 LPA (3–5 years, specialized modality); INR 10–20 LPA (senior/imaging head in private hospitals)",
+      "future_scope": "Growing with hospital expansion, diagnostic center chains (SRL, Lal Path Labs), tele-radiology, AI-powered image analysis, and increasing demand for CT/MRI diagnostics across India."
+    },
+    {
+      "career_name": "Operations Research Analyst",
+      "category": "Science",
+      "description": "Uses advanced mathematical and analytical methods such as optimization, simulation, and linear programming to help organizations make better decisions and improve operational efficiency.",
+      "required_skills": [
+        "Linear programming and optimization modeling",
+        "Simulation (Monte Carlo, discrete event)",
+        "Statistical analysis and probability theory",
+        "Network and graph theory",
+        "Python / R for optimization (PuLP, scipy.optimize, OR-Tools)",
+        "Supply chain and logistics modeling",
+        "Decision analysis under uncertainty",
+        "Data communication and report writing"
+      ],
+      "education_required": [
+        "B.Tech in Industrial Engineering, Mathematics, or Computer Science",
+        "M.Sc Operations Research or M.Tech Industrial Engineering",
+        "MBA in Operations (quantitative focus)",
+        "PhD (for research-oriented positions)"
+      ],
+      "specific_degree_requirements": "NITIE Mumbai, IIT Bombay (IEOR), IIT Delhi (DOMS/MBA), and ISI Kolkata are premier institutions for OR in India. M.Sc OR from Delhi University or M.Tech IE from NITs are standard pathways.",
+      "certifications": [
+        "INFORMS Certified Analytics Professional (CAP)",
+        "APICS CPIM (supply chain focus)",
+        "Python for Operations Research (Coursera/EdX)",
+        "Gurobi / CPLEX solver training"
+      ],
+      "entrance_exams": [
+        "GATE (for M.Tech Industrial Engineering)",
+        "CAT / GMAT (for MBA Operations/Analytics)",
+        "IIT JAM Mathematics (for M.Sc OR at IITs)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with strong Math",
+        "Pursue B.Tech Industrial Engineering or B.Sc Mathematics",
+        "Learn Python/R for optimization and simulation",
+        "Pursue M.Tech IE or M.Sc OR from NITIE / IITs",
+        "Join as Operations Research Analyst or Data Analyst with OR focus",
+        "Work in consulting, logistics, manufacturing, or tech on optimization problems",
+        "Advance to Senior Analyst → OR Manager → Decision Science Director"
+      ],
+      "tools_or_technologies": [
+        "Python (PuLP, OR-Tools, scipy.optimize)",
+        "CPLEX / Gurobi (enterprise optimization solvers)",
+        "Arena / AnyLogic (simulation software)",
+        "R (optimization packages)",
+        "Excel Solver",
+        "SAP APO (Advanced Planning and Optimization)",
+        "MATLAB"
+      ],
+      "experience_level": "Junior OR Analyst → OR Analyst → Senior Analyst → Lead Analyst → Decision Science Director",
+      "average_salary_range": "INR 5–10 LPA (entry); INR 12–25 LPA (3–6 years); INR 30–60 LPA (senior/consulting firm/tech firm lead)",
+      "future_scope": "Growing in AI-augmented optimization for logistics (Swiggy, Amazon, Flipkart), airline scheduling, financial portfolio optimization, healthcare resource allocation, and military operations research."
+    },
+    {
+      "career_name": "Educational Administrator / School Principal",
+      "category": "Humanities",
+      "description": "Leads and manages the overall functioning of a school — including academic programs, staff management, student welfare, administrative operations, policy compliance, and community engagement.",
+      "required_skills": [
+        "Educational leadership and administration",
+        "Curriculum planning and academic governance",
+        "Human resource management in education",
+        "Budget and resource management",
+        "School board and parent communication",
+        "CBSE/ICSE/IB school regulatory compliance",
+        "Conflict resolution",
+        "Vision setting and institutional culture building"
+      ],
+      "education_required": [
+        "B.Ed (mandatory)",
+        "M.Ed (Master of Education) — preferred or required for principal roles",
+        "MA/M.Sc in relevant subject + M.Ed",
+        "MBA in Education Management (alternate route)"
+      ],
+      "specific_degree_requirements": "M.Ed from an NCTE-recognized institution is standard for principal eligibility in CBSE/state-affiliated schools. For CBSE schools, the principal must have M.Ed or equivalent with minimum years of teaching experience. Some IB/IGCSE schools accept international education management degrees.",
+      "certifications": [
+        "National Initiative for School Heads (NISHTHA) Leadership Certification",
+        "School Leadership Programme — British Council / CBSE",
+        "Diploma in Educational Administration (IGNOU)",
+        "MBA in School Management (Symbiosis, IGNOU)"
+      ],
+      "entrance_exams": [
+        "M.Ed entrance exam (university-specific)",
+        "CUET-PG for M.Ed in central universities",
+        "School principal recruitment exams (KVS, NVS Principal Selection Test)"
+      ],
+      "career_path_steps": [
+        "Complete graduation in relevant subject",
+        "Pursue B.Ed from NCTE-recognized institution",
+        "Begin teaching career and clear CTET/State TET",
+        "Accumulate 5–10 years of teaching experience",
+        "Pursue M.Ed or MBA Education Management",
+        "Move to Vice Principal role",
+        "Advance to Principal position",
+        "Pursue KVS/NVS Principal examination for government schools",
+        "Contribute to curriculum, staff training, and school accreditation (NAAC, QCI)"
+      ],
+      "tools_or_technologies": [
+        "School ERP (School Management Systems: Fedena, Entab, MySchool)",
+        "CBSE LOC / UDISE+ portal",
+        "Google Workspace for Education",
+        "MS Office Suite",
+        "DIKSHA / NCERT e-learning platforms",
+        "Video conferencing (Zoom, Google Meet)"
+      ],
+      "experience_level": "Teacher → Senior Teacher → HOD → Vice Principal → Principal → Director of Education",
+      "average_salary_range": "INR 5–10 LPA (Vice Principal/private); INR 8–15 LPA (Principal private school); INR 6–12 LPA (KVS/NVS scale); INR 15–30 LPA (International school principal)",
+      "future_scope": "India's massive school system expansion, NEP 2020 implementation requiring leadership training, and growth of private and international schools ensure sustained demand for qualified educational leaders."
+    },
+    {
+      "career_name": "Public Relations (PR) Specialist",
+      "category": "Commerce",
+      "description": "Manages an organization's public image and communications. Crafts press releases, manages media relations, handles crisis communications, and builds brand reputation across stakeholders.",
+      "required_skills": [
+        "Media relations and press release writing",
+        "Crisis communication management",
+        "Brand messaging and storytelling",
+        "Social media management",
+        "Event management and product launches",
+        "Corporate communications",
+        "Writing and editing for multiple audiences",
+        "Networking and relationship management with journalists"
+      ],
+      "education_required": [
+        "BA in Journalism, Mass Communication, or English",
+        "BA/B.Sc Public Relations (niche programs)",
+        "MA in Mass Communication or PR",
+        "MBA in Marketing / Communications (for senior corporate PR track)"
+      ],
+      "specific_degree_requirements": "IIMC, Mudra Institute of Communications Ahmedabad (MICA), and Symbiosis Institute of Media and Communication (SIMC) are premier institutions. No single mandatory degree — portfolio of media work and networking are critical.",
+      "certifications": [
+        "PRCA (Public Relations and Communications Association) Diploma",
+        "MICA Digital Communication Certificate",
+        "Google Analytics Certification (for digital PR metrics)",
+        "Hootsuite Social Marketing Certificate"
+      ],
+      "entrance_exams": [
+        "IIMC Entrance Exam",
+        "MICA MICAT (for MA / PGDM Communication)",
+        "CUET-PG for MA Mass Communication in central universities"
+      ],
+      "career_path_steps": [
+        "Complete 12th in any stream",
+        "Pursue BA Journalism / Mass Communication / English",
+        "Intern at a PR agency or corporate communications team",
+        "Build network of media contacts and portfolio of press releases",
+        "Join as PR Executive or Corporate Communications Coordinator",
+        "Advance to PR Manager → Senior PR Manager",
+        "Pursue MBA or PGDM for corporate communications leadership",
+        "Move to Head of Corporate Affairs → VP Communications → Chief Communications Officer (CCO)"
+      ],
+      "tools_or_technologies": [
+        "Meltwater / Cision (media monitoring)",
+        "Prowly (PR platform)",
+        "Hootsuite / Sprout Social (social media management)",
+        "Canva (visual content creation)",
+        "Google Analytics (digital PR measurement)",
+        "MS Office / Google Workspace",
+        "Email marketing tools (Mailchimp)"
+      ],
+      "experience_level": "PR Intern → PR Executive → Senior Executive → PR Manager → Head of Communications → CCO",
+      "average_salary_range": "INR 3–6 LPA (entry); INR 8–15 LPA (manager, 3–5 years); INR 20–50 LPA (VP/CCO at large corporations)",
+      "future_scope": "Digital PR, influencer relations, ORM (online reputation management), and ESG communication are expanding the field. India's growing corporate ecosystem and startup ecosystem fuel demand for skilled PR professionals."
+    },
+    {
+      "career_name": "Chartered Accountant — Forensic Accounting",
+      "category": "Commerce",
+      "description": "A specialized CA who investigates financial fraud, embezzlement, money laundering, and corporate misconduct. Provides litigation support, expert witness testimony, and fraud prevention advisory.",
+      "required_skills": [
+        "Forensic investigation and evidence gathering",
+        "Financial statement fraud detection",
+        "Anti-money laundering (AML) analysis",
+        "Digital forensics for financial data",
+        "Corporate fraud schemes knowledge",
+        "Expert report writing for courts",
+        "Understanding of IPC, PMLA, FEMA, and Income Tax Act",
+        "Data analytics for fraud detection"
+      ],
+      "education_required": [
+        "CA Final qualification (ICAI mandatory)",
+        "LLB (additional — strongly recommended for litigation support)",
+        "Forensic accounting diploma / postgraduate program"
+      ],
+      "specific_degree_requirements": "CA membership (ACA/FCA) is the core credential. The ICAI Certificate Course on Forensic Accounting and Fraud Detection is the specialized overlay. CFE (Certified Fraud Examiner) is the international gold standard certification.",
+      "certifications": [
+        "ICAI Certificate Course on Forensic Accounting and Fraud Detection",
+        "Certified Fraud Examiner (CFE) — ACFE (USA)",
+        "Certified Anti-Money Laundering Specialist (CAMS)",
+        "DISA (Diploma in Information Systems Audit) — ICAI"
+      ],
+      "entrance_exams": [
+        "ICAI CA Foundation / Intermediate / Final (primary pathway)",
+        "CFE Exam (ACFE administered)"
+      ],
+      "career_path_steps": [
+        "Complete CA qualification (Foundation → Intermediate → Articleship → Final)",
+        "Gain 3–5 years of audit experience in public practice or industry",
+        "Pursue ICAI's Forensic Accounting certificate course",
+        "Earn Certified Fraud Examiner (CFE) designation",
+        "Join a forensic accounting firm or Big 4 Forensics division (EY Forensics, KPMG Forensics, etc.)",
+        "Handle fraud investigations, PMLA advisory, and litigation support",
+        "Advance to Senior Manager → Director Forensics → Independent Forensic Expert"
+      ],
+      "tools_or_technologies": [
+        "IDEA (Interactive Data Extraction and Analysis)",
+        "ACL Analytics",
+        "EnCase (digital forensics)",
+        "MS Excel (advanced data analysis)",
+        "Python / R (for large dataset fraud analytics)",
+        "Relativity (e-discovery platform)",
+        "Tally audit tools"
+      ],
+      "experience_level": "CA Fresher → Audit Manager → Forensic Analyst → Forensic Manager → Director Forensics → Independent Expert",
+      "average_salary_range": "INR 8–15 LPA (forensic analyst with CA); INR 20–45 LPA (senior manager); INR 50–100 LPA (Partner/Director at Big 4 Forensics); Independent CFE expert rates are very high",
+      "future_scope": "Growing demand from SFIO (Serious Fraud Investigation Office), ED, CBI, and courts for forensic accountants. Rising corporate fraud incidents, PMLA enforcement, and global anti-corruption initiatives are strong drivers."
+    },
+    {
+      "career_name": "Veterinarian (BVSc & AH)",
+      "category": "Science",
+      "description": "Diagnoses and treats diseases and injuries in animals. Works with companion animals, livestock, poultry, wildlife, and in public health, food safety, and zoonotic disease surveillance.",
+      "required_skills": [
+        "Clinical examination and diagnosis of animals",
+        "Surgical skills (spay/neuter, orthopedics)",
+        "Pharmacology and drug dosing for multiple species",
+        "Radiology and imaging interpretation",
+        "Herd health management (livestock)",
+        "Zoonotic disease surveillance and reporting",
+        "Vaccination and preventive healthcare",
+        "Animal handling and restraint"
+      ],
+      "education_required": [
+        "12th with PCB",
+        "BVSc & AH — Bachelor of Veterinary Science and Animal Husbandry (5.5 years including 1-year internship)",
+        "MVSc — Master of Veterinary Science (2 years, specialization — optional)"
+      ],
+      "specific_degree_requirements": "Veterinary Council of India (VCI) registration is mandatory to practice. NEET-UG is required for admission to BVSc programs at most central and state veterinary colleges under MCI/VCI norms.",
+      "certifications": [
+        "VCI Registration Certificate (mandatory for practice)",
+        "State Veterinary Council Enrollment",
+        "FNAAS (Fellow of National Academy of Agricultural Sciences — for senior academics)",
+        "ICAR-NET (for lectureship in veterinary colleges)"
+      ],
+      "entrance_exams": [
+        "NEET-UG (for BVSc admission in most states)",
+        "State-level veterinary entrance exams (UPCPMT, KEAM for veterinary)",
+        "ICAR AIEEA (for ICAR-affiliated veterinary colleges)"
+      ],
+      "career_path_steps": [
+        "Complete 12th with PCB",
+        "Clear NEET-UG / State Veterinary Entrance Exam",
+        "Enroll in BVSc & AH (5.5 years)",
+        "Complete compulsory rotating internship",
+        "Register with State Veterinary Council and VCI",
+        "Join as Clinical Veterinarian, Livestock Development Officer, or Government Vet",
+        "Pursue MVSc for specialization (Internal Medicine, Surgery, Pathology, Reproductive Biology)",
+        "Explore: ICAR research, FSSAI food safety, WHO/FAO animal health programs, or private small animal practice",
+        "Advance to Chief Veterinary Officer, Research Scientist, or Specialist Consultant"
+      ],
+      "tools_or_technologies": [
+        "Veterinary diagnostic equipment (X-ray, ultrasound, endoscope)",
+        "PACS / digital imaging viewers",
+        "Veterinary practice management software (VetSoft, DVMAX)",
+        "PCR machines (disease diagnosis)",
+        "ICAR-NAIP disease surveillance systems",
+        "Cold chain equipment (vaccine management)"
+      ],
+      "experience_level": "Intern Vet → Junior Vet / LDO → Senior Veterinarian → Chief Vet Officer → Research Scientist / Specialist",
+      "average_salary_range": "INR 3–7 LPA (government entry/private clinic); INR 8–15 LPA (senior govt/specialist); INR 15–35 LPA (specialist in metro private practice); ICAR/research roles per 7th CPC scales",
+      "future_scope": "Growing with increased pet ownership, animal husbandry modernization, zoonotic disease concerns (One Health approach), food safety regulations, and India's livestock export sector."
+    },
+    {
+      "career_name": "Librarian / Information Scientist",
+      "category": "Humanities",
+      "description": "Manages library resources, information systems, and knowledge services. Assists users in accessing, organizing, and retrieving information across physical and digital libraries.",
+      "required_skills": [
+        "Library cataloguing and classification (DDC, UDC)",
+        "Library management systems (Koha, Libsys)",
+        "Information retrieval and research assistance",
+        "Digital library development (DSpace, EPrints)",
+        "Reference service management",
+        "Collection development and acquisition",
+        "Knowledge organization and metadata standards",
+        "User education and information literacy programs"
+      ],
+      "education_required": [
+        "B.Lib.Sc (Bachelor of Library Science) or BLISc",
+        "M.Lib.Sc (Master of Library and Information Science) — preferred for senior/university library posts",
+        "PhD Library and Information Science (for academic and research librarian roles)"
+      ],
+      "specific_degree_requirements": "M.Lib.Sc from recognized universities (TISS, BHU, Delhi University, DRTC Bangalore) is the minimum for university librarian positions. UGC-NET Library Science is required for appointment as university librarian under UGC norms.",
+      "certifications": [
+        "UGC-NET Library and Information Science (for academic posts)",
+        "SLET/SET (for state university library posts)",
+        "Koha Library System Administration Certificate",
+        "Digital Library Certification (IGNOU / University programs)"
+      ],
+      "entrance_exams": [
+        "BHU PET / Delhi University entrance (M.Lib.Sc)",
+        "CUET-PG",
+        "UGC-NET Library and Information Science",
+        "KVS / NVS Librarian Recruitment Exam",
+        "SSC (for government library roles)"
+      ],
+      "career_path_steps": [
+        "Complete graduation in any discipline",
+        "Pursue B.Lib.Sc / BLISc",
+        "Pursue M.Lib.Sc / MLISc",
+        "Clear UGC-NET Library Science for eligibility for college/university positions",
+        "Start as Library Assistant → Junior Librarian",
+        "Build digital library and cataloguing skills",
+        "Apply for School Librarian (KVS/NVS), College Librarian, or Corporate Information Center roles",
+        "Advance to Senior Librarian → Deputy Librarian → Chief Librarian",
+        "Pursue PhD for Deputy/Chief Librarian at universities or academic posts"
+      ],
+      "tools_or_technologies": [
+        "Koha ILS (Integrated Library System)",
+        "LibSys (widely used in India)",
+        "SOUL 3.0 (INFLIBNET, India)",
+        "DSpace / EPrints (digital repositories)",
+        "OPAC (Online Public Access Catalog)",
+        "MARC 21 / Dublin Core (metadata standards)",
+        "NDL (National Digital Library of India)",
+        "INFLIBNET resources (Shodhganga, N-LIST)"
+      ],
+      "experience_level": "Library Trainee → Junior Librarian → Librarian → Senior Librarian → Deputy Librarian → Chief Librarian",
+      "average_salary_range": "INR 2.5–5 LPA (school/small college); INR 5–10 LPA (university/government, 7th CPC); INR 8–18 LPA (corporate information centers / IIM / IIT libraries)",
+      "future_scope": "Shift toward digital libraries, research data management, institutional repositories, and information architecture is creating new opportunities. Government libraries (Parliament, SC) and DRDO/ISRO archives offer specialized roles."
+    }
+  ]
+}

@@ -114,7 +114,19 @@ def get_role_embedding(role_name: str, role_data: dict[str, Any]) -> list[float]
     }
     return embedding
 
+def warm_role_embeddings(roles: dict[str, dict[str, Any]] | list[dict[str, Any]]) -> None:
+    """
+    Pre-compute and cache embeddings for all roles.
 
-def warm_role_embeddings(roles: dict[str, Any]) -> None:
+    Accepts EITHER:
+      - a list of role dicts  (new data_loader format)
+      - a dict  {role_name: role_data}  (old format)
+    """
+    if isinstance(roles, list):
+        roles = {r.get("role", f"role_{i}"): r for i, r in enumerate(roles)}
+
     for role_name, role_data in roles.items():
-        get_role_embedding(role_name, role_data)
+        normalized_role = dict(role_data)
+        if "skills" in normalized_role and "required_skills" not in normalized_role:
+            normalized_role["required_skills"] = normalized_role.get("skills", [])
+        get_role_embedding(role_name, normalized_role)

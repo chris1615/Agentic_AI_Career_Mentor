@@ -50,29 +50,6 @@ with col_b:
 
 analyze_btn = st.button("Analyze My Career", use_container_width=True)
 
-st.markdown("<div class='section-title'>Try an Example</div>", unsafe_allow_html=True)
-example_cols = st.columns(4)
-examples = [
-    ("Creative Media", ("Blender, Video Editing, VFX", "Drawing, Video Editing, VFX", "BCA", "VFX Artist")),
-    ("Game Dev", ("C++, Unity, Debugging", "Gaming, Animation, Interactive Design", "BSc", "Game Developer")),
-    ("Cybersecurity", ("Linux, Python", "Cybersecurity, Networks", "BCA", "Cybersecurity Analyst")),
-    ("Data", ("Python, Excel, SQL", "Analytics, Mathematics", "BCA", "Data Scientist")),
-]
-for index, (label, values) in enumerate(examples):
-    if example_cols[index].button(label, key=f"ex_{label}"):
-        st.session_state["_skills"] = values[0]
-        st.session_state["_interests"] = values[1]
-        st.session_state["_education"] = values[2]
-        st.session_state["_goal"] = values[3]
-        st.rerun()
-
-if "_skills" in st.session_state:
-    skills_input = st.session_state.pop("_skills")
-    interests_input = st.session_state.pop("_interests")
-    education_input = st.session_state.pop("_education")
-    goal_input = st.session_state.pop("_goal")
-    analyze_btn = True
-
 if analyze_btn:
     if not skills_input.strip():
         st.error("Please enter at least one skill to get started.")
@@ -111,6 +88,10 @@ if analyze_btn:
 
     with tabs[0]:
         st.markdown("<div class='section-title'>Top Career Recommendations</div>", unsafe_allow_html=True)
+        if result.get("live_skill_clusters"):
+            with st.expander("Live market skill clusters"):
+                for cluster in result.get("live_skill_clusters", []):
+                    st.markdown(f"- **{cluster.get('cluster', 'Cluster')}**: {', '.join(cluster.get('skills', []))}")
         for index, role in enumerate(result.get("recommended_roles", []), 1):
             render_role_card(role, f"{index}.")
             with st.expander(f"{role.get('role', 'Role')} - full explanation"):
@@ -120,6 +101,71 @@ if analyze_btn:
                         st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
                 else:
                     st.caption("No strong matched skills yet.")
+
+                st.markdown("**Direct Matches**")
+                if role.get("direct_matches"):
+                    for skill in role["direct_matches"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No direct exact matches.")
+
+                st.markdown("**Alias Matches**")
+                if role.get("alias_matches"):
+                    for skill in role["alias_matches"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No alias-based matches.")
+
+                st.markdown("**Inferred Base Skills**")
+                if role.get("inferred_matches"):
+                    for skill in role["inferred_matches"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No inferred base-skill matches.")
+
+                st.markdown("**Semantic Matches**")
+                if role.get("semantic_matches"):
+                    for skill in role["semantic_matches"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No semantic-only matches.")
+
+                st.markdown("**Normalized User Skills**")
+                if role.get("normalized_user_skills"):
+                    for skill in role["normalized_user_skills"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No normalized skills available.")
+
+                st.markdown("**Inferred User Skills**")
+                if role.get("inferred_user_skills"):
+                    for skill in role["inferred_user_skills"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No inferred user skills added.")
+
+                st.markdown("**Static Dataset Skills**")
+                if role.get("static_dataset_skills"):
+                    for skill in role["static_dataset_skills"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No static dataset skills attached.")
+
+                st.markdown("**Dynamically Learned Skills**")
+                if role.get("dynamic_learned_skills"):
+                    for skill in role["dynamic_learned_skills"]:
+                        st.markdown(f"<span class='chip-green'>{skill}</span>", unsafe_allow_html=True)
+                else:
+                    st.caption("No live-market learned skills attached.")
+
+                st.markdown("**Skill Clusters**")
+                if role.get("skill_clusters"):
+                    for cluster in role["skill_clusters"]:
+                        cluster_name = cluster.get("cluster", "Skill Cluster")
+                        cluster_skills = ", ".join(cluster.get("skills", []))
+                        st.markdown(f"- **{cluster_name}:** {cluster_skills}")
+                else:
+                    st.caption("No dynamic clusters available.")
 
                 st.markdown("**Missing Skills**")
                 if role.get("missing_skills"):
@@ -140,11 +186,15 @@ if analyze_btn:
                 st.markdown("**Score Breakdown**")
                 st.markdown(f"- Skills Match: {breakdown.get('skill_score', 0)}%")
                 st.markdown(f"- Semantic Similarity: {breakdown.get('semantic_score', 0)}%")
+                st.markdown(f"- Normalized Skill Overlap: {breakdown.get('overlap_score', 0)}%")
+                st.markdown(f"- Frequency-Weighted Skill Overlap: {breakdown.get('weighted_overlap_score', 0)}%")
                 st.markdown(f"- Random Forest Probability: {breakdown.get('random_forest_score', 0)}%")
                 st.markdown(f"- Existing Weighted Score: {breakdown.get('existing_weighted_score', 0)}%")
                 st.markdown(f"- Interest Match: {breakdown.get('interest_score', 0)}%")
                 st.markdown(f"- Domain Match: {breakdown.get('domain_score', 0)}%")
                 st.markdown(f"- Career Goal: {breakdown.get('goal_score', 0)}%")
+                st.markdown(f"- Live Job Market Signal: {breakdown.get('market_signal_score', 0)}%")
+                st.markdown(f"- Live Job Confidence Bonus: {breakdown.get('live_job_bonus_score', 0)}%")
                 st.markdown(f"- Eligibility: {breakdown.get('eligibility_score', 0)}%")
 
         model_metrics = result.get("ml_model_metrics", {})

@@ -1,204 +1,187 @@
 """
 hybrid_ml.py
 ------------
-Random Forest training and inference for hybrid role prediction.
+Trains (or reloads) a Random Forest classifier on the merged roles dataset
+and exposes a simple predict interface used by recommendation_engine.py.
+
+Model artefact
+--------------
+    models/random_forest_model.pkl
+
+The model is retrained when:
+    * The pkl file does not exist yet.
+    * ``force_retrain=True`` is passed to ``get_rf_model()``.
+    * The module is executed directly (``python -m backend.hybrid_ml``).
 """
 
 from __future__ import annotations
 
+import logging
 import os
+from pathlib import Path
 from typing import Any
 
-from semantic_engine import encode_text, normalize, role_text
+import joblib
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+
+logger = logging.getLogger(__name__)
+
+_HERE       = Path(__file__).parent
+_MODEL_DIR  = _HERE.parent / "models"
+_MODEL_FILE = _MODEL_DIR / "random_forest_model.pkl"
+
+# ---------------------------------------------------------------------------
+# Feature extraction
+# ---------------------------------------------------------------------------
 
 try:
-    import joblib
-except ImportError:  # pragma: no cover - optional dependency
-    joblib = None
-
-try:
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score, confusion_matrix
-    from sklearn.model_selection import train_test_split
-except ImportError:  # pragma: no cover - optional dependency
-    RandomForestClassifier = None
-    accuracy_score = None
-    confusion_matrix = None
-    train_test_split = None
+    from sentence_transformers import SentenceTransformer
+    _sbert = SentenceTransformer("all-MiniLM-L6-v2")
+    _SBERT_AVAILABLE = True
+except ImportError:
+    _SBERT_AVAILABLE = False
 
 
-MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
-MODEL_PATH = os.path.join(MODEL_DIR, "career_random_forest.joblib")
-METADATA_PATH = os.path.join(MODEL_DIR, "career_random_forest_metadata.joblib")
-
-_MODEL_CACHE = None
-_METADATA_CACHE = None
-
-
-def _build_training_samples(role_name: str, role_data: dict[str, Any]) -> list[str]:
-    skills = role_data.get("skills", []) or []
-    description = role_data.get("description", "")
-    domain = role_data.get("domain", "")
-    roadmap = role_data.get("roadmap", []) or []
-
-    samples = [
-        ", ".join(skills),
-        f"{role_name}. {description}",
-        f"{domain}. {', '.join(skills)}",
-        f"{role_name}. Domain: {domain}. Skills: {', '.join(skills)}",
-        f"{role_name}. Roadmap: {', '.join(roadmap[:4])}",
-        role_text(role_name, role_data),
-    ]
-    return [sample.strip() for sample in samples if sample.strip()]
+def _embed(text: str) -> np.ndarray:
+    if _SBERT_AVAILABLE:
+        return _sbert.encode(text, normalize_embeddings=True)
+    # Fallback: simple character-hash bag-of-words (64 dims)
+    vec = np.zeros(64)
+    for i, ch in enumerate(text.lower()):
+        vec[ord(ch) % 64] += 1
+    norm = np.linalg.norm(vec) or 1.0
+    return vec / norm
 
 
-def _vectorize_texts(texts: list[str]) -> list[list[float]]:
-    vectors = []
-    for text in texts:
-        embedding = encode_text(text)
-        if embedding is not None:
-            vectors.append(embedding)
-    return vectors
+def _role_to_features(role: dict[str, Any]) -> np.ndarray:
+    """Convert a role dict to a fixed-length feature vector."""
+    skills_text = " ".join(role.get("required_skills", []))
+    desc_text   = role.get("description", "")
+    combined    = f"{skills_text} {desc_text}"
+    return _embed(combined)
 
 
-def _artifacts_are_usable() -> bool:
-    return all(
-        [
-            joblib is not None,
-            RandomForestClassifier is not None,
-            accuracy_score is not None,
-            confusion_matrix is not None,
-            train_test_split is not None,
-        ]
-    )
+# ---------------------------------------------------------------------------
+# Training
+# ---------------------------------------------------------------------------
 
-
-def train_or_load_model(roles: dict[str, Any]) -> tuple[Any, dict[str, Any]]:
-    global _MODEL_CACHE, _METADATA_CACHE
-
-    if _MODEL_CACHE is not None and _METADATA_CACHE is not None:
-        return _MODEL_CACHE, _METADATA_CACHE
-
-    if not _artifacts_are_usable():
-        _MODEL_CACHE = None
-        _METADATA_CACHE = {
-            "status": "unavailable",
-            "accuracy": None,
-            "confusion_matrix": [],
-            "labels": [],
-            "feature_source": "sentence-transformer embeddings",
-        }
-        return _MODEL_CACHE, _METADATA_CACHE
-
-    os.makedirs(MODEL_DIR, exist_ok=True)
-
-    if os.path.exists(MODEL_PATH) and os.path.exists(METADATA_PATH):
-        try:
-            _MODEL_CACHE = joblib.load(MODEL_PATH)
-            _METADATA_CACHE = joblib.load(METADATA_PATH)
-            return _MODEL_CACHE, _METADATA_CACHE
-        except Exception:
-            pass
-
-    train_vectors: list[list[float]] = []
-    train_labels: list[str] = []
-    for role_name, role_data in roles.items():
-        samples = _build_training_samples(role_name, role_data)
-        vectors = _vectorize_texts(samples)
-        for vector in vectors:
-            train_vectors.append(vector)
-            train_labels.append(role_name)
-
-    unique_labels = sorted(set(train_labels))
-    if len(unique_labels) < 2 or len(train_vectors) < 4:
-        _MODEL_CACHE = None
-        _METADATA_CACHE = {
-            "status": "insufficient_data",
-            "accuracy": None,
-            "confusion_matrix": [],
-            "labels": unique_labels,
-            "feature_source": "sentence-transformer embeddings",
-        }
-        return _MODEL_CACHE, _METADATA_CACHE
-
-    try:
-        x_train, x_test, y_train, y_test = train_test_split(
-            train_vectors,
-            train_labels,
-            test_size=0.25,
-            random_state=42,
-            stratify=train_labels,
-        )
-    except ValueError:
-        x_train, x_test, y_train, y_test = train_test_split(
-            train_vectors,
-            train_labels,
-            test_size=0.25,
-            random_state=42,
-        )
-
-    model = RandomForestClassifier(
-        n_estimators=250,
-        max_depth=14,
-        random_state=42,
-        class_weight="balanced",
-    )
-    model.fit(x_train, y_train)
-
-    predictions = model.predict(x_test)
-    metadata = {
-        "status": "trained",
-        "accuracy": float(accuracy_score(y_test, predictions)),
-        "confusion_matrix": confusion_matrix(y_test, predictions, labels=unique_labels).tolist(),
-        "labels": unique_labels,
-        "feature_source": "sentence-transformer embeddings",
-        "sample_count": len(train_vectors),
-    }
-
-    joblib.dump(model, MODEL_PATH)
-    joblib.dump(metadata, METADATA_PATH)
-
-    _MODEL_CACHE = model
-    _METADATA_CACHE = metadata
-    return _MODEL_CACHE, _METADATA_CACHE
-
-
-def predict_role_probabilities(
+def train_model(
+    roles: list[dict[str, Any]],
     *,
-    user_skills: list[str],
-    interests: str,
-    career_goal: str,
-    roles: dict[str, Any],
-) -> tuple[dict[str, float], dict[str, Any]]:
-    model, metadata = train_or_load_model(roles)
-    if model is None:
-        return {}, metadata
+    n_estimators: int = 200,
+    random_state: int = 42,
+) -> RandomForestClassifier:
+    """
+    Train a Random Forest to predict role domain from role features.
 
-    user_profile_text = ". ".join(
-        part
-        for part in [
-            f"Skills: {', '.join(user_skills)}" if user_skills else "",
-            f"Interests: {interests}" if interests else "",
-            f"Career Goal: {career_goal}" if career_goal else "",
-        ]
-        if part
+    Parameters
+    ----------
+    roles : merged role list from data_loader.load_roles()
+
+    Returns
+    -------
+    Fitted RandomForestClassifier (also saved to disk).
+    """
+    if len(roles) < 4:
+        raise ValueError(
+            f"Need at least 4 roles to train; got {len(roles)}. "
+            "Run dynamic_role_builder to expand the dataset."
+        )
+
+    X = np.array([_role_to_features(r) for r in roles])
+    le = LabelEncoder()
+    y  = le.fit_transform([r.get("domain", "General") for r in roles])
+
+    # Guard against degenerate splits
+    n_splits = min(2, len(np.unique(y)))
+    if n_splits < 2 or len(roles) < 6:
+        X_train, X_test, y_train, y_test = X, X, y, y
+    else:
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=random_state, stratify=y
+        )
+
+    clf = RandomForestClassifier(
+        n_estimators=n_estimators,
+        max_depth=10,
+        random_state=random_state,
+        n_jobs=-1,
     )
-    embedding = encode_text(user_profile_text)
-    if embedding is None:
-        return {}, metadata
+    clf.fit(X_train, y_train)
+
+    train_acc = clf.score(X_train, y_train)
+    test_acc  = clf.score(X_test,  y_test)
+    logger.info(
+        "RF trained on %d samples | train_acc=%.3f | test_acc=%.3f",
+        len(X_train), train_acc, test_acc,
+    )
+
+    # Persist
+    _MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    payload = {"model": clf, "label_encoder": le}
+    joblib.dump(payload, _MODEL_FILE)
+    logger.info("Model saved to %s", _MODEL_FILE)
+    return clf
+
+
+# ---------------------------------------------------------------------------
+# Public accessor
+# ---------------------------------------------------------------------------
+
+_cached_model: RandomForestClassifier | None = None
+
+
+def get_rf_model(
+    roles: list[dict[str, Any]] | None = None,
+    force_retrain: bool = False,
+) -> RandomForestClassifier | None:
+    """
+    Return a trained RandomForestClassifier.
+
+    * Loads from disk if available and ``force_retrain`` is False.
+    * Trains from scratch if no saved model exists (requires *roles*).
+    * Returns ``None`` if training is impossible (no roles provided).
+    """
+    global _cached_model
+
+    if not force_retrain and _cached_model is not None:
+        return _cached_model
+
+    if not force_retrain and _MODEL_FILE.exists():
+        try:
+            payload = joblib.load(_MODEL_FILE)
+            _cached_model = payload["model"]
+            logger.info("RF model loaded from %s", _MODEL_FILE)
+            return _cached_model
+        except Exception as exc:
+            logger.warning("Could not load saved model (%s); retraining.", exc)
+
+    if not roles:
+        logger.warning("No roles supplied; cannot train RF model.")
+        return None
 
     try:
-        probabilities = model.predict_proba([embedding])[0]
-    except Exception:
-        return {}, metadata
+        _cached_model = train_model(roles)
+        return _cached_model
+    except ValueError as exc:
+        logger.warning("RF training skipped: %s", exc)
+        return None
 
-    by_role = {}
-    for label, probability in zip(model.classes_, probabilities):
-        by_role[str(label)] = float(probability)
 
-    normalized = {normalize(role_name): score for role_name, score in by_role.items()}
-    final = {}
-    for role_name in roles:
-        final[role_name] = normalized.get(normalize(role_name), 0.0)
+# ---------------------------------------------------------------------------
+# CLI entry point
+# ---------------------------------------------------------------------------
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+    from backend.data_loader import load_roles
 
-    return final, metadata
+    all_roles = load_roles()
+    print(f"Dataset size: {len(all_roles)} roles")
+    model = get_rf_model(roles=all_roles, force_retrain=True)
+    if model:
+        print("Training complete. Model saved to models/random_forest_model.pkl")
+    else:
+        print("Training failed – check logs for details.")
