@@ -1,0 +1,15 @@
+{
+  "react.js": ["react", "reactjs", "react.js", "react js"],
+  "node.js": ["node", "nodejs", "node.js", "node js"],
+  "mongodb": ["mongo", "mongo db", "mongo-db", "mongodb"],
+  "express.js": ["express", "expressjs", "express.js", "express js"],
+  "javascript": ["javascript", "js"],
+  "typescript": ["typescript", "ts"],
+  "graphql": ["graph ql", "graphql"],
+  "rest apis": ["rest api", "rest apis", "restful api", "restful apis"],
+  "sql": ["sql", "structured query language"],
+  "database systems": ["database", "databases", "db", "database systems"],
+  "frontend development": ["frontend", "front end", "frontend development", "ui development"],
+  "backend development": ["backend", "back end", "backend development", "server side"],
+  "api development": ["api development", "service development", "backend apis"]
+}

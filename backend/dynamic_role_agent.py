@@ -11,7 +11,10 @@ import os
 import re
 from typing import Any
 
-from job_api import fetch_adzuna_jobs, fetch_rapidapi_jobs
+try:
+    from backend.job_api import build_live_role_catalog
+except ImportError:
+    from job_api import build_live_role_catalog
 
 
 INTEREST_DOMAIN_MAP = {
@@ -257,53 +260,45 @@ def _expand_roles_with_ai(skills: list[str], interests: str, career_goal: str) -
 
 
 def discover_dynamic_roles(user_skills: list[str], interests: str, career_goal: str) -> dict[str, Any]:
-    query = " ".join([career_goal, interests, " ".join(user_skills)]).strip()
-    live_jobs = fetch_adzuna_jobs(query, limit=6) + fetch_rapidapi_jobs(query, limit=6)
-    creative_roles = _creative_role_matches(user_skills, interests, career_goal)
-    ai_roles = _expand_roles_with_ai(user_skills, interests, career_goal)
+    live_market = build_live_role_catalog(user_skills, interests, career_goal, limit_per_source=8)
+    live_jobs = live_market.get("jobs", [])
+    live_roles = live_market.get("roles", {})
 
     dynamic_roles = {}
-    for role_name, role_data in creative_roles.items():
-        dynamic_roles[role_name] = role_data
+    for role_name, role_data in live_roles.items():
+        dynamic_roles[role_name] = dict(role_data)
 
-    for item in live_jobs:
-        role_name = item.get("role", "").strip()
-        if not role_name:
-            continue
-        dynamic_roles.setdefault(
-            role_name,
-            {
-                "skills": item.get("skills", []),
-                "domain": item.get("domain", "Dynamic Market"),
-                "description": item.get("description", ""),
-                "roadmap": item.get("roadmap", []),
-                "degree_required": item.get("degree_required", False),
-                "portfolio_required": item.get("portfolio_required", False),
-                "required_degree": item.get("required_degree", []),
-                "education_level": item.get("education_level", ""),
-            },
-        )
+    if not dynamic_roles:
+        creative_roles = _creative_role_matches(user_skills, interests, career_goal)
+        ai_roles = _expand_roles_with_ai(user_skills, interests, career_goal)
 
-    for item in ai_roles:
-        role_name = item.get("role", "").strip()
-        if not role_name:
-            continue
-        dynamic_roles.setdefault(
-            role_name,
-            {
-                "skills": item.get("skills", []),
-                "domain": item.get("domain", "Emerging"),
-                "description": item.get("description", ""),
-                "roadmap": item.get("roadmap", []),
-                "degree_required": item.get("degree_required", False),
-                "portfolio_required": item.get("portfolio_required", False),
-                "required_degree": item.get("required_degree", []),
-                "education_level": item.get("education_level", ""),
-            },
-        )
+        for role_name, role_data in creative_roles.items():
+            dynamic_roles.setdefault(role_name, dict(role_data))
+
+        for item in ai_roles:
+            role_name = item.get("role", "").strip()
+            if not role_name:
+                continue
+            dynamic_roles.setdefault(
+                role_name,
+                {
+                    "skills": item.get("skills", []),
+                    "domain": item.get("domain", "Emerging"),
+                    "description": item.get("description", ""),
+                    "roadmap": item.get("roadmap", []),
+                    "degree_required": item.get("degree_required", False),
+                    "portfolio_required": item.get("portfolio_required", False),
+                    "required_degree": item.get("required_degree", []),
+                    "education_level": item.get("education_level", ""),
+                },
+            )
 
     return {
         "roles": dynamic_roles,
-        "live_job_listings": live_jobs[:8],
+        "live_job_listings": live_jobs[:12],
         "interest_domains": infer_interest_domains(interests, user_skills),
+        "query": live_market.get("query", ""),
+        "live_role_count": len(live_roles),
+        "skill_clusters": live_market.get("skill_clusters", []),
+        "updated_at": live_market.get("updated_at"),
     }
