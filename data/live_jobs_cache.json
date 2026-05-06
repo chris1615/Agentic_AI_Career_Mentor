@@ -1,10 +1,10 @@
 {
   "adzuna:full stack development react js node js express mongodb:8": {
-    "timestamp": 1777010237.324359,
+    "timestamp": 1778073487.539322,
     "jobs": []
   },
   "adzuna:mern stack developer:3": {
-    "timestamp": 1777010198.6202002,
+    "timestamp": 1778073491.766868,
     "jobs": [
       {
         "role": "Technical Lead",
@@ -15,8 +15,8 @@
         "domain": "Technology",
         "source": "Adzuna",
         "company": "Successive Digital",
-        "location": "Noida, Ghaziabad",
-        "job_url": "https://www.adzuna.in/land/ad/5678809109?se=xLDDW6I_8RG1uuN4FlV84g&utm_medium=api&utm_source=3b499e55&v=733F65C8C6057E91C1E79144B00CE428E52BAEB5"
+        "location": "India",
+        "job_url": "https://www.adzuna.in/land/ad/5713824872?se=TrLHB05J8RGpQdRO4F2CuA&utm_medium=api&utm_source=3b499e55&v=0BD6E4F0AC89E4AE3384DAD8FF90FBAF0AD2EB15"
       },
       {
         "role": "MERN Stack Developer",
@@ -33,35 +33,69 @@
       {
         "role": "MERN Stack Developer",
         "raw_role": "MERN Stack Developer",
-        "description": "About Us: We are a dynamic and rapidly expanding residential solar installation business based in California, USA. Our mission is to make clean energy accessible to homeowners and accelerate the adoption of solar power throughout the United States. After bootstrapping our early growth, we are investing in the systems that will take us through our next stage. We\u2019re looking for a versatile, senior full-stack engineer to help build and optimise the platforms that drive our business. This is an opp\u2026",
-        "skills": [],
-        "required_skills": [],
+        "description": "Key Responsibilities Develop and maintain responsive web applications using React.js and TypeScript Build scalable backend services using Node.js (Express.js / Fastify / NestJS) or Python (FastAPI / Flask) Design and implement RESTful APIs, GraphQL services, and WebSocket-based real-time features Work with databases such as PostgreSQL, MySQL, MongoDB, and Redis Collaborate with UI/UX designers to translate designs into high-quality code Ensure application performance, security, and scalability \u2026",
+        "skills": [
+          "Python",
+          "TypeScript",
+          "JavaScript",
+          "MongoDB",
+          "Database Systems",
+          "Postgresql",
+          "Mysql",
+          "Redis",
+          "React.js",
+          "Frontend Development",
+          "Node.js",
+          "Backend Development",
+          "Flask",
+          "Fastapi",
+          "Express.js",
+          "API Development",
+          "REST APIs",
+          "GraphQL"
+        ],
+        "required_skills": [
+          "Python",
+          "TypeScript",
+          "JavaScript",
+          "MongoDB",
+          "Database Systems",
+          "Postgresql",
+          "Mysql",
+          "Redis",
+          "React.js",
+          "Frontend Development",
+          "Node.js",
+          "Backend Development",
+          "Flask",
+          "Fastapi",
+          "Express.js",
+          "API Development",
+          "REST APIs",
+          "GraphQL"
+        ],
         "domain": "Technology",
         "source": "Adzuna",
-        "company": "Lytegen",
-        "location": "India",
-        "job_url": "https://www.adzuna.in/details/5559078258?utm_medium=api&utm_source=3b499e55"
+        "company": "Acme Services Private Limited",
+        "location": "Chauth Ka Barwara, Sawai Madhopur",
+        "job_url": "https://www.adzuna.in/details/5714583438?utm_medium=api&utm_source=3b499e55"
       }
     ]
   },
   "adzuna:full stack developer:3": {
-    "timestamp": 1777010203.2167745,
+    "timestamp": 1778073493.8225226,
     "jobs": [
       {
-        "role": "Full Stack Developer",
-        "raw_role": "Java Full stack Developer",
-        "description": "About Us: MUFG Bank, Ltd. is Japans premier bank, with a global network spanning in more than 40 markets. Outside of Japan, the bank offers an extensive scope of commercial and investment banking products and services to businesses, governments, and individuals worldwide. MUFG Banks parent, Mitsubishi UFJ Financial Group, Inc. (MUFG) is one of the worlds leading financial groups. Headquartered in Tokyo and with over 360 years of history, the Group has about 120,000 employees and offers services\u2026",
-        "skills": [
-          "Java"
-        ],
-        "required_skills": [
-          "Java"
-        ],
+        "role": "GIS Full",
+        "raw_role": "GIS Full-Stack Developer",
+        "description": "Dar Al-Handasah (Shair and Partners) is a renowned multidisciplinary consultancy firm specializing in Architecture, Engineering, Planning, and Environmental Design. With a legacy of over 60 years, we have a global presence and a commitment to delivering innovative and sustainable solutions to our clients' most complex challenges. Our diverse team of professionals collaborates across disciplines to create iconic projects that shape cities and improve lives. Job Title: GIS Full-Stack Developer Ex\u2026",
+        "skills": [],
+        "required_skills": [],
         "domain": "Technology",
         "source": "Adzuna",
-        "company": "MUFG Global Service ",
+        "company": "Dar",
         "location": "Bangalore, Karnataka",
-        "job_url": "https://www.adzuna.in/land/ad/5618490318?se=znGHXqI_8RGkOrqhmpNmcA&utm_medium=api&utm_source=3b499e55&v=A2BEA10052B12B60DD5E338453F6861F0876189B"
+        "job_url": "https://www.adzuna.in/land/ad/5711045033?se=8mkVCU5J8RGnOcTcG3SWIw&utm_medium=api&utm_source=3b499e55&v=2F1ED4EE39842208FDFE553EE499E859AFD9FE92"
       },
       {
         "role": "Full Stack Development Instructor",
@@ -73,7 +107,7 @@
         "source": "Adzuna",
         "company": "upGrad",
         "location": "Bangalore, Karnataka",
-        "job_url": "https://www.adzuna.in/land/ad/5697210377?se=znGHXqI_8RGkOrqhmpNmcA&utm_medium=api&utm_source=3b499e55&v=7A62F52E45ACE5B745B0353C44E072804F6AB923"
+        "job_url": "https://www.adzuna.in/land/ad/5697210377?se=8mkVCU5J8RGnOcTcG3SWIw&utm_medium=api&utm_source=3b499e55&v=7A62F52E45ACE5B745B0353C44E072804F6AB923"
       },
       {
         "role": "Full Stack Developer",
@@ -91,50 +125,46 @@
         "source": "Adzuna",
         "company": "Allshore Technologies",
         "location": "Hyderabad, Telangana",
-        "job_url": "https://www.adzuna.in/land/ad/5697518178?se=znGHXqI_8RGkOrqhmpNmcA&utm_medium=api&utm_source=3b499e55&v=44A3A1A2D2AB8F80A633FF4EB0A9CCAF3A6FA4D8"
+        "job_url": "https://www.adzuna.in/land/ad/5697518178?se=8mkVCU5J8RGnOcTcG3SWIw&utm_medium=api&utm_source=3b499e55&v=44A3A1A2D2AB8F80A633FF4EB0A9CCAF3A6FA4D8"
       }
     ]
   },
   "adzuna:backend developer:3": {
-    "timestamp": 1777010241.5482383,
+    "timestamp": 1778073495.7925394,
     "jobs": [
       {
         "role": "Backend Developer",
         "raw_role": "Backend Developer",
-        "description": "Company Description Swami Ramanand Teerth Marathwada University (SRTMU) is a state public university located in Nanded, Maharashtra, India. Established in 1994 and named after the revered freedom fighter Swami Ramanand Teerth, the university is committed to providing quality education and fostering academic excellence. Known for its focus on higher education and research, SRTMU serves as a center for learning, innovation, and knowledge dissemination. Its campus is situated on Latur Road, offeri\u2026",
+        "description": "We are looking for a skilled backend developer with strong expertise in Python and experience working with AI tools and frameworks. You will be responsible for building scalable backend systems, integrating AI-driven modules, and collaborating with data scientists and front-end teams to deliver intelligent applications. Key Responsibilities: 1. Design, develop, and maintain robust backend systems using Python and related frameworks (e.g., FastAPI, Flask, Django). 2. Integrate with AI models, AP\u2026",
+        "skills": [
+          "Python",
+          "Django",
+          "Flask",
+          "Fastapi"
+        ],
+        "required_skills": [
+          "Python",
+          "Django",
+          "Flask",
+          "Fastapi"
+        ],
+        "domain": "Technology",
+        "source": "Adzuna",
+        "company": "Sharedpro",
+        "location": "Vadodara, Gujarat",
+        "job_url": "https://www.adzuna.in/land/ad/5714430030?se=KL9MCk5J8RGU0Y2GykoW_Q&utm_medium=api&utm_source=3b499e55&v=C2268B3886C86AF80064C90155E18753615DCA8B"
+      },
+      {
+        "role": "Backend Developer",
+        "raw_role": "Backend Developer",
+        "description": "Atomicwork is on a mission to transform the digital workplace experience by uniting people, processes, and platforms through AI automation. Our team is building a modern service management platform that enables growing businesses to reduce operational complexity and drive business success. We\u2019re looking for an experienced backend engineer to join our team and help us build our modern service management platform. This is based out of our Bengaluru office . We offer competitive pay to employees a\u2026",
         "skills": [],
         "required_skills": [],
         "domain": "Technology",
         "source": "Adzuna",
-        "company": "Swami Ramanand Teerth Marathwada University , Nanded",
-        "location": "Nanded, Maharashtra",
-        "job_url": "https://www.adzuna.in/land/ad/5699705842?se=lHBbdaI_8RGTn8VwZIa35w&utm_medium=api&utm_source=3b499e55&v=3914662A1C05ED2A4FEE71AF4EA1CE5FF02CBEB9"
-      },
-      {
-        "role": "Backend Developer",
-        "raw_role": "BackEnd Developer",
-        "description": "Backend Developer NurseBee \u2022 Contract \u2022 Remote (India) About NurseBee NurseBee is a healthcare staffing startup building AI-powered tools to match nurses with facilities faster and smarter. Our backend sits at the intersection of data engineering, machine learning, and real-time APIs \u2014 and we need a polyglot backend engineer who's equally at home in Node.js and Python. The Role You'll design and build scalable APIs, integrate LLM and ML models into production workflows, and own the data layer. \u2026",
-        "skills": [
-          "Python",
-          "Machine Learning",
-          "Data Engineering",
-          "Node.js",
-          "JavaScript",
-          "Backend Development"
-        ],
-        "required_skills": [
-          "Python",
-          "Machine Learning",
-          "Data Engineering",
-          "Node.js",
-          "JavaScript",
-          "Backend Development"
-        ],
-        "domain": "Technology",
-        "source": "Adzuna",
-        "company": "NurseBee",
-        "location": "India",
-        "job_url": "https://www.adzuna.in/land/ad/5697210028?se=lHBbdaI_8RGTn8VwZIa35w&utm_medium=api&utm_source=3b499e55&v=BB9128EFC6BC41361F866AB08EDF656014867220"
+        "company": "Atomicwork",
+        "location": "Bangalore, Karnataka",
+        "job_url": "https://www.adzuna.in/land/ad/5712728670?se=KL9MCk5J8RGU0Y2GykoW_Q&utm_medium=api&utm_source=3b499e55&v=61488A9E66088E7EAF5052EFDA26E151E78BD1A0"
       },
       {
         "role": "Backend Developer",
@@ -154,7 +184,7 @@
         "source": "Adzuna",
         "company": "Best Infosystems Ltd.",
         "location": "Chennai, Tamil Nadu",
-        "job_url": "https://www.adzuna.in/land/ad/5255665378?se=lHBbdaI_8RGTn8VwZIa35w&utm_medium=api&utm_source=3b499e55&v=E630CD9A3BDBDD395CCC3DD9C1F778173A352BE7"
+        "job_url": "https://www.adzuna.in/land/ad/5255665378?se=KL9MCk5J8RGU0Y2GykoW_Q&utm_medium=api&utm_source=3b499e55&v=E630CD9A3BDBDD395CCC3DD9C1F778173A352BE7"
       }
     ]
   },
